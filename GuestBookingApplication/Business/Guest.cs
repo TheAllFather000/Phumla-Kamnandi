@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuestBookingApplication.Data
+namespace GuestBookingApplication.Business
 {
     internal class Guest
     {

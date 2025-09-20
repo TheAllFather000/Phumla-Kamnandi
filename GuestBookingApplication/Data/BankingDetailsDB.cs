@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuestBookingApplication.Data
 {
-    internal class Person
+    internal class BankingDetailsDB
     {
     }
 }

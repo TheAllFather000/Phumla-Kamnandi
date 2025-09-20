@@ -9,14 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Presentation\**" />
-    <EmbeddedResource Remove="Presentation\**" />
-    <None Remove="Presentation\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Logic\" />
-    <Folder Include="Business\" />
+    <Folder Include="Presentation\" />
   </ItemGroup>
 
 </Project>
