@@ -11,11 +11,19 @@ namespace Phumla.Data
 //generic DB class
     public class DB
     {
-               protected string s = Settings.Default.PKDatabaseConnectionString;
-               protected SqlConnection connection;
-               protected SqlCommand command;
-               protected DataSet ds;
-               protected SqlDataAdapter adapter;
+        protected string s = Settings.Default.PKDatabaseConnectionString;
+        protected SqlConnection connection;
+        protected SqlCommand command;
+        protected DataSet ds;
+        protected SqlDataAdapter adapter;
+
+        public enum Operation
+        {
+            Add,
+            Edit,
+            Delete,
+            Archive
+        }
 
         public DB()
         {
@@ -37,6 +45,7 @@ namespace Phumla.Data
             try
             {
                 adapter = new SqlDataAdapter(query, connection);
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
                 connection.Open();
                 ds.Clear();
                 adapter.Fill(ds, table);
@@ -51,6 +60,7 @@ namespace Phumla.Data
         #region UpdateSource
         protected bool UpdateDataSource(string query, string table)
         {
+            
             try
             {
                 connection.Open();
