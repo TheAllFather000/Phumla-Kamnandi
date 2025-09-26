@@ -12,10 +12,10 @@ namespace Phumla.Data
     public class DB
     {
                protected string s = Settings.Default.PKDatabaseConnectionString;
-               private SqlConnection connection;
-               private SqlCommand command;
-               private DataSet ds;
-               private SqlDataAdapter adapter;
+               protected SqlConnection connection;
+               protected SqlCommand command;
+               protected DataSet ds;
+               protected SqlDataAdapter adapter;
 
         public DB()
         {
@@ -56,7 +56,6 @@ namespace Phumla.Data
                 connection.Open();
                 adapter.Update(ds, table);
                 connection.Close();
-
                 Fill(query, table);
                 return true;
             }

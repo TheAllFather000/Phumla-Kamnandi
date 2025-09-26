@@ -60,6 +60,8 @@ namespace Phumla.Business
             phone = p.phone;
             address = p.address;
         }
+        public Person()
+        { }
         
     }
 }
