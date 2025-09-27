@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Phumla.Presentation
 {
-    public partial class LogIn : Form
+    public partial class LoginPage : Form
     {
-        public LogIn()
+        public LoginPage()
         {
             InitializeComponent();
         }
