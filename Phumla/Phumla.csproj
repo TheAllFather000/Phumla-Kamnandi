@@ -86,8 +86,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PKDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="PKDatabaseDataSet.xsc">
       <DependentUpon>PKDatabaseDataSet.xsd</DependentUpon>
@@ -121,9 +131,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="PKDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -132,6 +140,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PKDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\images.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
