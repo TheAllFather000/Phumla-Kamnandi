@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\data\\guestdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\ibrah\\onedrive\\documents\\notes\\inf2011s\\phumla-kamnandi\\phumla\\data\\guestdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:data\\guestdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\ibrah\\onedrive\\documents\\notes\\inf2011s\\phumla-kamnandi\\phumla\\business\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:business\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\ibrah\\onedrive\\documents\\notes\\inf2011s\\phumla-kamnandi\\phumla\\business\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:business\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\ibrah\\onedrive\\documents\\notes\\inf2011s\\phumla-kamnandi\\phumla\\data\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:data\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,34 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Person.cs",
-              "DocumentMoniker": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Business\\Person.cs",
-              "RelativeDocumentMoniker": "Business\\Person.cs",
-              "ToolTip": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Business\\Person.cs",
-              "RelativeToolTip": "Business\\Person.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwD8AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T08:17:28.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Guest.cs",
-              "DocumentMoniker": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Business\\Guest.cs",
-              "RelativeDocumentMoniker": "Business\\Guest.cs",
-              "ToolTip": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Business\\Guest.cs",
-              "RelativeToolTip": "Business\\Guest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T08:16:42.215Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -62,22 +28,23 @@
               "RelativeDocumentMoniker": "Data\\GuestDB.cs",
               "ToolTip": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Data\\GuestDB.cs",
               "RelativeToolTip": "Data\\GuestDB.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswDAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T17:30:36.994Z",
+              "WhenOpened": "2025-09-26T18:14:35.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "DB.cs",
+              "DocumentMoniker": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Data\\DB.cs",
+              "RelativeDocumentMoniker": "Data\\DB.cs",
+              "ToolTip": "C:\\Users\\Ibrah\\OneDrive\\Documents\\Notes\\INF2011S\\Phumla-Kamnandi\\Phumla\\Data\\DB.cs",
+              "RelativeToolTip": "Data\\DB.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAMwCkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T17:23:03.541Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-26T17:08:54.141Z",
+              "EditorCaption": ""
             }
           ]
         }
