@@ -1,2 +1,4 @@
 GuestBookingApplication/obj/
-.vs
+*.vs
+*.user
+*.ldf
