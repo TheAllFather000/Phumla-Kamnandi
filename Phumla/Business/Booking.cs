@@ -15,7 +15,7 @@ namespace Phumla.Business
         private string bookingTime;
         private string roomNumber;
         private bool depositStatus;
-
+        private double bill;
 
         public string ID
         { get { return id; } set { id = value; } }
@@ -34,8 +34,9 @@ namespace Phumla.Business
         public bool DepositStatus
         { get { return depositStatus; } set { depositStatus = value; } }
 
-
-        public Booking(string iD, string bookingID, string hotelID, string bookingDate, string bookingTime, string roomNumber, bool depositStatus)
+        public double Bill
+        { get { return bill; } set { bill = value; } }
+        public Booking(string iD, string bookingID, string hotelID, string bookingDate, string bookingTime, string roomNumber, bool depositStatus, double b)
         {
             ID = iD;
             BookingID = bookingID;
@@ -44,6 +45,26 @@ namespace Phumla.Business
             BookingTime = bookingTime;
             RoomNumber = roomNumber;
             DepositStatus = depositStatus;
+            bill = b;
+        }
+        public Booking(Booking booking)
+        {
+            ID = booking.ID;
+            BookingID = booking.ID;
+            HotelID= booking.HotelID;
+            BookingTime= booking.BookingTime;
+            BookingDate = booking.BookingDate;
+            RoomNumber = booking.RoomNumber;
+            DepositStatus = booking.depositStatus;
+            Bill = booking.bill;
+        }
+        public void incrementBill(double a)
+        {
+            bill += a;
+        }
+        public void decrementBill(double a)
+        {
+            bill -= a;
         }
     }
 }

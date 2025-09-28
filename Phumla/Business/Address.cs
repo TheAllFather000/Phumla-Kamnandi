@@ -8,6 +8,7 @@ namespace Phumla.Business
 {
     public class Address
     {
+        private long id;
         private string number;
         private string street;
         private string suburb;
@@ -17,6 +18,8 @@ namespace Phumla.Business
         public string HouseNumber
         { get { return number; } set { number = value; } }
         
+        public long ID
+        { get { return id; } set { id = value; } }
         
         public string Street
         {
@@ -40,8 +43,9 @@ namespace Phumla.Business
             number= street = suburb= city= postalcode = "NONE";
         }
 
-        public Address(string num, string st, string s, string c, string pc)
+        public Address(long id, string num, string st, string s, string c, string pc)
         {
+            this.id = id;
             number = num;
             street = st;
             suburb = s;
@@ -49,7 +53,16 @@ namespace Phumla.Business
             postalcode = pc;
         }
 
+        public Address(Address a)
+        {
+            this.id = a.id;
+            number = a.number;
+            street = a.street;
+            suburb = a.suburb;
+            city = a.city;
+            postalcode = a.postalcode;
 
+        }
 
 
         public override string ToString()
@@ -59,7 +72,7 @@ namespace Phumla.Business
 
         public string FormalToString()
         {
-            return "House Number: " + number + "\nStreet: " + street + "\nSuburb: " + suburb + "\nCity: " + city + "\nPostal Code: " + postalcode;
+            return "ID: "+id+"\nHouse Number: " + number + "\nStreet: " + street + "\nSuburb: " + suburb + "\nCity: " + city + "\nPostal Code: " + postalcode;
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phumla.Business
 {
-    internal class Customer
+    public class Customer:Person
     {
 
     }

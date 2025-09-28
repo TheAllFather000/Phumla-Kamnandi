@@ -39,6 +39,14 @@ namespace Phumla.Business
             this.cvv = cvv;
             this.expiryDate=ex;
         }
+        public BankingDetails(BankingDetails bd)
+        {
+            idNumber = bd.idNumber;
+            cardNumber = bd.cardNumber;
+            cvv = bd.cvv;
+            expiryDate = bd.expiryDate;
+
+        }
 
 
     }
