@@ -166,7 +166,7 @@
             // 
             // btnAddBankingDetails
             // 
-            this.btnAddBankingDetails.Location = new System.Drawing.Point(513, 650);
+            this.btnAddBankingDetails.Location = new System.Drawing.Point(519, 650);
             this.btnAddBankingDetails.Name = "btnAddBankingDetails";
             this.btnAddBankingDetails.Size = new System.Drawing.Size(147, 45);
             this.btnAddBankingDetails.TabIndex = 15;
@@ -268,7 +268,7 @@
             // 
             // txtProvince
             // 
-            this.txtProvince.Location = new System.Drawing.Point(297, 88);
+            this.txtProvince.Location = new System.Drawing.Point(297, 89);
             this.txtProvince.Name = "txtProvince";
             this.txtProvince.Size = new System.Drawing.Size(229, 22);
             this.txtProvince.TabIndex = 18;
@@ -284,7 +284,7 @@
             // 
             this.lblProvince.AutoSize = true;
             this.lblProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvince.Location = new System.Drawing.Point(3, 85);
+            this.lblProvince.Location = new System.Drawing.Point(3, 86);
             this.lblProvince.Name = "lblProvince";
             this.lblProvince.Size = new System.Drawing.Size(80, 22);
             this.lblProvince.TabIndex = 17;
@@ -292,7 +292,7 @@
             // 
             // txtCountry
             // 
-            this.txtCountry.Location = new System.Drawing.Point(297, 172);
+            this.txtCountry.Location = new System.Drawing.Point(297, 175);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(311, 22);
             this.txtCountry.TabIndex = 12;
@@ -309,7 +309,7 @@
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(297, 130);
+            this.txtPostalCode.Location = new System.Drawing.Point(297, 132);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(229, 22);
             this.txtPostalCode.TabIndex = 11;
@@ -318,7 +318,7 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(3, 127);
+            this.lblPostalCode.Location = new System.Drawing.Point(3, 129);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(108, 22);
             this.lblPostalCode.TabIndex = 9;
@@ -328,7 +328,7 @@
             // 
             this.lblCountry.AutoSize = true;
             this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(3, 169);
+            this.lblCountry.Location = new System.Drawing.Point(3, 172);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(73, 22);
             this.lblCountry.TabIndex = 10;
@@ -347,7 +347,7 @@
             this.pnlPersonalDetails.Controls.Add(this.tpnlPersonalDetails);
             this.pnlPersonalDetails.Location = new System.Drawing.Point(40, 134);
             this.pnlPersonalDetails.Name = "pnlPersonalDetails";
-            this.pnlPersonalDetails.Size = new System.Drawing.Size(622, 239);
+            this.pnlPersonalDetails.Size = new System.Drawing.Size(626, 239);
             this.pnlPersonalDetails.TabIndex = 21;
             // 
             // pnlBillingAddress
@@ -356,8 +356,9 @@
             this.pnlBillingAddress.Controls.Add(this.tpnlBillingAddress);
             this.pnlBillingAddress.Location = new System.Drawing.Point(40, 395);
             this.pnlBillingAddress.Name = "pnlBillingAddress";
-            this.pnlBillingAddress.Size = new System.Drawing.Size(622, 249);
+            this.pnlBillingAddress.Size = new System.Drawing.Size(626, 249);
             this.pnlBillingAddress.TabIndex = 22;
+            this.pnlBillingAddress.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBillingAddress_Paint);
             // 
             // lblPersonalDetails
             // 
@@ -392,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 704);
+            this.ClientSize = new System.Drawing.Size(706, 704);
             this.Controls.Add(this.btnFinaliseGuestAccount);
             this.Controls.Add(this.lblBillingAddress);
             this.Controls.Add(this.lblPersonalDetails);

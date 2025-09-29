@@ -22,8 +22,35 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.Generate
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.CoreCompileInputs.cache
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.pdb
+<<<<<<< HEAD
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase.mdf
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.AssemblyReference.cache
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe.config
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.AddGuest.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.BankingDetails.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Properties.Resources.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.GenerateResource.cache
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.CoreCompileInputs.cache
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.pdb
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe.config
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.pdb
+=======
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.AddGuest.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.BankingDetails.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> b20a61a40e881b4a824df846f31614868bf73506
+=======
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
+>>>>>>> c5df176bc8de9c6033029fba2418f056f18f108c
+=======
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
+>>>>>>> c5df176bc8de9c6033029fba2418f056f18f108c

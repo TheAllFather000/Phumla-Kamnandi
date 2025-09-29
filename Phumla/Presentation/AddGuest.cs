@@ -31,5 +31,10 @@ namespace Phumla.Presentation
         {
 
         }
+
+        private void pnlBillingAddress_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
