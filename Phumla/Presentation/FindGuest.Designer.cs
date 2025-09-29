@@ -36,6 +36,7 @@
             this.btnEditGuestAccount = new System.Windows.Forms.Button();
             this.btnRemoveGuestAccount = new System.Windows.Forms.Button();
             this.btnGoBackToAddGuest = new System.Windows.Forms.Button();
+            this.btnCreateGuestAccount = new System.Windows.Forms.Button();
             this.pnlExisitingGuests.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             // 
             // btnEditGuestAccount
             // 
-            this.btnEditGuestAccount.Location = new System.Drawing.Point(93, 637);
+            this.btnEditGuestAccount.Location = new System.Drawing.Point(319, 637);
             this.btnEditGuestAccount.Name = "btnEditGuestAccount";
             this.btnEditGuestAccount.Size = new System.Drawing.Size(165, 33);
             this.btnEditGuestAccount.TabIndex = 9;
@@ -97,7 +98,7 @@
             // 
             // btnRemoveGuestAccount
             // 
-            this.btnRemoveGuestAccount.Location = new System.Drawing.Point(287, 637);
+            this.btnRemoveGuestAccount.Location = new System.Drawing.Point(561, 637);
             this.btnRemoveGuestAccount.Name = "btnRemoveGuestAccount";
             this.btnRemoveGuestAccount.Size = new System.Drawing.Size(165, 33);
             this.btnRemoveGuestAccount.TabIndex = 10;
@@ -113,11 +114,21 @@
             this.btnGoBackToAddGuest.Text = "Go Back";
             this.btnGoBackToAddGuest.UseVisualStyleBackColor = true;
             // 
+            // btnCreateGuestAccount
+            // 
+            this.btnCreateGuestAccount.Location = new System.Drawing.Point(93, 637);
+            this.btnCreateGuestAccount.Name = "btnCreateGuestAccount";
+            this.btnCreateGuestAccount.Size = new System.Drawing.Size(165, 33);
+            this.btnCreateGuestAccount.TabIndex = 32;
+            this.btnCreateGuestAccount.Text = "Create Guest Account";
+            this.btnCreateGuestAccount.UseVisualStyleBackColor = true;
+            // 
             // FindGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 691);
+            this.Controls.Add(this.btnCreateGuestAccount);
             this.Controls.Add(this.btnGoBackToAddGuest);
             this.Controls.Add(this.btnRemoveGuestAccount);
             this.Controls.Add(this.btnEditGuestAccount);
@@ -143,5 +154,6 @@
         private System.Windows.Forms.Button btnEditGuestAccount;
         private System.Windows.Forms.Button btnRemoveGuestAccount;
         private System.Windows.Forms.Button btnGoBackToAddGuest;
+        private System.Windows.Forms.Button btnCreateGuestAccount;
     }
 }

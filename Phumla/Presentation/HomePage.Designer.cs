@@ -34,11 +34,14 @@
             this.btnRemoveGuest = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.lblHomePage = new System.Windows.Forms.Label();
+            this.tpnlHomePage = new System.Windows.Forms.TableLayoutPanel();
+            this.tpnlHomePage.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddBooking
             // 
-            this.btnAddBooking.Location = new System.Drawing.Point(47, 212);
+            this.btnAddBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddBooking.Location = new System.Drawing.Point(221, 88);
             this.btnAddBooking.Name = "btnAddBooking";
             this.btnAddBooking.Size = new System.Drawing.Size(170, 40);
             this.btnAddBooking.TabIndex = 0;
@@ -48,7 +51,8 @@
             // 
             // btnCreateReport
             // 
-            this.btnCreateReport.Location = new System.Drawing.Point(253, 443);
+            this.btnCreateReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreateReport.Location = new System.Drawing.Point(221, 304);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(170, 40);
             this.btnCreateReport.TabIndex = 1;
@@ -58,9 +62,9 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(47, 443);
+            this.btnLogout.Location = new System.Drawing.Point(12, 12);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(170, 40);
+            this.btnLogout.Size = new System.Drawing.Size(104, 40);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -68,7 +72,8 @@
             // 
             // btnRemoveGuest
             // 
-            this.btnRemoveGuest.Location = new System.Drawing.Point(495, 212);
+            this.btnRemoveGuest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRemoveGuest.Location = new System.Drawing.Point(221, 232);
             this.btnRemoveGuest.Name = "btnRemoveGuest";
             this.btnRemoveGuest.Size = new System.Drawing.Size(170, 40);
             this.btnRemoveGuest.TabIndex = 3;
@@ -78,7 +83,8 @@
             // 
             // btnEditBooking
             // 
-            this.btnEditBooking.Location = new System.Drawing.Point(253, 212);
+            this.btnEditBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEditBooking.Location = new System.Drawing.Point(221, 160);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(170, 40);
             this.btnEditBooking.TabIndex = 4;
@@ -88,29 +94,47 @@
             // 
             // lblHomePage
             // 
+            this.lblHomePage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHomePage.AutoSize = true;
             this.lblHomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHomePage.Location = new System.Drawing.Point(144, 47);
+            this.lblHomePage.Location = new System.Drawing.Point(81, 8);
             this.lblHomePage.Name = "lblHomePage";
             this.lblHomePage.Size = new System.Drawing.Size(451, 55);
             this.lblHomePage.TabIndex = 5;
             this.lblHomePage.Text = "Welcome, [FILL IN]";
+            // 
+            // tpnlHomePage
+            // 
+            this.tpnlHomePage.ColumnCount = 1;
+            this.tpnlHomePage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpnlHomePage.Controls.Add(this.btnRemoveGuest, 0, 3);
+            this.tpnlHomePage.Controls.Add(this.btnCreateReport, 0, 4);
+            this.tpnlHomePage.Controls.Add(this.lblHomePage, 0, 0);
+            this.tpnlHomePage.Controls.Add(this.btnAddBooking, 0, 1);
+            this.tpnlHomePage.Controls.Add(this.btnEditBooking, 0, 2);
+            this.tpnlHomePage.Location = new System.Drawing.Point(60, 99);
+            this.tpnlHomePage.Name = "tpnlHomePage";
+            this.tpnlHomePage.RowCount = 5;
+            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tpnlHomePage.Size = new System.Drawing.Size(613, 360);
+            this.tpnlHomePage.TabIndex = 6;
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 515);
-            this.Controls.Add(this.lblHomePage);
-            this.Controls.Add(this.btnEditBooking);
-            this.Controls.Add(this.btnRemoveGuest);
+            this.Controls.Add(this.tpnlHomePage);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnCreateReport);
-            this.Controls.Add(this.btnAddBooking);
             this.Name = "HomePage";
             this.Text = "Home Page: [HOTEL ID]";
+            this.tpnlHomePage.ResumeLayout(false);
+            this.tpnlHomePage.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -122,5 +146,6 @@
         private System.Windows.Forms.Button btnRemoveGuest;
         private System.Windows.Forms.Button btnEditBooking;
         private System.Windows.Forms.Label lblHomePage;
+        private System.Windows.Forms.TableLayoutPanel tpnlHomePage;
     }
 }

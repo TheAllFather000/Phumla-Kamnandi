@@ -100,6 +100,12 @@
     <Compile Include="Presentation\BankingDetails.Designer.cs">
       <DependentUpon>BankingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\CreateReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CreateReservation.Designer.cs">
+      <DependentUpon>CreateReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\FindGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BankingDetails.resx">
       <DependentUpon>BankingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CreateReservation.resx">
+      <DependentUpon>CreateReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FindGuest.resx">
       <DependentUpon>FindGuest.cs</DependentUpon>
