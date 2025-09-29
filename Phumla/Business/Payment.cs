@@ -48,5 +48,6 @@ namespace Phumla.Business
             time = p.time;
 
         }
+        public Payment() { }
     }
 }
