@@ -23,7 +23,6 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.CoreComp
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.pdb
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase.mdf
-C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.AssemblyReference.cache
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe.config
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.AddGuest.resources
@@ -37,3 +36,6 @@ C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.Gener
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.CoreCompileInputs.cache
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.pdb
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe.config
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.pdb

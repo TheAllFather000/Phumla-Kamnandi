@@ -183,10 +183,6 @@
     <Content Include="PKDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="PKDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>PKDatabase.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\images.jpeg" />
   </ItemGroup>
   <ItemGroup>
