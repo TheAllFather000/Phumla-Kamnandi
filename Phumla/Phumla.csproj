@@ -69,6 +69,7 @@
     <Compile Include="Business\Customer.cs" />
     <Compile Include="Business\Email.cs" />
     <Compile Include="Business\Guest.cs" />
+    <Compile Include="Business\GuestController.cs" />
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\Person.cs" />
     <Compile Include="Business\Room.cs" />
@@ -103,12 +104,6 @@
     <Compile Include="Presentation\BankingDetails.Designer.cs">
       <DependentUpon>BankingDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\CreateReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\CreateReservation.Designer.cs">
-      <DependentUpon>CreateReservation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\FindGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BankingDetails.resx">
       <DependentUpon>BankingDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\CreateReservation.resx">
-      <DependentUpon>CreateReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FindGuest.resx">
       <DependentUpon>FindGuest.cs</DependentUpon>
@@ -185,6 +177,10 @@
   <ItemGroup>
     <Content Include="PKDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PKDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PKDatabase.mdf</DependentUpon>
     </Content>
     <None Include="Resources\images.jpeg" />
   </ItemGroup>

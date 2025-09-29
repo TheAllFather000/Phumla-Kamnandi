@@ -16,7 +16,7 @@ namespace Phumla.Data
         public const string table = "Guest";
         private Collection<Guest> guests;
 
-        private Collection<Guest> Guests
+        public Collection<Guest> Guests
         {
             get{ return guests; }
             set { guests = new Collection<Guest>(value); }
@@ -53,7 +53,7 @@ namespace Phumla.Data
         
 
         #region CRUD
-        public void DataSetChange(Guest g, DB.Operation operation)
+        public bool DataSetChange(Guest g, DB.Operation operation)
         {
             DataRow r = null;
             switch (operation)
@@ -71,7 +71,7 @@ namespace Phumla.Data
                 break;
                 
             }
-            UpdateDataSource("SELECT * FROM Guest", table);
+            return UpdateDataSource("SELECT * FROM Guest", table);
         }
 
         public void DeleteEntry(long id, DB.Operation op)
