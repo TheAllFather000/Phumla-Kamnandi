@@ -26,3 +26,4 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.Ad
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.BankingDetails.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources

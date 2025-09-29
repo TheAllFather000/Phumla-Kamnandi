@@ -66,5 +66,7 @@ namespace Phumla.Business
         {
             bill -= a;
         }
+        public Booking()
+        { }
     }
 }

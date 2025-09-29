@@ -71,6 +71,7 @@
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\Person.cs" />
+    <Compile Include="Business\Room.cs" />
     <Compile Include="Data\AccessDB.cs" />
     <Compile Include="Data\AddressDB.cs" />
     <Compile Include="Data\BankingDetailsDB.cs" />
