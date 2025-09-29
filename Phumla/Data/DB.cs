@@ -174,6 +174,14 @@ namespace Phumla.Data
                     row["postalcode"] = a.Postalcode;
                     UpdateDataSource("SELECT * FROM Address", table);
                 }
+                else if (g.GetType() == typeof(Room))
+                {
+                    Room r = new Room((Room) g);
+                    row["roomid"] = r.RoomID;
+                    row["hotelid"] = r.HotelID;
+                    row["status"] = r.Status;
+                    UpdateDataSource("SELECT * FROM ROOM", table);
+                }
             }
 
             

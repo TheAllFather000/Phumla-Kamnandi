@@ -45,4 +45,8 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.Ad
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.BankingDetails.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
+<<<<<<< HEAD
 >>>>>>> b20a61a40e881b4a824df846f31614868bf73506
+=======
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
+>>>>>>> c5df176bc8de9c6033029fba2418f056f18f108c
