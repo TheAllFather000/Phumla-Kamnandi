@@ -21,5 +21,10 @@ namespace Phumla.Presentation
         {
 
         }
+
+        private void lblSurname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
