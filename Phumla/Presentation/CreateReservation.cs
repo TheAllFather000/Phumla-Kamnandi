@@ -16,10 +16,5 @@ namespace Phumla.Presentation
         {
             InitializeComponent();
         }
-
-        private void CreateBooking_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
