@@ -22,10 +22,13 @@ namespace Phumla.Data
         }
         public AccessDB() : base()
         {
+            accesses = new Collection<Access>();
             Fill(selectCommand, table);
+            fillWithAccess();
         }
-        public void fillWithGuests()
+        public void fillWithAccess()
         {
+            accesses = new Collection<Access>();
             Access a = new Business.Access();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
@@ -60,6 +63,8 @@ namespace Phumla.Data
             ds.AcceptChanges();
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
+            fillWithAccess();
+
         }
 
         public void changePassword(long eid, string password)
@@ -75,6 +80,7 @@ namespace Phumla.Data
             ds.AcceptChanges();
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
+            fillWithAccess();
         }
 
         public Access.AccessLevel checkLoginDetails(long eid, string pword)

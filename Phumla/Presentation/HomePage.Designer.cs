@@ -72,8 +72,12 @@
             // 
             // btnRemoveGuest
             // 
+<<<<<<< HEAD
             this.btnRemoveGuest.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRemoveGuest.Location = new System.Drawing.Point(221, 232);
+=======
+            this.btnRemoveGuest.Location = new System.Drawing.Point(476, 212);
+>>>>>>> b20a61a40e881b4a824df846f31614868bf73506
             this.btnRemoveGuest.Name = "btnRemoveGuest";
             this.btnRemoveGuest.Size = new System.Drawing.Size(170, 40);
             this.btnRemoveGuest.TabIndex = 3;

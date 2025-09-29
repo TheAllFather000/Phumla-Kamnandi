@@ -67,6 +67,7 @@
     <Compile Include="Business\BankingDetails.cs" />
     <Compile Include="Business\Booking.cs" />
     <Compile Include="Business\Customer.cs" />
+    <Compile Include="Business\Email.cs" />
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\Person.cs" />
