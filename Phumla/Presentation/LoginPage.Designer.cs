@@ -45,6 +45,7 @@
             this.lblLogin.Size = new System.Drawing.Size(474, 69);
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login to Phumla";
+            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // lblEmpID
             // 

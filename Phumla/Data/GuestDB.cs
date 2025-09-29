@@ -23,7 +23,9 @@ namespace Phumla.Data
         }
         public GuestDB(): base()
         {
-            base.Fill("SELECT * FROM GUESTS", table);
+            Guests = new Collection<Guest>();
+            Fill("SELECT * FROM GUESTS", table);
+            getAllGuests();
         }
         
         
@@ -31,6 +33,7 @@ namespace Phumla.Data
         {
             Guest guest;
             guest = new Guest();
+            Guests = new Collection<Guest>();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
                 if (row.RowState != DataRowState.Deleted)
@@ -89,6 +92,8 @@ namespace Phumla.Data
                     }
                     ds.AcceptChanges();
             }
+            UpdateDataSource("SELECT * FROM Guest", table);
+            getAllGuests();
         }
         #endregion
 

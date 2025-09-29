@@ -68,7 +68,7 @@
             // 
             // btnRemoveGuest
             // 
-            this.btnRemoveGuest.Location = new System.Drawing.Point(495, 212);
+            this.btnRemoveGuest.Location = new System.Drawing.Point(476, 212);
             this.btnRemoveGuest.Name = "btnRemoveGuest";
             this.btnRemoveGuest.Size = new System.Drawing.Size(170, 40);
             this.btnRemoveGuest.TabIndex = 3;
