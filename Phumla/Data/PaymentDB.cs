@@ -37,6 +37,12 @@ namespace Phumla.Data
             }
         }
 
-        public bool
+        public bool addNewPayment(Payment p)
+        {
+            payments.Add(p);
+            bool success = UpdateDataSource("SELECT * FROM Payment", table);
+            getAllPayments();
+            return success;
+        }
     }
 }
