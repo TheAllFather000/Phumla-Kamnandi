@@ -44,4 +44,3 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.Ba
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
-C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf
