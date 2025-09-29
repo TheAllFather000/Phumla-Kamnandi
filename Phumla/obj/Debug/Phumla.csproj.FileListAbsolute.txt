@@ -10,3 +10,15 @@ C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\obj\Debug\Phumla.pdb
 C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\bin\Debug\PKDatabase.mdf
 C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\bin\Debug\PKDatabase_log.ldf
 C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\obj\Debug\Phumla.exe.config
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase.mdf
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe.config
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.pdb
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.AssemblyReference.cache
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe.config
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Properties.Resources.resources
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.GenerateResource.cache
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.CoreCompileInputs.cache
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.pdb

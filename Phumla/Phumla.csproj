@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Access.cs" />
     <Compile Include="Business\Address.cs" />
     <Compile Include="Business\BankingDetails.cs" />
     <Compile Include="Business\Booking.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\Person.cs" />
+    <Compile Include="Data\AccessDB.cs" />
     <Compile Include="Data\AddressDB.cs" />
     <Compile Include="Data\BankingDetailsDB.cs" />
     <Compile Include="Data\BookingDB.cs" />

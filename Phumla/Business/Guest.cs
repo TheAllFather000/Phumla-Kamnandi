@@ -21,5 +21,14 @@ namespace Phumla.Business
         }
         public Guest()
         {}
+        public Guest(Guest g)
+        {
+            ID = g.ID;
+            Name = g.Name;
+            Phone = g.Phone;
+            Email = g.Email;
+            outstandingPayments = g.outstandingPayments;
+            Age = g.Age;
+        }
     }
 }

@@ -13,8 +13,7 @@ namespace Phumla.Data
 {
     public class GuestDB: DB
     {
-        const string table = "Guest";
-        private string selectCommand = "SELECT * FROM Guest";
+        public const string table = "Guest";
         private Collection<Guest> guests;
 
         private Collection<Guest> Guests
@@ -36,7 +35,7 @@ namespace Phumla.Data
             {
                 if (row.RowState != DataRowState.Deleted)
                 {
-                    guest.ID =  Convert.ToInt64(row["ID"].ToString().TrimEnd());
+                    guest.ID =  Convert.ToInt64(row["id"].ToString().TrimEnd());
                     guest.Name = row["name"].ToString().TrimEnd();
                     guest.Age = Convert.ToInt32(row["age"].ToString().TrimEnd());
                     guest.Email = row["email"].ToString().TrimEnd();
@@ -48,19 +47,7 @@ namespace Phumla.Data
             
         }
 
-        public void FillRow(DataRow row, Guest g, DB.Operation op)
-        {
-            if (op != DB.Operation.Delete)
-            {
-                row["ID"] = g.ID;
-                row["name"] = g.Name;
-                row["email"] = g.Email;
-                row["age"] = g.Age;
-                row["phone"] = g.Phone;
-                row["outstandingpayments"] = g.Outstanding;
-            }
-            UpdateDataSource("SELECT * FROM Guest", table);
-        }
+        
 
         #region CRUD
         public void DataSetChange(Guest g, DB.Operation operation)
@@ -70,14 +57,14 @@ namespace Phumla.Data
             {
                 case DB.Operation.Add:
                     r = ds.Tables[table].NewRow();
-                    FillRow(r, g, operation);
+                    FillRow(r, g, table, operation);
                 break;
                 case DB.Operation.Delete:
                     DeleteEntry(g.ID, operation);
                 break;
                 case DB.Operation.Edit:
-                    r = ds.Tables[table].Rows[FindRow(g.ID)];
-                    FillRow(r, g, operation );
+                    r = ds.Tables[table].Rows[FindRow(g.ID, table)];
+                    FillRow(r, g,table, operation);
                 break;
                 
             }
@@ -91,7 +78,7 @@ namespace Phumla.Data
             {
                     foreach (DataRow row in ds.Tables[table].Rows)
                     {
-                        if (id == Convert.ToInt64(ds.Tables[table].Rows[rowIndex]["ID"]) && rowIndex < ds.Tables[table].Rows.Count)
+                        if (id == Convert.ToInt64(ds.Tables[table].Rows[rowIndex]["id"]) && rowIndex < ds.Tables[table].Rows.Count)
                         {
                             ds.Tables[table].Rows.Remove(row);
                             ds.Tables[table].AcceptChanges();
@@ -107,29 +94,7 @@ namespace Phumla.Data
 
 
         #region Collections
-        private int FindRow(long id)
-        {
-            int rowIndex = 0;
-            DataRow myRow;
-            int returnValue = -1;
-            foreach (DataRow row in ds.Tables[table].Rows)
-            {
-                myRow = row;
-                if (myRow.RowState != DataRowState.Deleted) 
-                {
-                    if (id.Equals(Convert.ToInt64(ds.Tables[table].Rows[rowIndex]["ID"])))
-                    {
-                        returnValue = rowIndex;
-                    }
-                    rowIndex++;
-                }
-
-        }
-
         
-            return returnValue;
-        }
-
         #endregion
 
 
@@ -195,6 +160,7 @@ namespace Phumla.Data
 
         public bool UpdateDataSource(Guest g)
         {
+            Create_INSERT_Command(g);
             var success = UpdateDataSource("SELECT * FROM Guest", table);
             Create_UPDATE_Command(g);
             return success;
