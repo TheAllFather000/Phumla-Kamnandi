@@ -120,6 +120,7 @@ namespace Phumla.Data
                     row["age"] = guest.Age;
                     row["phone"] = guest.Phone;
                     row["outstandingpayments"] = guest.Outstanding;
+                    ds.AcceptChanges();
                     UpdateDataSource("SELECT * FROM Guest", table);
                 }
                 else if (g.GetType() == typeof(Booking))
@@ -133,6 +134,8 @@ namespace Phumla.Data
                     row["bookingdate"] = b.BookingDate;
                     row["depositstatus"] = b.DepositStatus;
                     row["bill"] = b.Bill;
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM Booking", table);
                 }
                 else if (g.GetType() == typeof(BankingDetails))
@@ -142,6 +145,8 @@ namespace Phumla.Data
                     row["cardNumber"] = bd.CardNumber;
                     row["cvv"] = bd.CVV;
                     row["expiryDate"] = bd.ExpiryDate;
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM BankingDetails", table);
                 }
                 else if (g.GetType() == typeof(Payment))
@@ -153,6 +158,8 @@ namespace Phumla.Data
                     row["reason"] = p.Reason;
                     row["date"] = p.Date;
                     row["time"] = p.Time;
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM Payment", table);
                 }
                 else if (g.GetType() == typeof(Access))
@@ -161,6 +168,9 @@ namespace Phumla.Data
                     row["employeeid"] = a.EmployeeID;
                     row["password"] = a.Password;
                     row["accesslevel"] = a.Level;
+                    Console.WriteLine(a.EmployeeID + " "+a.Password+ " "+a.Level);
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM Access", table);
                 }
                 else if (g.GetType() == typeof(Address))
@@ -172,6 +182,8 @@ namespace Phumla.Data
                     row["suburb"] = a.Suburb;
                     row["city"] = a.City;
                     row["postalcode"] = a.Postalcode;
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM Address", table);
                 }
                 else if (g.GetType() == typeof(Room))
@@ -180,6 +192,8 @@ namespace Phumla.Data
                     row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
                     row["status"] = r.Status;
+                    ds.AcceptChanges();
+
                     UpdateDataSource("SELECT * FROM ROOM", table);
                 }
             }

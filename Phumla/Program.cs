@@ -24,7 +24,13 @@ namespace Phumla
             b.DepositStatus = true;
             b.Bill = 0;
             new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");*/
-            Application.Run(new CreateReservation());
+            
+            AccessDB access = new AccessDB();
+            access.AddAccess(100000, "testpassword", Access.AccessLevel.Receptionist);
+            access.Fill("SELECT * FROM Access", "Access");
+            access.fillWithAccess();
+            Console.WriteLine(access.EmployeeAccess);
+            Application.Run();
         }
     }
 }

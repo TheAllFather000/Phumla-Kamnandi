@@ -11,8 +11,8 @@ namespace Phumla.Data
 {
     public class AccessDB : DB
     {
-        public const string table = "Access";
-        public const string selectCommand = "SELECT * FROM Access";
+        public static string table = "Access";
+        public static string selectCommand = "SELECT * FROM Access";
         private Collection<Access> accesses;
 
         public Collection<Access> EmployeeAccess
@@ -23,8 +23,6 @@ namespace Phumla.Data
         public AccessDB() : base()
         {
             accesses = new Collection<Access>();
-            Fill(selectCommand, table);
-            fillWithAccess();
         }
         public void fillWithAccess()
         {
@@ -83,6 +81,12 @@ namespace Phumla.Data
             fillWithAccess();
         }
 
+        public void AddAccess(long eid, string password, Access.AccessLevel al)
+        {
+            Access access = new Access(eid, password, al);
+            DataRow r = ds.Tables[table].NewRow();
+            FillRow(r, access, table, Operation.Add);
+        }
         public Access.AccessLevel checkLoginDetails(long eid, string pword)
         {
             Access.AccessLevel a = Access.AccessLevel.Receptionist;
