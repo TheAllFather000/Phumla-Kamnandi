@@ -140,6 +140,7 @@
             this.btnGoBackToAddGuest.TabIndex = 30;
             this.btnGoBackToAddGuest.Text = "Go Back";
             this.btnGoBackToAddGuest.UseVisualStyleBackColor = true;
+            this.btnGoBackToAddGuest.Click += new System.EventHandler(this.btnGoBackToAddGuest_Click);
             // 
             // cbxCompanyName
             // 
