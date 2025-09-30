@@ -19,18 +19,12 @@ namespace Phumla
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /*Guest g = new Guest("Ibrahim Sow", 18, 00050505050, "ibrahimsow367@gmail.com","+27 78 377 6253", 4.5);
+            Guest g = new Guest("Ibrahim Sow", 18, 00050505050, "ibrahimsow367@gmail.com","+27 78 377 6253", 4.5);
             Booking b = new Booking();
             b.DepositStatus = true;
             b.Bill = 0;
             new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");*/
-            
-            AccessDB access = new AccessDB();
-            access.AddAccess(100000, "testpassword", Access.AccessLevel.Receptionist);
-            access.Fill("SELECT * FROM Access", "Access");
-            access.fillWithAccess();
-            Console.WriteLine(access.EmployeeAccess);
-            Application.Run();
+            Application.Run(new CreateReservation());
         }
     }
 }

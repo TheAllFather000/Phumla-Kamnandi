@@ -27,7 +27,7 @@ namespace Phumla.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PKDatabase.md" +
-            "f;Integrated Security=True;Connect Timeout=30;Encrypt=No")]
+            "f;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;")]
         public string PKDatabaseConnectionString {
             get {
                 return ((string)(this["PKDatabaseConnectionString"]));

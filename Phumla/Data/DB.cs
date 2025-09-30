@@ -45,16 +45,27 @@ namespace Phumla.Data
         {
             try
             {
+                using (SqlConnection testConnection = new SqlConnection(s))
+                {
+                    testConnection.Open();
+                    Console.WriteLine("Connection successful!");
+                    testConnection.Close();
+                }
+
                 adapter = new SqlDataAdapter(query, connection);
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
                 connection.Open();
                 ds.Clear();
                 adapter.Fill(ds, table);
                 connection.Close();
+                if (ds.Tables.Contains(table))
+                {
+                    Console.WriteLine(query + " " + table);
+                }
             }
             catch (Exception e)
             {
-                System.Windows.Forms.MessageBox.Show(e.Message + " Error", "Error");
+                Console.WriteLine("ERROR "+ e.Message);
             }
         }
         #endregion
@@ -128,7 +139,7 @@ namespace Phumla.Data
                     Booking b = new Booking( (Booking)g);
 
                     row["id"] = b.ID;
-                    row["bookingid"] = b.BookingID;
+                    row["roomid"] = b.RoomNumber;
                     row["hotelid"] = b.HotelID;
                     row["bookingtime"] = b.BookingTime;
                     row["bookingdate"] = b.BookingDate;
@@ -166,7 +177,7 @@ namespace Phumla.Data
                 {
                     Access a = new Access((Access)g);
                     row["employeeid"] = a.EmployeeID;
-                    row["password"] = a.Password;
+                    row["password_"] = a.Password;
                     row["accesslevel"] = a.Level;
                     Console.WriteLine(a.EmployeeID + " "+a.Password+ " "+a.Level);
                     ds.AcceptChanges();
@@ -191,9 +202,24 @@ namespace Phumla.Data
                     Room r = new Room((Room) g);
                     row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
-                    row["status"] = r.Status;
+                    string d = Convert.ToString(row["date_under_use"]);
+                    d.Replace("/", "-");
+                    d.Replace("AM", "");
+                    d.Replace("PM", "");
+                    d.Trim();
+                    string[] datetime = d.Split(' ');
+                    int year = Convert.ToInt32(d[0]);
+                    int month = Convert.ToInt32(d[1]);
+                    int day = Convert.ToInt32(d[2]);
+                    int hour = Convert.ToInt32(d[3]);
+                    int minute = Convert.ToInt32(d[4]);
+                    int second = Convert.ToInt32(d[5]);
+                    r.DateAvailable = new DateTime
+                        (
+                        year, month, day,
+                        hour, minute, second
+                        );
                     ds.AcceptChanges();
-
                     UpdateDataSource("SELECT * FROM ROOM", table);
                 }
             }

@@ -138,6 +138,7 @@
             this.Controls.Add(this.lblFindGuestAccount);
             this.Name = "FindGuest";
             this.Text = "Find Guest Account";
+            this.Load += new System.EventHandler(this.FindGuest_Load);
             this.pnlExisitingGuests.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

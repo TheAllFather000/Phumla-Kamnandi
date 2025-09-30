@@ -149,7 +149,7 @@
             this.txtHotelID.Name = "txtHotelID";
             this.txtHotelID.Size = new System.Drawing.Size(300, 22);
             this.txtHotelID.TabIndex = 41;
-            this.txtHotelID.Text = "As text change, the list below changes real time";
+            this.txtHotelID.Text = "Greyed out if not manager";
             // 
             // lblHotelID
             // 

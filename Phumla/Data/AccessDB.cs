@@ -23,18 +23,20 @@ namespace Phumla.Data
         public AccessDB() : base()
         {
             accesses = new Collection<Access>();
+            Fill(selectCommand, table);
+            fillWithAccess();
         }
         public void fillWithAccess()
         {
             accesses = new Collection<Access>();
-            Access a = new Business.Access();
+            Access a = new Access();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
                 if (row.RowState != DataRowState.Deleted)
                 {
 
                     a.EmployeeID = Convert.ToInt64(row["employeeid"]);
-                    a.Password = Convert.ToString(row["password"]);
+                    a.Password = Convert.ToString(row["password_"]);
                     switch (Convert.ToString(row["accesslevel"]))
                     {
                         case "Receptionist":
@@ -71,7 +73,7 @@ namespace Phumla.Data
             {
                 if (eid == Convert.ToInt64(r["employeeid"]))
                 {
-                    r["password"] = password;
+                    r["password_"] = password;
                     break;
                 }
             }
@@ -86,13 +88,15 @@ namespace Phumla.Data
             Access access = new Access(eid, password, al);
             DataRow r = ds.Tables[table].NewRow();
             FillRow(r, access, table, Operation.Add);
+            accesses.Add(access);
+
         }
         public Access.AccessLevel checkLoginDetails(long eid, string pword)
         {
             Access.AccessLevel a = Access.AccessLevel.Receptionist;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["employeeid"]) == eid && Convert.ToString(r["password"]) == pword)
+                if (Convert.ToInt64(r["employeeid"]) == eid && Convert.ToString(r["password_"]) == pword)
                 {
                     switch (Convert.ToString(r["accesslevel"]))
                     {

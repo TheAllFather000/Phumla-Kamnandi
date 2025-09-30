@@ -19,7 +19,7 @@ namespace Phumla.Presentation
 
         private void CreateReservation_Load(object sender, EventArgs e)
         {
-
+            this.CenterToScreen();
         }
 
         private void label1_Click(object sender, EventArgs e)

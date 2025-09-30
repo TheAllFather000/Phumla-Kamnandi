@@ -11,7 +11,6 @@ C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\bin\Debug\PKDatabase
 C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\bin\Debug\PKDatabase_log.ldf
 C:\Users\Ibrah\OneDrive\Documents\Notes\INF2011S\PKK\Phumla\obj\Debug\Phumla.exe.config
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase.mdf
-C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe.config
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.exe
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\Phumla.pdb
@@ -27,7 +26,6 @@ C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.Assem
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.exe.config
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.AddGuest.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.BankingDetails.resources
-C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
@@ -44,3 +42,8 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.Ba
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.HomePage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.LoginPage.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
+C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReport.resources
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReport.resources
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
+C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf

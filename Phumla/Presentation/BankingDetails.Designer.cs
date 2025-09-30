@@ -125,7 +125,7 @@
             // 
             this.lblAddGuest.AutoSize = true;
             this.lblAddGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddGuest.Location = new System.Drawing.Point(59, 51);
+            this.lblAddGuest.Location = new System.Drawing.Point(59, 61);
             this.lblAddGuest.Name = "lblAddGuest";
             this.lblAddGuest.Size = new System.Drawing.Size(439, 59);
             this.lblAddGuest.TabIndex = 17;
@@ -140,6 +140,7 @@
             this.btnGoBackToAddGuest.TabIndex = 30;
             this.btnGoBackToAddGuest.Text = "Go Back";
             this.btnGoBackToAddGuest.UseVisualStyleBackColor = true;
+            this.btnGoBackToAddGuest.Click += new System.EventHandler(this.btnGoBackToAddGuest_Click);
             // 
             // cbxCompanyName
             // 
@@ -190,7 +191,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(12, 162);
+            this.panel1.Location = new System.Drawing.Point(12, 177);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(513, 200);
             this.panel1.TabIndex = 34;
@@ -199,7 +200,7 @@
             // 
             this.lblCardDetails.AutoSize = true;
             this.lblCardDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardDetails.Location = new System.Drawing.Point(17, 143);
+            this.lblCardDetails.Location = new System.Drawing.Point(17, 158);
             this.lblCardDetails.Name = "lblCardDetails";
             this.lblCardDetails.Size = new System.Drawing.Size(164, 29);
             this.lblCardDetails.TabIndex = 35;
@@ -209,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 510);
+            this.ClientSize = new System.Drawing.Size(538, 510);
             this.Controls.Add(this.lblCardDetails);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGoBackToAddGuest);
@@ -218,6 +219,7 @@
             this.Controls.Add(this.lblAddGuest);
             this.Name = "BankingDetails";
             this.Text = "Guest Banking Details";
+            this.Load += new System.EventHandler(this.BankingDetails_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

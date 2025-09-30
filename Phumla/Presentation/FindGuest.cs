@@ -21,5 +21,10 @@ namespace Phumla.Presentation
         {
 
         }
+
+        private void FindGuest_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

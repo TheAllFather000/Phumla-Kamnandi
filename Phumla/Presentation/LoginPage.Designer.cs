@@ -85,12 +85,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(184, 329);
+            this.btnLogin.Location = new System.Drawing.Point(184, 332);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(123, 50);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblLoginError
             // 
@@ -116,6 +117,7 @@
             this.Controls.Add(this.lblLogin);
             this.Name = "LoginPage";
             this.Text = "Phumla Kamnandi Employee Login Window";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

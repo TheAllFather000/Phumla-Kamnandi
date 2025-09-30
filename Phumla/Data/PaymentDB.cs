@@ -19,6 +19,7 @@ namespace Phumla.Data
 
         public PaymentDB()
         { 
+            payments = new Collection<Payment>();
             Fill("SELECT * FROM Payment", table);
         }
 
