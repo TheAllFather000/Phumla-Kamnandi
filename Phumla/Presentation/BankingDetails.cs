@@ -26,5 +26,10 @@ namespace Phumla.Presentation
         {
 
         }
+
+        private void BankingDetails_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

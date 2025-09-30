@@ -172,6 +172,7 @@
             this.btnAddBankingDetails.TabIndex = 15;
             this.btnAddBankingDetails.Text = "Add Banking Details";
             this.btnAddBankingDetails.UseVisualStyleBackColor = true;
+            this.btnAddBankingDetails.Click += new System.EventHandler(this.btnAddBankingDetails_Click);
             // 
             // btnCancel
             // 

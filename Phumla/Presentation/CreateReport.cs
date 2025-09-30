@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Phumla.Presentation
 {
-    public partial class CreateReservation : Form
+    public partial class CreateReport : Form
     {
-        public CreateReservation()
+        public CreateReport()
         {
             InitializeComponent();
-        }
-
-        private void CreateReservation_Load(object sender, EventArgs e)
-        {
-            this.CenterToScreen();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
