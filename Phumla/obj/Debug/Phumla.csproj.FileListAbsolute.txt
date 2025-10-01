@@ -44,12 +44,8 @@ C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.Lo
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.FindGuest.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReport.resources
-<<<<<<< HEAD
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReport.resources
 C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.Presentation.CreateReservation.resources
-C:\Users\Ibrah\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\PKDatabase_log.ldf
-=======
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\ReaLTaiizor.dll
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\bin\Debug\ReaLTaiizor.xml
 C:\Users\Makolela\Downloads\Phumla-Kamnandi\Phumla\obj\Debug\Phumla.csproj.Up2Date
->>>>>>> 622a03b4f1c7fd8241bb22dcc8fdb2148f501c7b

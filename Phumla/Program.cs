@@ -24,7 +24,7 @@ namespace Phumla
             b.DepositStatus = true;
             b.Bill = 0;
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
-            Application.Run(new LoginPage());
+            Application.Run(new AddGuest());
         }
     }
 }

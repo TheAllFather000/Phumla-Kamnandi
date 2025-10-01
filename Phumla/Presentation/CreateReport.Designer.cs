@@ -37,6 +37,8 @@
             this.lblStartDate = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
+            this.poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -119,11 +121,52 @@
             this.dtpStartDate.Size = new System.Drawing.Size(251, 22);
             this.dtpStartDate.TabIndex = 44;
             // 
+            // hopeDatePicker1
+            // 
+            this.hopeDatePicker1.BackColor = System.Drawing.Color.White;
+            this.hopeDatePicker1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.hopeDatePicker1.Date = new System.DateTime(2025, 10, 2, 0, 0, 0, 0);
+            this.hopeDatePicker1.DayNames = "MTWTFSS";
+            this.hopeDatePicker1.DaysTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
+            this.hopeDatePicker1.DayTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.hopeDatePicker1.DayTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.hopeDatePicker1.HeaderFormat = "{0} Y - {1} M";
+            this.hopeDatePicker1.HeaderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.hopeDatePicker1.HeadLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.hopeDatePicker1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.hopeDatePicker1.Location = new System.Drawing.Point(269, 249);
+            this.hopeDatePicker1.Name = "hopeDatePicker1";
+            this.hopeDatePicker1.NMColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.hopeDatePicker1.NMHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeDatePicker1.NYColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.hopeDatePicker1.NYHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeDatePicker1.PMColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.hopeDatePicker1.PMHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeDatePicker1.PYColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.hopeDatePicker1.PYHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeDatePicker1.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeDatePicker1.SelectedTextColor = System.Drawing.Color.White;
+            this.hopeDatePicker1.Size = new System.Drawing.Size(250, 270);
+            this.hopeDatePicker1.TabIndex = 48;
+            this.hopeDatePicker1.Text = "hopeDatePicker1";
+            this.hopeDatePicker1.ValueTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(133)))), ((int)(((byte)(228)))));
+            // 
+            // poisonDateTime1
+            // 
+            this.poisonDateTime1.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.poisonDateTime1.Location = new System.Drawing.Point(27, 298);
+            this.poisonDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.poisonDateTime1.Name = "poisonDateTime1";
+            this.poisonDateTime1.Size = new System.Drawing.Size(200, 30);
+            this.poisonDateTime1.TabIndex = 49;
+            // 
             // CreateReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 555);
+            this.Controls.Add(this.poisonDateTime1);
+            this.Controls.Add(this.hopeDatePicker1);
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.lblStartDate);
             this.Controls.Add(this.dtpEndDate);
@@ -135,6 +178,7 @@
             this.Controls.Add(this.btnCreateReport);
             this.Name = "CreateReport";
             this.Text = "CreateReport";
+            this.Load += new System.EventHandler(this.CreateReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +195,7 @@
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
+        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
     }
 }
