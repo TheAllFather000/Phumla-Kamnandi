@@ -30,6 +30,11 @@ namespace Phumla.Data
         {
             try
             {
+                if (AppDomain.CurrentDomain.GetData("DataDirectory") == null)
+                {
+                    AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+                    Console.WriteLine("DataDirectory set to: " + AppDomain.CurrentDomain.GetData("DataDirectory"));
+                }
                 connection = new SqlConnection(s);
                 ds = new DataSet();
 
@@ -45,19 +50,11 @@ namespace Phumla.Data
         {
             try
             {
-                using (SqlConnection testConnection = new SqlConnection(s))
-                {
-                    testConnection.Open();
-                    Console.WriteLine("Connection successful!");
-                    testConnection.Close();
-                }
-
                 adapter = new SqlDataAdapter(query, connection);
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
                 connection.Open();
                 ds.Clear();
                 adapter.Fill(ds, table);
-                connection.Close();
                 if (ds.Tables.Contains(table))
                 {
                     Console.WriteLine(query + " " + table);
@@ -68,15 +65,21 @@ namespace Phumla.Data
                 Console.WriteLine("ERROR "+ e.Message);
             }
         }
+        public void closeConnection()
+        {
+            if (connection != null && connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+                Console.WriteLine("Connection closed.");
+            }
+        }
         #endregion
         #region UpdateSource
         protected bool UpdateDataSource(string query, string table)
         {
             try
             {
-                connection.Open();
                 adapter.Update(ds, table);
-                connection.Close();
                 Fill(query, table);
                 return true;
             }

@@ -12,7 +12,7 @@ namespace Phumla.Data
     public class AccessDB : DB
     {
         public static string table = "Access";
-        public static string selectCommand = "SELECT * FROM Access";
+        public static string selectCommand = "SELECT * FROM [Access]";
         private Collection<Access> accesses;
 
         public Collection<Access> EmployeeAccess
@@ -23,12 +23,19 @@ namespace Phumla.Data
         public AccessDB() : base()
         {
             accesses = new Collection<Access>();
-            Fill(selectCommand, table);
+            Console.WriteLine("GRAAAAAAAAAA " + AppDomain.CurrentDomain.GetData("DataDirectory"));
+
+            Console.WriteLine("EMPTY");
+                Fill(selectCommand, table);
             fillWithAccess();
         }
         public void fillWithAccess()
         {
-            accesses = new Collection<Access>();
+            if (!ds.Tables.Contains(table))
+            {
+                Console.WriteLine("EMPTY");
+                Fill("SELECT * FROM Access", "Access");
+            }
             Access a = new Access();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
