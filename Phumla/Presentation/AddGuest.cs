@@ -14,6 +14,8 @@ namespace Phumla.Presentation
     public partial class AddGuest : Form
     {
         private string name, surname, id, email, phoneNumber;
+
+        //private bool isNameValid, isSurnameValid, isIDValid, isEmailValid, isPhoneNumberValid;
         private DateTime dateOfBirth;
         private const int ID_AGE = 16;
         private const bool TESTING = true; // For Debugging
@@ -92,6 +94,17 @@ namespace Phumla.Presentation
 
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure?", "You will be returned to the Home Page", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                HomePage homePage = new HomePage();
+                homePage.ShowDialog();
+                this.Hide();
+            }
+        }
+
         private void pnlBillingAddress_Paint(object sender, PaintEventArgs e)
         {
 
@@ -102,6 +115,11 @@ namespace Phumla.Presentation
             BankingDetails bankingDetails = new BankingDetails();
             bankingDetails.Show();
             this.Hide();
+        }
+
+        public bool isEmailValid (string email)
+        {
+            return email.Contains("@");
         }
 
         private void btnFinaliseGuestAccount_Click(object sender, EventArgs e)
@@ -145,6 +163,13 @@ namespace Phumla.Presentation
             if (string.IsNullOrEmpty(email))
             {
                 lblEmailError.Text = "Please enter an email.";
+
+            } else if (!isEmailValid(email))
+            {
+                lblEmailError.Text = "Please enter a valid email.";
+            } else
+            {
+                lblEmailError.Visible = false;
             }
 
             // Phone number
