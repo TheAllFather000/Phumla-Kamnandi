@@ -1,6 +1,6 @@
 Phumla/obj/*
 Phumla/.vs/*
-bin/
+Phumla/bin/*
 *.user
 *.ldf
 *.suo
