@@ -61,7 +61,6 @@
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "Cancel Creation";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnFinaliseGuestAccount
             // 
@@ -71,7 +70,6 @@
             this.btnFinaliseGuestAccount.TabIndex = 28;
             this.btnFinaliseGuestAccount.Text = "Finalise Guest Account";
             this.btnFinaliseGuestAccount.UseVisualStyleBackColor = true;
-            this.btnFinaliseGuestAccount.Click += new System.EventHandler(this.btnFinaliseGuestAccount_Click);
             // 
             // txtCVV
             // 

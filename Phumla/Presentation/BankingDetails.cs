@@ -37,8 +37,6 @@ namespace Phumla.Presentation
         {
             
         }
-<<<<<<< HEAD
-=======
 
         private void btnFinaliseGuestAccount_Click(object sender, EventArgs e)
         {
@@ -55,6 +53,5 @@ namespace Phumla.Presentation
                 this.Hide();
             }
         }
->>>>>>> 622a03b4f1c7fd8241bb22dcc8fdb2148f501c7b
     }
 }

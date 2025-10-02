@@ -73,19 +73,11 @@
             this.lblPersonalDetails = new System.Windows.Forms.Label();
             this.lblBillingAddress = new System.Windows.Forms.Label();
             this.btnFinaliseGuestAccount = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNameError = new System.Windows.Forms.Label();
-            this.lblSurnameError = new System.Windows.Forms.Label();
-            this.lblDoBError = new System.Windows.Forms.Label();
-            this.lblIDError = new System.Windows.Forms.Label();
-            this.lblEmailError = new System.Windows.Forms.Label();
-            this.lblPhoneNumberError = new System.Windows.Forms.Label();
             this.tpnlPersonalDetails.SuspendLayout();
             this.tpnlBillingAddress.SuspendLayout();
             this.pnlPersonalDetails.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlBillingAddress.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -302,10 +294,10 @@
             // 
             // txtStreet
             // 
-            this.txtStreet.Location = new System.Drawing.Point(182, 3);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(419, 22);
-            this.txtStreet.TabIndex = 7;
+            this.txtStreetName.Location = new System.Drawing.Point(182, 3);
+            this.txtStreetName.Name = "txtStreet";
+            this.txtStreetName.Size = new System.Drawing.Size(419, 22);
+            this.txtStreetName.TabIndex = 7;
             // 
             // lblProvince
             // 
@@ -640,106 +632,7 @@
             this.btnFinaliseGuestAccount.Text = "Finalise Guest Account";
             this.btnFinaliseGuestAccount.UseVisualStyleBackColor = true;
             this.btnFinaliseGuestAccount.Click += new System.EventHandler(this.btnFinaliseGuestAccount_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.lblPhoneNumberError, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmailError, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lblIDError, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblDoBError, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblSurnameError, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblNameError, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtPhoneNumber, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.dtpDOB, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtSurname, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(204, 20);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(415, 342);
-            this.tableLayoutPanel1.TabIndex = 20;
-            // 
-            // lblNameError
-            // 
-            this.lblNameError.AutoSize = true;
-            this.lblNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblNameError.Location = new System.Drawing.Point(3, 28);
-            this.lblNameError.Name = "lblNameError";
-            this.lblNameError.Size = new System.Drawing.Size(85, 22);
-            this.lblNameError.TabIndex = 19;
-            this.lblNameError.Text = "Name(s)";
-            // 
-            // lblSurnameError
-            // 
-            this.lblSurnameError.AutoSize = true;
-            this.lblSurnameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurnameError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblSurnameError.Location = new System.Drawing.Point(3, 84);
-            this.lblSurnameError.Name = "lblSurnameError";
-            this.lblSurnameError.Size = new System.Drawing.Size(85, 22);
-            this.lblSurnameError.TabIndex = 20;
-            this.lblSurnameError.Text = "Name(s)";
-            // 
-            // lblDoBError
-            // 
-            this.lblDoBError.AutoSize = true;
-            this.lblDoBError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoBError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblDoBError.Location = new System.Drawing.Point(3, 140);
-            this.lblDoBError.Name = "lblDoBError";
-            this.lblDoBError.Size = new System.Drawing.Size(85, 22);
-            this.lblDoBError.TabIndex = 21;
-            this.lblDoBError.Text = "Name(s)";
-            // 
-            // lblIDError
-            // 
-            this.lblIDError.AutoSize = true;
-            this.lblIDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblIDError.Location = new System.Drawing.Point(3, 196);
-            this.lblIDError.Name = "lblIDError";
-            this.lblIDError.Size = new System.Drawing.Size(85, 22);
-            this.lblIDError.TabIndex = 22;
-            this.lblIDError.Text = "Name(s)";
-            // 
-            // lblEmailError
-            // 
-            this.lblEmailError.AutoSize = true;
-            this.lblEmailError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblEmailError.Location = new System.Drawing.Point(3, 252);
-            this.lblEmailError.Name = "lblEmailError";
-            this.lblEmailError.Size = new System.Drawing.Size(85, 22);
-            this.lblEmailError.TabIndex = 23;
-            this.lblEmailError.Text = "Name(s)";
-            // 
-            // lblPhoneNumberError
-            // 
-            this.lblPhoneNumberError.AutoSize = true;
-            this.lblPhoneNumberError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumberError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblPhoneNumberError.Location = new System.Drawing.Point(3, 308);
-            this.lblPhoneNumberError.Name = "lblPhoneNumberError";
-            this.lblPhoneNumberError.Size = new System.Drawing.Size(85, 22);
-            this.lblPhoneNumberError.TabIndex = 24;
-            this.lblPhoneNumberError.Text = "Name(s)";
+           
 
             // 
             // AddGuest

@@ -1,5 +1,6 @@
-GuestBookingApplication/obj/
-*.vs
+Phumla/obj/*
+Phumla/.vs/*
+Phumla/bin/*
 *.user
 *.ldf
-obj/
+*.suo

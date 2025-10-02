@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\ibrah\\downloads\\phumla-kamnandi\\phumla\\presentation\\addguest.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:presentation\\addguest.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,31 +54,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddGuest.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.Designer.cs",
-              "RelativeDocumentMoniker": "Presentation\\AddGuest.Designer.cs",
-              "ToolTip": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.Designer.cs",
-              "RelativeToolTip": "Presentation\\AddGuest.Designer.cs",
-              "ViewState": "AgIAADABAAAAAAAAAAD4vz8BAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T21:16:50.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AddGuest.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs",
               "RelativeDocumentMoniker": "Presentation\\AddGuest.cs",
               "ToolTip": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs",
               "RelativeToolTip": "Presentation\\AddGuest.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAlwLoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAlwLQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T21:16:18.035Z"
+              "WhenOpened": "2025-10-01T21:16:18.035Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Phumla",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Phumla.csproj",
               "RelativeDocumentMoniker": "Phumla.csproj",
@@ -93,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -105,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AccessDB.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\AccessDB.cs",
               "RelativeDocumentMoniker": "Data\\AccessDB.cs",
@@ -117,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "DB.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\DB.cs",
               "RelativeDocumentMoniker": "Data\\DB.cs",
@@ -129,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Settings.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Properties\\Settings.Designer.cs",
               "RelativeDocumentMoniker": "Properties\\Settings.Designer.cs",
@@ -141,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "GuestController.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Business\\GuestController.cs",
               "RelativeDocumentMoniker": "Business\\GuestController.cs",
@@ -153,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "RoomDB.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\RoomDB.cs",
               "RelativeDocumentMoniker": "Data\\RoomDB.cs",
@@ -165,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "GuestDB.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\GuestDB.cs",
               "RelativeDocumentMoniker": "Data\\GuestDB.cs",
@@ -177,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "PaymentDB.cs",
               "DocumentMoniker": "C:\\Users\\Ibrah\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\PaymentDB.cs",
               "RelativeDocumentMoniker": "Data\\PaymentDB.cs",

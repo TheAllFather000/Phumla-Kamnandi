@@ -16,5 +16,10 @@ namespace Phumla.Presentation
         {
             InitializeComponent();
         }
+
+        private void CreateReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
