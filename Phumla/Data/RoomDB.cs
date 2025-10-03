@@ -13,7 +13,7 @@ namespace Phumla.Data
     public class RoomDB : DB
     {
         private Collection<Room> rooms;
-        public static string table = "RoomDB";
+        public static string table = "Room";
         public Collection<Room> Rooms
         {
             get { return rooms; }
@@ -21,7 +21,7 @@ namespace Phumla.Data
         }
         public RoomDB() : base()
         {
-            Fill("SELECT * FROM ROOM", table);
+            Fill("SELECT * FROM Room", table);
             rooms = new Collection<Room>();
             getAllRooms();
         }

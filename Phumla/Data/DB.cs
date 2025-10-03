@@ -120,7 +120,7 @@ namespace Phumla.Data
         #endregion
 
 
-        public void FillRow(DataRow row, Object g, string table, DB.Operation op)
+        public bool FillRow(DataRow row, Object g, string table, DB.Operation op)
         {
             if (op != DB.Operation.Delete)
             {
@@ -135,7 +135,7 @@ namespace Phumla.Data
                     row["phone"] = guest.Phone;
                     row["outstandingpayments"] = guest.Outstanding;
                     ds.AcceptChanges();
-                    UpdateDataSource("SELECT * FROM Guest", table);
+                    return UpdateDataSource("SELECT * FROM Guest", table);
                 }
                 else if (g.GetType() == typeof(Booking))
                 {
@@ -144,13 +144,14 @@ namespace Phumla.Data
                     row["id"] = b.ID;
                     row["roomid"] = b.RoomNumber;
                     row["hotelid"] = b.HotelID;
+                    b.CheckedIn = Convert.ToInt32(row["checkin"]) == 1 ? true : false;
                     row["bookingtime"] = b.BookingTime;
                     row["bookingdate"] = b.BookingDate;
                     row["depositstatus"] = b.DepositStatus;
                     row["bill"] = b.Bill;
                     ds.AcceptChanges();
 
-                    UpdateDataSource("SELECT * FROM Booking", table);
+                    return UpdateDataSource("SELECT * FROM Booking", table);
                 }
                 else if (g.GetType() == typeof(BankingDetails))
                 {
@@ -161,7 +162,7 @@ namespace Phumla.Data
                     row["expiryDate"] = bd.ExpiryDate;
                     ds.AcceptChanges();
 
-                    UpdateDataSource("SELECT * FROM BankingDetails", table);
+                    return UpdateDataSource("SELECT * FROM BankingDetails", table);
                 }
                 else if (g.GetType() == typeof(Payment))
                 {
@@ -174,7 +175,7 @@ namespace Phumla.Data
                     row["time"] = p.Time;
                     ds.AcceptChanges();
 
-                    UpdateDataSource("SELECT * FROM Payment", table);
+                    return UpdateDataSource("SELECT * FROM Payment", table);
                 }
                 else if (g.GetType() == typeof(Access))
                 {
@@ -185,7 +186,7 @@ namespace Phumla.Data
                     Console.WriteLine(a.EmployeeID + " "+a.Password+ " "+a.Level);
                     ds.AcceptChanges();
 
-                    UpdateDataSource("SELECT * FROM Access", table);
+                    return UpdateDataSource("SELECT * FROM Access", table);
                 }
                 else if (g.GetType() == typeof(Address))
                 {
@@ -198,7 +199,7 @@ namespace Phumla.Data
                     row["postalcode"] = a.Postalcode;
                     ds.AcceptChanges();
 
-                    UpdateDataSource("SELECT * FROM Address", table);
+                    return UpdateDataSource("SELECT * FROM Address", table);
                 }
                 else if (g.GetType() == typeof(Room))
                 {
@@ -223,9 +224,10 @@ namespace Phumla.Data
                         hour, minute, second
                         );
                     ds.AcceptChanges();
-                    UpdateDataSource("SELECT * FROM ROOM", table);
+                    return UpdateDataSource("SELECT * FROM ROOM", table);
                 }
             }
+            return false;
 
             
         }

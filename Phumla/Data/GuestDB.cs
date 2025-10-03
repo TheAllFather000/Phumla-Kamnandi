@@ -71,10 +71,11 @@ namespace Phumla.Data
                 break;
                 
             }
+            getAllGuests();
             return UpdateDataSource("SELECT * FROM Guest", table);
         }
 
-        public void DeleteEntry(long id, DB.Operation op)
+        public bool DeleteEntry(long id, DB.Operation op)
         {
             int rowIndex = 0;
             if (op == DB.Operation.Delete)
@@ -92,8 +93,9 @@ namespace Phumla.Data
                     }
                     ds.AcceptChanges();
             }
-            UpdateDataSource("SELECT * FROM Guest", table);
+            bool success = UpdateDataSource("SELECT * FROM Guest", table);
             getAllGuests();
+            return success;
         }
         #endregion
 

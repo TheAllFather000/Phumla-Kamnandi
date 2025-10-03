@@ -35,7 +35,7 @@ namespace Phumla.Business
         public bool replaceGuest(Guest g)
         {
             bool success;
-            for (int i = 0; i <Guests.Count;i++)
+            for (int i = 0; i < Guests.Count; i++)
             {
                 if (Guests[i].ID == g.ID)
                 {
@@ -49,11 +49,44 @@ namespace Phumla.Business
         }
         public bool addNewGuest(Guest g)
         {
-            
+
             bool success = gdb.DataSetChange(g, DB.Operation.Add);
             guests = gdb.Guests;
             return success;
         }
+        public bool removeGuest(long id)
+        {
+            foreach (Guest gue in guests)
+            {
+                if (gue.ID == id)
+                {
+                    guests.Remove(gue);
+                }
+            }
+            bool success =gdb.DeleteEntry(id, DB.Operation.Delete);
+            guests = gdb.Guests;
+            return success;
+        }
+        public bool checkIDExists(long id)
+        {
+            foreach (Guest g in guests)
+            {
+                if (g.ID == id) 
+                    return true;
+            }
+            return false;
 
+        }
+        public bool checkPhoneNumberExists(string pNum)
+        {
+            foreach (Guest g in guests)
+            {
+                if (g.Phone ==pNum)
+                    return true;
+            }
+            return false;
+        }
+
+         
     }
 }

@@ -76,8 +76,10 @@
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\GuestController.cs" />
     <Compile Include="Business\Payment.cs" />
+    <Compile Include="Business\PaymentController.cs" />
     <Compile Include="Business\Person.cs" />
     <Compile Include="Business\Room.cs" />
+    <Compile Include="Business\RoomController.cs" />
     <Compile Include="Data\AccessDB.cs" />
     <Compile Include="Data\AddressDB.cs" />
     <Compile Include="Data\BankingDetailsDB.cs" />
@@ -204,8 +206,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="PKDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="PKDatabase.mdf" />
+    <Content Include="PKDatabase_log.ldf">
+      <DependentUpon>PKDatabase.mdf</DependentUpon>
     </Content>
     <None Include="Resources\images.jpeg" />
   </ItemGroup>

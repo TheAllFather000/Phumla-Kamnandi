@@ -13,7 +13,6 @@ namespace Phumla.Business
     {
         private MailMessage mail;
         private SmtpClient smtp;
-        private string hotel;
         private string sender;
         private string subject;
         private string reciever;

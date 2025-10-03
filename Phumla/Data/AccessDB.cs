@@ -23,10 +23,8 @@ namespace Phumla.Data
         public AccessDB() : base()
         {
             accesses = new Collection<Access>();
-            Console.WriteLine("GRAAAAAAAAAA " + AppDomain.CurrentDomain.GetData("DataDirectory"));
-
             Console.WriteLine("EMPTY");
-                Fill(selectCommand, table);
+            Fill(selectCommand, table);
             fillWithAccess();
         }
         public void fillWithAccess()
@@ -52,7 +50,11 @@ namespace Phumla.Data
                         case "Manager":
                             a.Level = Access.AccessLevel.Manager;
                             break;
+                        case "Administrator":
+                            a.Level = Access.AccessLevel.Administrator;
+                        break;
                     }
+                    Console.WriteLine(a.EmployeeID + " " + a.Password + " " + a.Level);
                     accesses.Add(a);
                 }
             }
