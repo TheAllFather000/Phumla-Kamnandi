@@ -17,6 +17,10 @@ namespace Phumla
         [STAThread]
         static void Main()
         {
+            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Guest g = new Guest("Ibrahim Sow", 18, 00050505050, "ibrahimsow367@gmail.com","+27 78 377 6253", 4.5);
@@ -25,7 +29,7 @@ namespace Phumla
             b.Bill = 0;
             AccessDB accessDB = new AccessDB();
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
-            Application.Run(new AddGuest());
+            Application.Run(new LoginPage());
         }
     }
 }

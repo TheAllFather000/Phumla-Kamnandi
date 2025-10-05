@@ -34,7 +34,6 @@
             this.txtEmpID = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lblLoginError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -93,22 +92,11 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lblLoginError
-            // 
-            this.lblLoginError.AutoSize = true;
-            this.lblLoginError.ForeColor = System.Drawing.Color.Red;
-            this.lblLoginError.Location = new System.Drawing.Point(22, 113);
-            this.lblLoginError.Name = "lblLoginError";
-            this.lblLoginError.Size = new System.Drawing.Size(96, 16);
-            this.lblLoginError.TabIndex = 6;
-            this.lblLoginError.Text = "Error Message";
-            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 411);
-            this.Controls.Add(this.lblLoginError);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmpID);
@@ -131,6 +119,5 @@
         private System.Windows.Forms.TextBox txtEmpID;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblLoginError;
     }
 }

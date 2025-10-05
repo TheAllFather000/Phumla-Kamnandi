@@ -33,7 +33,7 @@ namespace Phumla.Presentation
             string tempID = txtEmpID.Text;
             string password = txtPassword.Text;
 
-            /*if (long.TryParse(tempID, out long id))
+            if (long.TryParse(tempID, out long id))
             {
         
                 long empID = long.Parse(txtEmpID.Text);
@@ -41,23 +41,21 @@ namespace Phumla.Presentation
                 Access.AccessLevel accessLevel = accessDB.checkLoginDetails(empID, password); // Causes errors.
                 if (accessLevel == Access.AccessLevel.None)
                 {
-                    lblLoginError.Visible = true;
-                    lblLoginError.Text = "Incorrect employee credentials. Please try again.";
+                    MessageBox.Show("Login Details Cannot Be Verified. Please Try Again", "Invalid Login Credentials");
                 } else
                 {
-                    // Create an employee object
+                    HomePage homePage = new HomePage(tempID); // MODIFY WHEN CODE ABOVE WORKS
+                    this.Hide();
+                    homePage.ShowDialog();
+                    this.Close();
                 }
-            } */
-            HomePage homePage =  new HomePage(tempID); // MODIFY WHEN CODE ABOVE WORKS
-            this.Hide();
-            homePage.ShowDialog();
-            this.Close();
+            } 
+
 
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            lblLoginError.Visible = false;          // Error message not displayed on load.
             this.CenterToScreen();
         }
     }

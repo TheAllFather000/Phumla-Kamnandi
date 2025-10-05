@@ -12,7 +12,7 @@ namespace Phumla.Data
     public class AccessDB : DB
     {
         public static string table = "Access";
-        public static string selectCommand = "SELECT * FROM [Access]";
+        public static string selectCommand = "SELECT * FROM Access";
         private Collection<Access> accesses;
 
         public Collection<Access> EmployeeAccess

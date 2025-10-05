@@ -30,11 +30,7 @@ namespace Phumla.Data
         {
             try
             {
-                if (AppDomain.CurrentDomain.GetData("DataDirectory") == null)
-                {
-                    AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
-                    Console.WriteLine("DataDirectory set to: " + AppDomain.CurrentDomain.GetData("DataDirectory"));
-                }
+                
                 connection = new SqlConnection(s);
                 ds = new DataSet();
 
