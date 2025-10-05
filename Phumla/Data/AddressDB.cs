@@ -26,9 +26,10 @@ namespace Phumla.Data
         public void AllAddresses()
         {
             addresses = new Collection<Address>();
-            Address a = new Address(); 
             foreach (DataRow r in ds.Tables[table].Rows)
             {
+                Address a = new Address();
+
                 a.ID = Convert.ToInt64(r["id"]);
                 a.HouseNumber = Convert.ToString(r["number"]);
                 a.Suburb = Convert.ToString(r["suburb"]);
@@ -67,21 +68,15 @@ namespace Phumla.Data
         }
         public Address getAddress(long id)
         {
-            Address a = new Address();
-            foreach (DataRow r in ds.Tables[table].Rows)
+            foreach (Address add in addresses)
             {
-                if (id == Convert.ToInt64(r["id"]))
+                if (id == add.ID)
                 {
-                    a.ID = Convert.ToInt64(r["id"]);
-                    a.HouseNumber = Convert.ToString(r["number"]);
-                    a.Suburb = Convert.ToString(r["suburb"]);
-                    a.City = Convert.ToString(r["city"]);
-                    a.Postalcode = Convert.ToString(r["postalcode"]);
-
+                    return add;
                 }
 
-        }
-            return a;
+            }
+            return null;
     }
 }
     }

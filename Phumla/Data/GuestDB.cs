@@ -31,13 +31,13 @@ namespace Phumla.Data
         
         public void getAllGuests()
         {
-            Guest guest;
-            guest = new Guest();
+          
             Guests = new Collection<Guest>();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
                 if (row.RowState != DataRowState.Deleted)
                 {
+                    var guest = new Guest();
                     guest.ID =  Convert.ToInt64(row["id"].ToString().TrimEnd());
                     guest.Name = row["name"].ToString().TrimEnd();
                     guest.Age = Convert.ToInt32(row["age"].ToString().TrimEnd());

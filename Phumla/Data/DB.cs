@@ -53,7 +53,6 @@ namespace Phumla.Data
                 adapter.Fill(ds, table);
                 if (ds.Tables.Contains(table))
                 {
-                    Console.WriteLine(query + " " + table);
                 }
             }
             catch (Exception e)
@@ -66,7 +65,6 @@ namespace Phumla.Data
             if (connection != null && connection.State == ConnectionState.Open)
             {
                 connection.Close();
-                Console.WriteLine("Connection closed.");
             }
         }
         #endregion
@@ -179,7 +177,6 @@ namespace Phumla.Data
                     row["employeeid"] = a.EmployeeID;
                     row["password_"] = a.Password;
                     row["accesslevel"] = a.Level;
-                    Console.WriteLine(a.EmployeeID + " "+a.Password+ " "+a.Level);
                     ds.AcceptChanges();
 
                     return UpdateDataSource("SELECT * FROM Access", table);

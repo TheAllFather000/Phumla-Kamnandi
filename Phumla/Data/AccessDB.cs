@@ -23,7 +23,6 @@ namespace Phumla.Data
         public AccessDB() : base()
         {
             accesses = new Collection<Access>();
-            Console.WriteLine("EMPTY");
             Fill(selectCommand, table);
             fillWithAccess();
         }
@@ -31,15 +30,11 @@ namespace Phumla.Data
         {
             if (!ds.Tables.Contains(table))
             {
-                Console.WriteLine("EMPTY");
                 Fill("SELECT * FROM Access", "Access");
             }
-            Access a = new Access();
             foreach (DataRow row in ds.Tables[table].Rows)
             {
-                if (row.RowState != DataRowState.Deleted)
-                {
-
+                    Access a = new Access();
                     a.EmployeeID = Convert.ToInt64(row["employeeid"]);
                     a.Password = Convert.ToString(row["password_"]);
                     switch (Convert.ToString(row["accesslevel"]))
@@ -54,11 +49,11 @@ namespace Phumla.Data
                             a.Level = Access.AccessLevel.Administrator;
                         break;
                     }
-                    Console.WriteLine(a.EmployeeID + " " + a.Password + " " + a.Level);
+                    Console.WriteLine(a.EmployeeID.GetType() + " " + a.Password.GetType() + " " + a.Level.GetType());
                     accesses.Add(a);
                 }
             }
-        }
+        
         public void changeAccessLevel(long eid, Access.AccessLevel al)
         {
             foreach (DataRow r in ds.Tables[table].Rows)
@@ -102,27 +97,33 @@ namespace Phumla.Data
         }
         public Access.AccessLevel checkLoginDetails(long eid, string pword)
         {
-            Access.AccessLevel a = Access.AccessLevel.Receptionist;
-            foreach (DataRow r in ds.Tables[table].Rows)
+            Access.AccessLevel a = Access.AccessLevel.None;
+            foreach (Access ac in accesses)
             {
-                if (Convert.ToInt64(r["employeeid"]) == eid && Convert.ToString(r["password_"]) == pword)
+                if (ac.EmployeeID == eid)
                 {
-                    switch (Convert.ToString(r["accesslevel"]))
+                    Console.WriteLine("SEX");
+                }
+                if (ac.Password == pword)
+                { Console.WriteLine("BITCH"); }
+                if (ac.EmployeeID ==  eid && ac.Password == pword)
+                {
+                    Console.WriteLine(eid + " " + pword);
+
+                    switch ((ac.Level))
                     {
-                        case "Administrator":
+                        case Access.AccessLevel.Administrator:
                             a = Access.AccessLevel.Administrator;
                         break;
-                        case "Manager":
+                        case Access.AccessLevel.Manager:
                             a = Access.AccessLevel.Manager;
                         break;
-                        case "Receptionist":
+                        case Access.AccessLevel.Receptionist:
                             a = Access.AccessLevel.Receptionist;
                         break;
                     }
-                }
-                else
-                {
-                    return Access.AccessLevel.None;
+                    Console.WriteLine(a);
+                    return a;
                 }
             }
             return a;
