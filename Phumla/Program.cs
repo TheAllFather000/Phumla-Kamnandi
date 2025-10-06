@@ -28,12 +28,7 @@ namespace Phumla
             b.DepositStatus = true;
             b.Bill = 0;
             AccessDB accessDB = new AccessDB();
-            foreach (Access a in accessDB.EmployeeAccess)
-            {
-                Console.WriteLine(a.EmployeeID + " " + a.Password + " " + a.Level);
-            }
             Access.AccessLevel access = accessDB.checkLoginDetails(110113, "eishyahneh");
-            Console.WriteLine(access);
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             Application.Run(new LoginPage());
         }

@@ -1,12 +1,13 @@
-﻿using Phumla.Properties;
+﻿using Phumla.Business;
+using Phumla.Properties;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Collections.ObjectModel;
-using Phumla.Business;
 
 namespace Phumla.Data
 {
@@ -47,12 +48,12 @@ namespace Phumla.Data
                 if (Convert.ToInt64(r["id"]) == id)
                 {
                     r.Delete();
-                    ds.Tables[table].AcceptChanges();
-                    ds.AcceptChanges();
                 }
 
                 rowindex++;
             }
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            
             UpdateDataSource("SELECT * FROM Address", table);
             AllAddresses();
         }
@@ -62,7 +63,9 @@ namespace Phumla.Data
             Address a = new Address(id, n, s, su, city, postalcode);
             Addresses.Add(a);
             DataRow r = ds.Tables[table].NewRow();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             FillRow(r, a, table, DB.Operation.Add);
+            ds.Tables[table].Rows.Add(r);
             AllAddresses();
             return a;
         }

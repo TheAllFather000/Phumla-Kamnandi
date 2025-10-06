@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Phumla.Business;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Phumla.Business;
 
 namespace Phumla.Data
 {
@@ -39,6 +40,7 @@ namespace Phumla.Data
                 b.CheckedIn = Convert.ToInt32(r["checkin"]) == 1 ? true : false;
                 b.BookingDate = Convert.ToString(r["bookingdate"]);
                 b.BookingTime = Convert.ToString(r["bookingtime"]);
+                b.BookingEnd = Convert.ToString(r["bookingend"]);
                 b.DepositStatus = Convert.ToInt32(r["depositstatus"]) == 1 ? true : false;
             }
 
@@ -46,6 +48,7 @@ namespace Phumla.Data
         public bool createNewBooking(Booking b)
         {
             DataRow r = ds.Tables[table].NewRow();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             var success = FillRow(r, b, table, Operation.Add);
             getAllBookings();
             return success;
@@ -57,6 +60,7 @@ namespace Phumla.Data
             {
                 if (Convert.ToInt64(r["id"]) == b.ID && Convert.ToString(r["roomid"]) == b.RoomNumber)
                 {
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, b, table, Operation.Edit);
                     break;
                 }
@@ -88,8 +92,7 @@ namespace Phumla.Data
                 }
                 
             }
-            ds.Tables[table].AcceptChanges();
-            ds.AcceptChanges();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             success = UpdateDataSource("Select * From Booking", table);
             getAllBookings();
             return success;

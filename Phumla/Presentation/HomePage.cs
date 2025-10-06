@@ -13,9 +13,12 @@ namespace Phumla.Presentation
     public partial class HomePage : Form
     {
         private string empID = "The man with hands";
+        private CreateReservation reservation;
         public HomePage()
         {
             InitializeComponent();
+            reservation = new CreateReservation();
+            reservation.Visible= false;
         }
 
         /*
@@ -25,6 +28,8 @@ namespace Phumla.Presentation
         { 
             InitializeComponent();
             this.empID = empID;
+            reservation = new CreateReservation();
+            reservation.Visible = false;
         }
 
         private void btnEditBooking_Click(object sender, EventArgs e)
@@ -56,7 +61,7 @@ namespace Phumla.Presentation
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-
+            reservation.Visible = true;
         }
 
         private void HomePage_Load(object sender, EventArgs e)

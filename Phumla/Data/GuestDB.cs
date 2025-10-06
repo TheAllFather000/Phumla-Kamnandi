@@ -60,8 +60,10 @@ namespace Phumla.Data
             {
                 case DB.Operation.Add:
                     r = ds.Tables[table].NewRow();
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     FillRow(r, g, table, operation);
-                break;
+                    ds.Tables[table].Rows.Add(r);
+                    break;
                 case DB.Operation.Delete:
                     DeleteEntry(g.ID, operation);
                 break;
@@ -85,14 +87,14 @@ namespace Phumla.Data
                         if (id == Convert.ToInt64(ds.Tables[table].Rows[rowIndex]["id"]) && rowIndex < ds.Tables[table].Rows.Count)
                         {
                             ds.Tables[table].Rows.Remove(row);
-                            ds.Tables[table].AcceptChanges();
                             break;
                         }
                         rowIndex++;
 
                     }
-                    ds.AcceptChanges();
+
             }
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             bool success = UpdateDataSource("SELECT * FROM Guest", table);
             getAllGuests();
             return success;

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlClient;
 namespace Phumla.Data
 {
     public class BankingDetailsDB:DB
@@ -51,11 +52,10 @@ namespace Phumla.Data
                 if (Convert.ToInt64(r["id"]) == (id))
                 {
                     r.Delete();
-                    ds.Tables[table].AcceptChanges();
                 }
 
             }
-            ds.AcceptChanges();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             bool success =UpdateDataSource("SELECT * From BankingDetails", table);
             FillWithDetails();
             return success;
@@ -64,6 +64,8 @@ namespace Phumla.Data
         {
             DataRow r = ds.Tables[table].NewRow();
             bool success = FillRow(r, bd, table, DB.Operation.Add);
+            ds.Tables[table].Rows.Add(r);
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             FillWithDetails();
             return success;
         }
@@ -74,8 +76,9 @@ namespace Phumla.Data
             {
                 if (Convert.ToInt64(r["guestid"]) == bd.IDNumber)
                 {
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, bd, table, Operation.Edit);
-
+                    break;
                 }
             }
             FillWithDetails() ;

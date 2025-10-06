@@ -51,9 +51,8 @@ namespace Phumla.Data
                 connection.Open();
                 ds.Clear();
                 adapter.Fill(ds, table);
-                if (ds.Tables.Contains(table))
-                {
-                }
+                connection.Close();
+
             }
             catch (Exception e)
             {
@@ -73,7 +72,17 @@ namespace Phumla.Data
         {
             try
             {
-                adapter.Update(ds, table);
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
+                try
+                {
+                    connection.Open();
+                    adapter.Update(ds, table);
+                    connection.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Fill(query, table);
                 return true;
             }
@@ -128,7 +137,9 @@ namespace Phumla.Data
                     row["age"] = guest.Age;
                     row["phone"] = guest.Phone;
                     row["outstandingpayments"] = guest.Outstanding;
-                    ds.AcceptChanges();
+                    ds.Tables[table].Rows.Add(row);
+
+                    ;
                     return UpdateDataSource("SELECT * FROM Guest", table);
                 }
                 else if (g.GetType() == typeof(Booking))
@@ -142,8 +153,11 @@ namespace Phumla.Data
                     row["bookingtime"] = b.BookingTime;
                     row["bookingdate"] = b.BookingDate;
                     row["depositstatus"] = b.DepositStatus;
+                    row["bookingend"] = b.BookingEnd;
+                    ds.Tables[table].Rows.Add(row);
+
                     row["bill"] = b.Bill;
-                    ds.AcceptChanges();
+                    
 
                     return UpdateDataSource("SELECT * FROM Booking", table);
                 }
@@ -154,7 +168,9 @@ namespace Phumla.Data
                     row["cardNumber"] = bd.CardNumber;
                     row["cvv"] = bd.CVV;
                     row["expiryDate"] = bd.ExpiryDate;
-                    ds.AcceptChanges();
+                    ds.Tables[table].Rows.Add(row);
+
+                     
 
                     return UpdateDataSource("SELECT * FROM BankingDetails", table);
                 }
@@ -167,7 +183,9 @@ namespace Phumla.Data
                     row["reason"] = p.Reason;
                     row["date"] = p.Date;
                     row["time"] = p.Time;
-                    ds.AcceptChanges();
+                    ds.Tables[table].Rows.Add(row);
+
+                     ;
 
                     return UpdateDataSource("SELECT * FROM Payment", table);
                 }
@@ -177,7 +195,10 @@ namespace Phumla.Data
                     row["employeeid"] = a.EmployeeID;
                     row["password_"] = a.Password;
                     row["accesslevel"] = a.Level;
-                    ds.AcceptChanges();
+                    Console.WriteLine(row["employeeid"]);
+                    ds.Tables[table].Rows.Add(row);
+
+                    
 
                     return UpdateDataSource("SELECT * FROM Access", table);
                 }
@@ -190,7 +211,9 @@ namespace Phumla.Data
                     row["suburb"] = a.Suburb;
                     row["city"] = a.City;
                     row["postalcode"] = a.Postalcode;
-                    ds.AcceptChanges();
+                    ds.Tables[table].Rows.Add(row);
+
+                     ;
 
                     return UpdateDataSource("SELECT * FROM Address", table);
                 }
@@ -216,7 +239,8 @@ namespace Phumla.Data
                         year, month, day,
                         hour, minute, second
                         );
-                    ds.AcceptChanges();
+                    ds.Tables[table].Rows.Add(row);
+                     ;
                     return UpdateDataSource("SELECT * FROM ROOM", table);
                 }
             }

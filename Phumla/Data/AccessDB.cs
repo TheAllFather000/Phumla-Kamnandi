@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
+using System.Data.SqlClient;
 using Phumla.Business;
 using System.Collections.ObjectModel;
 namespace Phumla.Data
@@ -49,7 +49,7 @@ namespace Phumla.Data
                             a.Level = Access.AccessLevel.Administrator;
                         break;
                     }
-                    Console.WriteLine(a.EmployeeID.GetType() + " " + a.Password.GetType() + " " + a.Level.GetType());
+                    Console.WriteLine(a.EmployeeID + " " + a.Password + " " + a.Level);
                     accesses.Add(a);
                 }
             }
@@ -64,7 +64,6 @@ namespace Phumla.Data
                     break;
                 }
             }
-            ds.AcceptChanges();
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
             fillWithAccess();
@@ -81,7 +80,7 @@ namespace Phumla.Data
                     break;
                 }
             }
-            ds.AcceptChanges();
+             ;
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
             fillWithAccess();
@@ -93,22 +92,15 @@ namespace Phumla.Data
             DataRow r = ds.Tables[table].NewRow();
             FillRow(r, access, table, Operation.Add);
             accesses.Add(access);
-
         }
         public Access.AccessLevel checkLoginDetails(long eid, string pword)
         {
             Access.AccessLevel a = Access.AccessLevel.None;
             foreach (Access ac in accesses)
             {
-                if (ac.EmployeeID == eid)
-                {
-                    Console.WriteLine("SEX");
-                }
-                if (ac.Password == pword)
-                { Console.WriteLine("BITCH"); }
+                
                 if (ac.EmployeeID ==  eid && ac.Password == pword)
                 {
-                    Console.WriteLine(eid + " " + pword);
 
                     switch ((ac.Level))
                     {
@@ -122,7 +114,6 @@ namespace Phumla.Data
                             a = Access.AccessLevel.Receptionist;
                         break;
                     }
-                    Console.WriteLine(a);
                     return a;
                 }
             }

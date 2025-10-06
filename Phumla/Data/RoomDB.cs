@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using Phumla.Business;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Phumla.Business;
-using System.Data;
-using Microsoft.SqlServer.Server;
-using System.Runtime.InteropServices;
 namespace Phumla.Data
 {
     public class RoomDB : DB
@@ -62,16 +63,17 @@ namespace Phumla.Data
                 if (rid == Convert.ToString(r["roomid"]))
                 {
                     r["roomstatus"] = 1;
-                    ds.Tables[table].AcceptChanges();
                     break;
                 }
             }
-            ds.AcceptChanges();
+            
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            adapter.Update(ds, table);
             UpdateDataSource("SELECT * FROM Room", table);
             getAllRooms();
 
         }
-        public Collection<Room> getAllAvailableRooms(DateTime date)
+        public Collection<Room> checkRoomAvailability(DateTime date)
         {
             Collection<Room> collection = new Collection<Room>();
             Fill("SELECT * FROM Room where date_under_use <= '" + date.ToString("yyyy-MM-dd HH:mm:ss") + "'", table);
@@ -100,6 +102,7 @@ namespace Phumla.Data
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));
                 collection.Add(room);
             }
+            Fill("SELECT * FROM Room", table);
             return collection;
             
         }

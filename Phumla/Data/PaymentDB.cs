@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Phumla.Business;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Phumla.Business;
 
 namespace Phumla.Data
 {
@@ -43,7 +44,9 @@ namespace Phumla.Data
         {
             payments.Add(p);
             DataRow r = ds.Tables[table].NewRow();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             bool success = FillRow(r, p, table, DB.Operation.Add);
+            ds.Tables[table].Rows.Add(r);
             getAllPayments();
             return success;
         }
@@ -54,6 +57,7 @@ namespace Phumla.Data
             {
                 if (Convert.ToInt64(r["paymentid"]) == p.PaymentID)
                 {
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, p, table, DB.Operation.Edit);
                     break;
                 }
@@ -89,8 +93,7 @@ namespace Phumla.Data
 
                 }
             }
-            ds.Tables[table].AcceptChanges();
-            ds.AcceptChanges();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             UpdateDataSource("SELECT * FROM Payment", table);
             getAllPayments();
 

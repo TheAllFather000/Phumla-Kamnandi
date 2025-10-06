@@ -41,6 +41,7 @@
             this.lblEndDate = new System.Windows.Forms.Label();
             this.txtHotelID = new System.Windows.Forms.TextBox();
             this.lblHotelID = new System.Windows.Forms.Label();
+            this.checkAvailability = new System.Windows.Forms.Button();
             this.pnlExisitingGuests.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,11 +162,22 @@
             this.lblHotelID.TabIndex = 40;
             this.lblHotelID.Text = "Hotel ID";
             // 
+            // checkAvailability
+            // 
+            this.checkAvailability.Location = new System.Drawing.Point(61, 672);
+            this.checkAvailability.Name = "checkAvailability";
+            this.checkAvailability.Size = new System.Drawing.Size(147, 45);
+            this.checkAvailability.TabIndex = 42;
+            this.checkAvailability.Text = "Check Room Availability";
+            this.checkAvailability.UseVisualStyleBackColor = true;
+            this.checkAvailability.Click += new System.EventHandler(this.checkAvailability_Click);
+            // 
             // CreateReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 720);
+            this.ClientSize = new System.Drawing.Size(966, 720);
+            this.Controls.Add(this.checkAvailability);
             this.Controls.Add(this.txtHotelID);
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.lblHotelID);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.TextBox txtHotelID;
         private System.Windows.Forms.Label lblHotelID;
+        private System.Windows.Forms.Button checkAvailability;
     }
 }
