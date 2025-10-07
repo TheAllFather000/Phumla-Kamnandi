@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Phumla.Business;
+using Phumla.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,7 +98,7 @@ namespace Phumla.Presentation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure?", "You will be returned to the Home Page", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("You will be returned to the Home Page.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 HomePage homePage = new HomePage();
@@ -126,7 +128,6 @@ namespace Phumla.Presentation
         {
             name = txtName.Text;
             surname = txtSurname.Text;
-            dateOfBirth = dtpDOB.Value;
             id = txtID.Text;
             email = txtEmail.Text;
             phoneNumber = txtPhoneNumber.Text;
@@ -178,6 +179,13 @@ namespace Phumla.Presentation
                 lblPhoneNumberError.Text = "Please enter a phone number.";
             }
 
+            int age = DateTime.Today.Year - dateOfBirth.Year;
+
+            Guest guest = new Guest(name + " " + surname, age, id, email, phoneNumber, 3.0);
+
+            AccessDB a = new AccessDB();
+            a.AddAccess(6741, "peniser", Access.AccessLevel.Administrator);
+      
 
         }
 

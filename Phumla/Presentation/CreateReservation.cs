@@ -24,6 +24,8 @@ namespace Phumla.Presentation
         private void CreateReservation_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
+            txtGuestID.Clear();
+            txtHotelID.Clear();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,6 +38,11 @@ namespace Phumla.Presentation
 
             Collection<Room> availablerooms = new Collection<Room>();
             
+        }
+
+        private void btnGoBackToAddGuest_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Reservation will be unsaved.", "Go back to Home Page?");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Phumla.Business
             guests = gdb.Guests;
         }
 
-        public Guest Find(long id)
+        public Guest Find(string id)
         {
             foreach (Guest gue in guests)
             {
@@ -54,20 +54,20 @@ namespace Phumla.Business
             guests = gdb.Guests;
             return success;
         }
-        public bool removeGuest(long id)
+        public bool removeGuest(string id)
         {
-            foreach (Guest gue in guests)
+            foreach (Guest g in guests)
             {
-                if (gue.ID == id)
+                if (g.ID == id)
                 {
-                    guests.Remove(gue);
+                    guests.Remove(g);
                 }
             }
             bool success =gdb.DeleteEntry(id, DB.Operation.Delete);
             guests = gdb.Guests;
             return success;
         }
-        public bool checkIDExists(long id)
+        public bool checkIDExists(string id)
         {
             foreach (Guest g in guests)
             {

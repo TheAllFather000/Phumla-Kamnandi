@@ -38,7 +38,7 @@ namespace Phumla.Data
                 if (row.RowState != DataRowState.Deleted)
                 {
                     var guest = new Guest();
-                    guest.ID =  Convert.ToInt64(row["id"].ToString().TrimEnd());
+                    guest.ID =  Convert.ToString(row["id"].ToString().TrimEnd());
                     guest.Name = row["name"].ToString().TrimEnd();
                     guest.Age = Convert.ToInt32(row["age"].ToString().TrimEnd());
                     guest.Email = row["email"].ToString().TrimEnd();
@@ -77,14 +77,14 @@ namespace Phumla.Data
             return UpdateDataSource("SELECT * FROM Guest", table);
         }
 
-        public bool DeleteEntry(long id, DB.Operation op)
+        public bool DeleteEntry(string id, DB.Operation op)
         {
             int rowIndex = 0;
             if (op == DB.Operation.Delete)
             {
                     foreach (DataRow row in ds.Tables[table].Rows)
                     {
-                        if (id == Convert.ToInt64(ds.Tables[table].Rows[rowIndex]["id"]) && rowIndex < ds.Tables[table].Rows.Count)
+                        if (id == Convert.ToString(ds.Tables[table].Rows[rowIndex]["id"]) && rowIndex < ds.Tables[table].Rows.Count)
                         {
                             ds.Tables[table].Rows.Remove(row);
                             break;

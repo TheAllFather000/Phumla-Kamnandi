@@ -10,7 +10,7 @@ namespace Phumla.Business
     {
         private string name;
         private int age;
-        private long id;
+        private string id;
         private string email;
         private string phone;
         private Address address;
@@ -22,7 +22,7 @@ namespace Phumla.Business
         }
         public int Age
             { get { return age; } set { age = value; } }
-        public long ID
+        public string ID
         { get { return id; } set { id = value; } } 
         public string Email
             { get { return email; } set { email = value; } }
@@ -32,23 +32,23 @@ namespace Phumla.Business
         public Address Address
             { get { return address; } set { address = value; } }
 
-        public Person(string n, int a, long id, string e, string p)
+        public Person(string name, int age, string id, string email, string phone)
         {
-            name = n;
-            age = a;
+            this.name = name;
+            this.age = age;
             this.id = id;
-            email = e;
-            phone = p;
+            this.email = email;
+            this.phone = phone;
             address = new Address();
         }
 
-        public Person(string n, int a, long id, string e, string p, Address ad)
+        public Person(string name, int age, string id, string email, string phone, Address ad)
         {
-            name = n;
-            age = a;
+            this.name = name;
+            this.age = age;
             this.id = id;
-            email = e;
-            phone = p;
+            this.email = email;
+            this.phone = phone;
             address = ad;
         }
         public Person(Person p)

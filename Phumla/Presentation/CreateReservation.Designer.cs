@@ -63,6 +63,7 @@
             this.btnGoBackToAddGuest.TabIndex = 31;
             this.btnGoBackToAddGuest.Text = "Go Back";
             this.btnGoBackToAddGuest.UseVisualStyleBackColor = true;
+            this.btnGoBackToAddGuest.Click += new System.EventHandler(this.btnGoBackToAddGuest_Click);
             // 
             // pnlExisitingGuests
             // 

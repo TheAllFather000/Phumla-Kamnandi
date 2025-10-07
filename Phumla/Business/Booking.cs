@@ -8,7 +8,7 @@ namespace Phumla.Business
 {
     public class Booking
     {
-        private long id;
+        private string id;
         private string hotelID;
         private bool checkedin;
         private string bookingStartDate;
@@ -18,7 +18,7 @@ namespace Phumla.Business
         private bool depositStatus;
         private double bill;
 
-        public long ID
+        public string ID
         { get { return id; } set { id = value; } }
 
         public string HotelID
@@ -39,9 +39,9 @@ namespace Phumla.Business
 
         public double Bill
         { get { return bill; } set { bill = value; } }
-        public Booking(long iD, string hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
+        public Booking(string id, string hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
         {
-            ID = iD;
+            ID = id;
             HotelID = hotelID;
             CheckedIn = checkin;
             BookingDate = bookingDate;

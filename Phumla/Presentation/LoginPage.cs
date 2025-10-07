@@ -14,7 +14,9 @@ namespace Phumla.Presentation
 {
     public partial class LoginPage : Form
     {
-        public Access employee; // Will be used to show names in labels and whatnot
+        private Access employee; // Carried over to other forms
+        private bool debug = true;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -25,37 +27,44 @@ namespace Phumla.Presentation
 
         }
 
-        /*
-         *  Will fix later - Makolela
-         */
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string tempID = txtEmpID.Text;
+            long empID = 0;
+            Int64.TryParse(txtEmpID.Text, out empID);
             string password = txtPassword.Text;
 
-            if (long.TryParse(tempID, out long id))
+            if (string.IsNullOrEmpty(txtEmpID.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-        
-                long empID = long.Parse(txtEmpID.Text);
+                MessageBox.Show("Please fill in the text fields given.", "Invalid Login Credentials");
+            }
+            else
+            {
                 AccessDB accessDB = new AccessDB();
-                Access.AccessLevel accessLevel = accessDB.checkLoginDetails(empID, password); // Causes errors.
+                Access.AccessLevel accessLevel = accessDB.checkLoginDetails(empID, password);
                 if (accessLevel == Access.AccessLevel.None)
                 {
-                    MessageBox.Show("Login Details Cannot Be Verified. Please Try Again", "Invalid Login Credentials");
-                } else
+                    MessageBox.Show("Login Details are incorrect. Please Try Again.", "Invalid Login Credentials");
+                    txtPassword.Clear();
+                }
+                else
                 {
-                    HomePage homePage = new HomePage(tempID); // MODIFY WHEN CODE ABOVE WORKS
+                    employee = new Access(empID, password);
+                    HomePage homePage = new HomePage(employee);
                     this.Hide();
                     homePage.ShowDialog();
                     this.Close();
                 }
-            } 
-
-
+            }
+            
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
+            if (debug)
+            {
+                txtEmpID.Text = "111111";
+                txtPassword.Text = "Ibrahim Was Here";
+            }
             this.CenterToScreen();
         }
     }

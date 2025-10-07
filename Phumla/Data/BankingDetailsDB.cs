@@ -29,14 +29,14 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 BankingDetails bd = new BankingDetails();
-                bd.IDNumber = Convert.ToInt64(r["id"]);
+                bd.IDNumber = Convert.ToString(r["id"]);
                 bd.CVV = Convert.ToInt32(r["cvv"]);
                 bd.ExpiryDate = Convert.ToString(r["expiryDate"]);
                 bd.CardNumber = Convert.ToInt64(r["cardNumber"]);
                 details.Add(bd);
             }
         }
-        public BankingDetails getBankingDetails(long id)
+        public BankingDetails getBankingDetails(string id)
         {
             foreach (BankingDetails bd in  details)
             {
@@ -74,7 +74,7 @@ namespace Phumla.Data
             bool success = false;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["guestid"]) == bd.IDNumber)
+                if (Convert.ToString(r["guestid"]) == bd.IDNumber)
                 {
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, bd, table, Operation.Edit);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phumla.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace Phumla.Presentation
 {
     public partial class HomePage : Form
     {
-        private string empID = "The man with hands";
+        private Access employee;
         private CreateReservation reservation;
         public HomePage()
         {
@@ -24,10 +25,10 @@ namespace Phumla.Presentation
         /*
          * For display of employee ID on certain forms. 
          */
-        public HomePage(string empID)
+        public HomePage(Access employee)
         { 
             InitializeComponent();
-            this.empID = empID;
+            this.employee = employee;
             reservation = new CreateReservation();
             reservation.Visible = false;
         }
@@ -51,6 +52,7 @@ namespace Phumla.Presentation
                 this.Hide();
                 loginPage.ShowDialog();
                 this.Close();
+                employee = null;
             }
         }
 
@@ -67,7 +69,7 @@ namespace Phumla.Presentation
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            lblHomePage.Text = "Welcome, " + "[EMPLOYEE NAME]"; // CHANGE FOR LATER
+            lblHomePage.Text = "Welcome, " + employee.EmployeeID; // CHANGE FOR LATER
         }
     }
 }

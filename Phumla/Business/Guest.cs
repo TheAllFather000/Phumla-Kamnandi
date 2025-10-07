@@ -11,13 +11,12 @@ namespace Phumla.Business
         private double outstandingPayments;
         public double Outstanding
         {
-            get
-            {return outstandingPayments;}
+            get { return outstandingPayments; }
             set { outstandingPayments = value; }
         }
-        public Guest(string n, int a, long id, string e, string p, double op) : base(n, a, id, e, p)
+        public Guest(string name, int age, string id, string email, string phone, double outstandingPayments) : base(name, age, id, email, phone)
         {
-            outstandingPayments = op;
+            this.outstandingPayments = outstandingPayments;
         }
         public Guest()
         {}

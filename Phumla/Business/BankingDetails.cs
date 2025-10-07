@@ -9,13 +9,13 @@ namespace Phumla.Business
     public class BankingDetails
     {
         
-        private long idNumber;
+        private string idNumber;
         private long cardNumber;
         private int cvv;
         private string expiryDate;
         
 
-        public long IDNumber
+        public string IDNumber
         { get { return idNumber; } set { idNumber = value; } }
         public long CardNumber
             { get { return cardNumber; } set { cardNumber = value; } }
@@ -32,7 +32,7 @@ namespace Phumla.Business
             expiryDate = "08/2028";
         }
 
-        public BankingDetails(long id, long card, int cvv, string ex)
+        public BankingDetails(string id, long card, int cvv, string ex)
         {
             this.idNumber = id;
             this.cardNumber=card;

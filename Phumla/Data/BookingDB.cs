@@ -33,7 +33,7 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Booking b = new Booking();
-                b.ID = Convert.ToInt64(r["id"]);
+                b.ID = Convert.ToString(r["id"]);
                 b.Bill = Convert.ToDouble(r["bill"]);
                 b.RoomNumber = Convert.ToString(r["roomid"]);
                 b.HotelID = Convert.ToString(r["hotelid"]);
@@ -58,7 +58,7 @@ namespace Phumla.Data
             bool success = false;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["id"]) == b.ID && Convert.ToString(r["roomid"]) == b.RoomNumber)
+                if (Convert.ToString(r["id"]) == b.ID && Convert.ToString(r["roomid"]) == b.RoomNumber)
                 {
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, b, table, Operation.Edit);
@@ -68,7 +68,7 @@ namespace Phumla.Data
             getAllBookings();
             return success;
         }
-        public Collection<Booking> getAllBookingsFor(long id)
+        public Collection<Booking> getAllBookingsFor(string id)
         {
             Collection<Booking> bookingsfor = new Collection<Booking>();
             foreach (Booking b in bookings)
@@ -80,12 +80,12 @@ namespace Phumla.Data
             return bookingsfor;
         }
 
-        public bool cancelBooking(long id, string roomid, string date)
+        public bool cancelBooking(string id, string roomid, string date)
         {
             bool success;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["id"]) == id && Convert.ToString(r["bookingdate"]) == date && Convert.ToString(r["roomid"]) == roomid)
+                if (Convert.ToString(r["id"]) == id && Convert.ToString(r["bookingdate"]) == date && Convert.ToString(r["roomid"]) == roomid)
                 {
                     r.Delete();
                     break;

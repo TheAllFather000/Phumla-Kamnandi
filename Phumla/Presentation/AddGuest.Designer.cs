@@ -46,7 +46,7 @@
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.tpnlBillingAddress = new System.Windows.Forms.TableLayoutPanel();
             this.lblStreetName = new System.Windows.Forms.Label();
-            this.lblProvince = new System.Windows.Forms.Label();
+            this.lblSuburb = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.lblCountry = new System.Windows.Forms.Label();
@@ -62,11 +62,11 @@
             this.lblNameError = new System.Windows.Forms.Label();
             this.pnlBillingAddress = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtProvince = new System.Windows.Forms.TextBox();
+            this.txtSuburb = new System.Windows.Forms.TextBox();
             this.lblCountryError = new System.Windows.Forms.Label();
             this.lblPostalCodeError = new System.Windows.Forms.Label();
             this.txtStreetName = new System.Windows.Forms.TextBox();
-            this.lblProvinceError = new System.Windows.Forms.Label();
+            this.lblSuburbError = new System.Windows.Forms.Label();
             this.lblCityError = new System.Windows.Forms.Label();
             this.lblStreetNameError = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -182,8 +182,6 @@
             // 
             // btnAddBankingDetails
             // 
-            this.btnAddBankingDetails.Location = new System.Drawing.Point(519, 832);
-
             this.btnAddBankingDetails.Location = new System.Drawing.Point(519, 961);
             this.btnAddBankingDetails.Name = "btnAddBankingDetails";
             this.btnAddBankingDetails.Size = new System.Drawing.Size(147, 45);
@@ -194,14 +192,12 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(40, 832);
             this.btnCancel.Location = new System.Drawing.Point(40, 961);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(147, 45);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel Creation";
             this.btnCancel.UseVisualStyleBackColor = true;
-
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblDOB
@@ -254,16 +250,15 @@
             // 
             // tpnlBillingAddress
             // 
-            this.tpnlBillingAddress.ColumnCount = 2;
+            this.tpnlBillingAddress.ColumnCount = 1;
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.1531F));
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.84691F));
-            this.tpnlBillingAddress.ColumnCount = 1;
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpnlBillingAddress.Controls.Add(this.lblStreetName, 0, 0);
-            this.tpnlBillingAddress.Controls.Add(this.lblProvince, 0, 2);
-            this.tpnlBillingAddress.Controls.Add(this.lblCity, 0, 1);
+            this.tpnlBillingAddress.Controls.Add(this.lblSuburb, 0, 1);
             this.tpnlBillingAddress.Controls.Add(this.lblPostalCode, 0, 3);
             this.tpnlBillingAddress.Controls.Add(this.lblCountry, 0, 4);
+            this.tpnlBillingAddress.Controls.Add(this.lblCity, 0, 2);
             this.tpnlBillingAddress.Location = new System.Drawing.Point(3, 12);
             this.tpnlBillingAddress.Name = "tpnlBillingAddress";
             this.tpnlBillingAddress.RowCount = 5;
@@ -285,56 +280,26 @@
             this.lblStreetName.TabIndex = 5;
             this.lblStreetName.Text = "Street Name";
             // 
-            // txtProvince
+            // lblSuburb
             // 
-            this.txtProvince.Location = new System.Drawing.Point(182, 89);
-            this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(353, 22);
-            this.txtProvince.TabIndex = 18;
+            this.lblSuburb.AutoSize = true;
+            this.lblSuburb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuburb.Location = new System.Drawing.Point(3, 68);
+            this.lblSuburb.Name = "lblSuburb";
+            this.lblSuburb.Size = new System.Drawing.Size(68, 22);
+            this.lblSuburb.TabIndex = 17;
+            this.lblSuburb.Text = "Suburb";
             // 
-            // txtStreet
-            // 
-            this.txtStreetName.Location = new System.Drawing.Point(182, 3);
-            this.txtStreetName.Name = "txtStreet";
-            this.txtStreetName.Size = new System.Drawing.Size(419, 22);
-            this.txtStreetName.TabIndex = 7;
-            // 
-            // lblProvince
-            // 
-            this.lblProvince.AutoSize = true;
-            this.lblProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvince.Location = new System.Drawing.Point(3, 136);
-            this.lblProvince.Name = "lblProvince";
-            this.lblProvince.Size = new System.Drawing.Size(80, 22);
-            this.lblProvince.TabIndex = 17;
-            this.lblProvince.Text = "Province";
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.Location = new System.Drawing.Point(182, 175);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(419, 22);
-            this.txtCountry.TabIndex = 12;
-            // 
-
             // lblCity
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(3, 68);
+            this.lblCity.Location = new System.Drawing.Point(3, 136);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(41, 22);
             this.lblCity.TabIndex = 6;
             this.lblCity.Text = "City";
             // 
-            // txtPostalCode
-            // 
-            this.txtPostalCode.Location = new System.Drawing.Point(182, 132);
-            this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(353, 22);
-            this.txtPostalCode.TabIndex = 11;
-            // 
-
             // lblPostalCode
             // 
             this.lblPostalCode.AutoSize = true;
@@ -357,10 +322,6 @@
             // 
             // txtCountry
             // 
-            this.txtCity.Location = new System.Drawing.Point(182, 46);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(419, 22);
-            this.txtCity.TabIndex = 8;
             this.txtCountry.Location = new System.Drawing.Point(3, 275);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(409, 22);
@@ -498,16 +459,16 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.txtProvince, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtSuburb, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblCountryError, 0, 9);
             this.tableLayoutPanel2.Controls.Add(this.txtCountry, 0, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblPostalCodeError, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lblSuburbError, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtStreetName, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblProvinceError, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtPostalCode, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.lblCityError, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblStreetNameError, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtCity, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblCityError, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtCity, 0, 4);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(204, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 10;
@@ -526,12 +487,12 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(415, 342);
             this.tableLayoutPanel2.TabIndex = 39;
             // 
-            // txtProvince
+            // txtSuburb
             // 
-            this.txtProvince.Location = new System.Drawing.Point(3, 139);
-            this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(353, 22);
-            this.txtProvince.TabIndex = 18;
+            this.txtSuburb.Location = new System.Drawing.Point(3, 71);
+            this.txtSuburb.Name = "txtSuburb";
+            this.txtSuburb.Size = new System.Drawing.Size(409, 22);
+            this.txtSuburb.TabIndex = 18;
             // 
             // lblCountryError
             // 
@@ -562,23 +523,23 @@
             this.txtStreetName.Size = new System.Drawing.Size(409, 22);
             this.txtStreetName.TabIndex = 7;
             // 
-            // lblProvinceError
+            // lblSuburbError
             // 
-            this.lblProvinceError.AutoSize = true;
-            this.lblProvinceError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvinceError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblProvinceError.Location = new System.Drawing.Point(3, 170);
-            this.lblProvinceError.Name = "lblProvinceError";
-            this.lblProvinceError.Size = new System.Drawing.Size(85, 22);
-            this.lblProvinceError.TabIndex = 21;
-            this.lblProvinceError.Text = "Name(s)";
+            this.lblSuburbError.AutoSize = true;
+            this.lblSuburbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuburbError.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSuburbError.Location = new System.Drawing.Point(3, 102);
+            this.lblSuburbError.Name = "lblSuburbError";
+            this.lblSuburbError.Size = new System.Drawing.Size(85, 22);
+            this.lblSuburbError.TabIndex = 21;
+            this.lblSuburbError.Text = "Name(s)";
             // 
             // lblCityError
             // 
             this.lblCityError.AutoSize = true;
             this.lblCityError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCityError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCityError.Location = new System.Drawing.Point(3, 102);
+            this.lblCityError.Location = new System.Drawing.Point(3, 170);
             this.lblCityError.Name = "lblCityError";
             this.lblCityError.Size = new System.Drawing.Size(85, 22);
             this.lblCityError.TabIndex = 20;
@@ -597,7 +558,7 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(3, 71);
+            this.txtCity.Location = new System.Drawing.Point(3, 139);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(409, 22);
             this.txtCity.TabIndex = 8;
@@ -624,7 +585,6 @@
             // 
             // btnFinaliseGuestAccount
             // 
-            this.btnFinaliseGuestAccount.Location = new System.Drawing.Point(267, 832);
             this.btnFinaliseGuestAccount.Location = new System.Drawing.Point(252, 961);
             this.btnFinaliseGuestAccount.Name = "btnFinaliseGuestAccount";
             this.btnFinaliseGuestAccount.Size = new System.Drawing.Size(147, 45);
@@ -632,16 +592,13 @@
             this.btnFinaliseGuestAccount.Text = "Finalise Guest Account";
             this.btnFinaliseGuestAccount.UseVisualStyleBackColor = true;
             this.btnFinaliseGuestAccount.Click += new System.EventHandler(this.btnFinaliseGuestAccount_Click);
-           
-
             // 
             // AddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(714, 916);
-            this.ClientSize = new System.Drawing.Size(710, 1055);
+            this.ClientSize = new System.Drawing.Size(740, 1055);
             this.Controls.Add(this.btnFinaliseGuestAccount);
             this.Controls.Add(this.lblBillingAddress);
             this.Controls.Add(this.lblPersonalDetails);
@@ -661,8 +618,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.pnlBillingAddress.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -689,7 +644,7 @@
         private System.Windows.Forms.TableLayoutPanel tpnlPersonalDetails;
         private System.Windows.Forms.TableLayoutPanel tpnlBillingAddress;
         private System.Windows.Forms.Label lblStreetName;
-        private System.Windows.Forms.Label lblProvince;
+        private System.Windows.Forms.Label lblSuburb;
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox txtPostalCode;
@@ -710,11 +665,11 @@
         private System.Windows.Forms.Label lblNameError;
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txtProvince;
+        private System.Windows.Forms.TextBox txtSuburb;
         private System.Windows.Forms.Label lblCountryError;
         private System.Windows.Forms.Label lblPostalCodeError;
         private System.Windows.Forms.TextBox txtStreetName;
-        private System.Windows.Forms.Label lblProvinceError;
+        private System.Windows.Forms.Label lblSuburbError;
         private System.Windows.Forms.Label lblCityError;
         private System.Windows.Forms.Label lblStreetNameError;
         private System.Windows.Forms.TextBox txtCity;

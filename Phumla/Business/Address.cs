@@ -40,39 +40,40 @@ namespace Phumla.Business
 
         public Address()
         {
-            number= street = suburb= city= postalcode = "NONE";
+            number = street = suburb = city = postalcode = "NONE";
         }
 
-        public Address(long id, string num, string st, string s, string c, string pc)
+        public Address(long id, string num, string street, string suburb, string city, string pc)
         {
             this.id = id;
             number = num;
-            street = st;
-            suburb = s;
-            city = c;
+            this.street = street;
+            this.suburb = suburb;
+            this.city = city;
             postalcode = pc;
         }
 
-        public Address(Address a)
+        public Address(Address address)
         {
-            this.id = a.id;
-            number = a.number;
-            street = a.street;
-            suburb = a.suburb;
-            city = a.city;
-            postalcode = a.postalcode;
+            this.id = address.id;
+            number = address.number;
+            street = address.street;
+            suburb = address.suburb;
+            city = address.city;
+            postalcode = address.postalcode;
 
         }
 
 
         public override string ToString()
         {
-            return number + " "+street+", "+suburb+", "+city+", "+postalcode;
+            return number + " " + street+", " + suburb + ", " + city + ", " + postalcode;
         }
 
         public string FormalToString()
         {
-            return "ID: "+id+"\nHouse Number: " + number + "\nStreet: " + street + "\nSuburb: " + suburb + "\nCity: " + city + "\nPostal Code: " + postalcode;
+            return "ID: " + id + "\nHouse Number: " + number + "\nStreet: " + street + "\nSuburb: " + 
+                suburb + "\nCity: " + city + "\nPostal Code: " + postalcode;
         }
 
 

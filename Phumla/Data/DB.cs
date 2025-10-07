@@ -100,7 +100,7 @@ namespace Phumla.Data
 
 
         #region Collections
-        public int FindRow(long id, string table)
+        public int FindRow(string id, string table)
         {
             int rowIndex = 0;
             DataRow myRow;
