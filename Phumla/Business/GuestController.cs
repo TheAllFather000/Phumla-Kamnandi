@@ -63,28 +63,9 @@ namespace Phumla.Business
                     guests.Remove(g);
                 }
             }
-            bool success =gdb.DeleteEntry(id, DB.Operation.Delete);
+            bool success = gdb.DeleteEntry(id, DB.Operation.Delete);
             guests = gdb.Guests;
             return success;
-        }
-        public bool checkIDExists(string id)
-        {
-            foreach (Guest g in guests)
-            {
-                if (g.ID == id) 
-                    return true;
-            }
-            return false;
-
-        }
-        public bool checkPhoneNumberExists(string pNum)
-        {
-            foreach (Guest g in guests)
-            {
-                if (g.Phone ==pNum)
-                    return true;
-            }
-            return false;
         }
 
          

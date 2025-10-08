@@ -69,7 +69,27 @@ namespace Phumla.Presentation
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            lblHomePage.Text = "Welcome, " + employee.EmployeeID; // CHANGE FOR LATER
+            //lblHomePage.Text = "Welcome, " + employee.EmployeeID; // CHANGE FOR LATER
+        }
+
+        private void poisonDropDownButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void poisonContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
