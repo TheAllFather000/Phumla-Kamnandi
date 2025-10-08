@@ -24,7 +24,7 @@ namespace Phumla.Data
         public GuestDB(): base()
         {
             Guests = new Collection<Guest>();
-            Fill("SELECT * FROM GUESTS", table);
+            Fill("SELECT * FROM Guest", table);
             getAllGuests();
         }
         

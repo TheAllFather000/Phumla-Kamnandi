@@ -31,6 +31,8 @@ namespace Phumla
             Employee.AccessLevel employee = employeeDB.checkLoginDetails(110113, "eishyahneh");
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             */
+            GuestDB guest = new GuestDB();
+            guest.AddGuest(new Guest("050921", 12, "0509215555555", "phumla@k.gmail.com", "+test", 100));
             Application.Run(new LoginPage());
         }
     }
