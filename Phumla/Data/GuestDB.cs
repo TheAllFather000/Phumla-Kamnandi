@@ -49,6 +49,13 @@ namespace Phumla.Data
             }
             
         }
+        public bool AddGuest(Guest g)
+        {
+            DataRow r = ds.Tables[table].NewRow();
+            bool success = FillRow(r, g, table, DB.Operation.Add);
+            guests.Add(g);
+            return success;
+        }
 
         
 
