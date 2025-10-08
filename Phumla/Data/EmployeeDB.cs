@@ -9,52 +9,52 @@ using Phumla.Business;
 using System.Collections.ObjectModel;
 namespace Phumla.Data
 {
-    public class AccessDB : DB
+    public class EmployeeDB : DB
     {
-        public static string table = "Access";
-        public static string selectCommand = "SELECT * FROM Access";
-        private Collection<Access> accesses;
+        public static string table = "Employee";
+        public static string selectCommand = "SELECT * FROM Employee";
+        private Collection<Employee> employees;
 
-        public Collection<Access> EmployeeAccess
+        public Collection<Employee> Employees
         {
-            get { return accesses; }
-            set { accesses = value; }
+            get { return employees; }
+            set { employees = value; }
         }
-        public AccessDB() : base()
+        public EmployeeDB() : base()
         {
-            accesses = new Collection<Access>();
+            employees = new Collection<Employee>();
             Fill(selectCommand, table);
-            fillWithAccess();
+            fillWithEmployee();
         }
-        public void fillWithAccess()
+        public void fillWithEmployee()
         {
             if (!ds.Tables.Contains(table))
             {
-                Fill("SELECT * FROM Access", "Access");
+                Fill("SELECT * FROM Employee", "Employee");
             }
             foreach (DataRow row in ds.Tables[table].Rows)
             {
-                    Access a = new Access();
+                    Employee a = new Employee();
                     a.EmployeeID = Convert.ToInt64(row["employeeid"]);
                     a.Password = Convert.ToString(row["password_"]);
                     switch (Convert.ToString(row["accesslevel"]))
                     {
                         case "Receptionist":
-                            a.Level = Access.AccessLevel.Receptionist;
+                            a.Level = Employee.AccessLevel.Receptionist;
                             break;
                         case "Manager":
-                            a.Level = Access.AccessLevel.Manager;
+                            a.Level = Employee.AccessLevel.Manager;
                             break;
                         case "Administrator":
-                            a.Level = Access.AccessLevel.Administrator;
+                            a.Level = Employee.AccessLevel.Administrator;
                         break;
                     }
                     Console.WriteLine(a.EmployeeID + " " + a.Password + " " + a.Level);
-                    accesses.Add(a);
+                    employees.Add(a);
                 }
             }
         
-        public void changeAccessLevel(long eid, Access.AccessLevel al)
+        public void changeAccessLevel(long eid, Employee.AccessLevel al)
         {
             foreach (DataRow r in ds.Tables[table].Rows)
             {
@@ -66,7 +66,7 @@ namespace Phumla.Data
             }
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
-            fillWithAccess();
+            fillWithEmployee();
 
         }
 
@@ -83,20 +83,20 @@ namespace Phumla.Data
              ;
             UpdateDataSource(selectCommand, table);
             Fill(selectCommand, table);
-            fillWithAccess();
+            fillWithEmployee();
         }
 
-        public void AddAccess(long eid, string password, Access.AccessLevel al)
+        public void AddEmployee(long eid, string password, Employee.AccessLevel al)
         {
-            Access access = new Access(eid, password, al);
+            Employee employee = new Employee(eid, password, al);
             DataRow r = ds.Tables[table].NewRow();
-            FillRow(r, access, table, Operation.Add);
-            accesses.Add(access);
+            FillRow(r, employee, table, Operation.Add);
+            employees.Add(employee);
         }
-        public Access.AccessLevel checkLoginDetails(long eid, string pword)
+        public Employee.AccessLevel checkLoginDetails(long eid, string pword)
         {
-            Access.AccessLevel a = Access.AccessLevel.None;
-            foreach (Access ac in accesses)
+            Employee.AccessLevel a = Employee.AccessLevel.None;
+            foreach (Employee ac in employees)
             {
                 
                 if (ac.EmployeeID ==  eid && ac.Password == pword)
@@ -104,14 +104,14 @@ namespace Phumla.Data
 
                     switch ((ac.Level))
                     {
-                        case Access.AccessLevel.Administrator:
-                            a = Access.AccessLevel.Administrator;
+                        case Employee.AccessLevel.Administrator:
+                            a = Employee.AccessLevel.Administrator;
                         break;
-                        case Access.AccessLevel.Manager:
-                            a = Access.AccessLevel.Manager;
+                        case Employee.AccessLevel.Manager:
+                            a = Employee.AccessLevel.Manager;
                         break;
-                        case Access.AccessLevel.Receptionist:
-                            a = Access.AccessLevel.Receptionist;
+                        case Employee.AccessLevel.Receptionist:
+                            a = Employee.AccessLevel.Receptionist;
                         break;
                     }
                     return a;

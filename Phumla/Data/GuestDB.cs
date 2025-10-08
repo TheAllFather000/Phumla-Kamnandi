@@ -33,6 +33,7 @@ namespace Phumla.Data
         {
           
             Guests = new Collection<Guest>();
+
             foreach (DataRow row in ds.Tables[table].Rows)
             {
                 if (row.RowState != DataRowState.Deleted)

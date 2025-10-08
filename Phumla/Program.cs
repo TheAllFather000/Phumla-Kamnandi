@@ -27,11 +27,11 @@ namespace Phumla
             Booking b = new Booking();
             b.DepositStatus = true;
             b.Bill = 0;
-            AccessDB accessDB = new AccessDB();
-            Access.AccessLevel access = accessDB.checkLoginDetails(110113, "eishyahneh");
+            AccessDB employeeDB = new AccessDB();
+            Employee.AccessLevel employee = employeeDB.checkLoginDetails(110113, "eishyahneh");
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             */
-            Application.Run(new AddGuest());
+            Application.Run(new LoginPage());
         }
     }
 }

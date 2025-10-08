@@ -14,7 +14,7 @@ namespace Phumla.Presentation
 {
     public partial class LoginPage : Form
     {
-        private Access employee; // Carried over to other forms
+        private Employee employee; // Carried over to other forms
         private bool debug = true;
 
         public LoginPage()
@@ -39,16 +39,16 @@ namespace Phumla.Presentation
             }
             else
             {
-                AccessDB accessDB = new AccessDB();
-                Access.AccessLevel accessLevel = accessDB.checkLoginDetails(empID, password);
-                if (accessLevel == Access.AccessLevel.None)
+                EmployeeDB employeeDB = new EmployeeDB();
+                Employee.AccessLevel accessLevel = employeeDB.checkLoginDetails(empID, password);
+                if (accessLevel == Employee.AccessLevel.None)
                 {
                     MessageBox.Show("Login Details are incorrect. Please Try Again.", "Invalid Login Credentials");
                     txtPassword.Clear();
                 }
                 else
                 {
-                    employee = new Access(empID, password);
+                    employee = new Employee(empID, password);
                     HomePage homePage = new HomePage(employee);
                     this.Hide();
                     homePage.ShowDialog();

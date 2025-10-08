@@ -3,30 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\data\\employeedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:data\\employeedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:presentation\\addguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\business\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:business\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\presentation\\bankingdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:presentation\\bankingdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Phumla||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\SQLQuery1333.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery1333.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+      "AbsoluteMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|c:\\users\\makolela\\downloads\\phumla-kamnandi\\phumla\\data\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B86ED9E-BCC1-4378-975B-23E0B3F67197}|Phumla.csproj|solutionrelative:data\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,82 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddGuest.cs",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs",
-              "RelativeDocumentMoniker": "Presentation\\AddGuest.cs",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs*",
-              "RelativeToolTip": "Presentation\\AddGuest.cs*",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAtwGIAAABpAAAAAAAAAA==",
+              "Title": "EmployeeDB.cs",
+              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\EmployeeDB.cs",
+              "RelativeDocumentMoniker": "Data\\EmployeeDB.cs",
+              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\EmployeeDB.cs",
+              "RelativeToolTip": "Data\\EmployeeDB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAawFgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T22:02:08.842Z",
+              "WhenOpened": "2025-10-08T08:49:04.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Business\\Employee.cs",
+              "RelativeDocumentMoniker": "Business\\Employee.cs",
+              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Business\\Employee.cs",
+              "RelativeToolTip": "Business\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T08:48:54.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BankingDetails.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\BankingDetails.cs",
-              "RelativeDocumentMoniker": "Presentation\\BankingDetails.cs",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\BankingDetails.cs [Design]",
-              "RelativeToolTip": "Presentation\\BankingDetails.cs [Design]",
+              "Title": "DB.cs",
+              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\DB.cs",
+              "RelativeDocumentMoniker": "Data\\DB.cs",
+              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Data\\DB.cs",
+              "RelativeToolTip": "Data\\DB.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAtwMoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T22:02:05.004Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddGuest.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs",
-              "RelativeDocumentMoniker": "Presentation\\AddGuest.cs",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Presentation\\AddGuest.cs [Design]*",
-              "RelativeToolTip": "Presentation\\AddGuest.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T22:01:25.168Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SQLQuery1333.sql",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\SQLQuery1333.sql",
-              "RelativeDocumentMoniker": "SQLQuery1333.sql",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\SQLQuery1333.sql",
-              "RelativeToolTip": "SQLQuery1333.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-10-06T11:21:03.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Phumla",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Phumla.csproj",
-              "RelativeDocumentMoniker": "Phumla.csproj",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Phumla.csproj",
-              "RelativeToolTip": "Phumla.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-07T21:43:05.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Makolela\\Downloads\\Phumla-Kamnandi\\Phumla\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAxwCEAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T19:43:02.799Z",
+              "WhenOpened": "2025-10-08T08:48:40.11Z",
               "EditorCaption": ""
             }
           ]

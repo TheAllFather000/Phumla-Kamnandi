@@ -180,11 +180,10 @@ namespace Phumla.Presentation
             }
 
             int age = DateTime.Today.Year - dateOfBirth.Year;
+            GuestDB g = new GuestDB();
 
             Guest guest = new Guest(name + " " + surname, age, id, email, phoneNumber, 3.0);
-
-            AccessDB a = new AccessDB();
-            a.AddAccess(6741, "peniser", Access.AccessLevel.Administrator);
+            g.AddGuest(guest);
       
 
         }

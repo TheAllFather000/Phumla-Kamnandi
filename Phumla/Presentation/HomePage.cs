@@ -13,7 +13,7 @@ namespace Phumla.Presentation
 {
     public partial class HomePage : Form
     {
-        private Access employee;
+        private Employee employee;
         private CreateReservation reservation;
         public HomePage()
         {
@@ -25,7 +25,7 @@ namespace Phumla.Presentation
         /*
          * For display of employee ID on certain forms. 
          */
-        public HomePage(Access employee)
+        public HomePage(Employee employee)
         { 
             InitializeComponent();
             this.employee = employee;

@@ -70,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\Access.cs" />
+    <Compile Include="Business\Employee.cs" />
     <Compile Include="Business\Address.cs" />
     <Compile Include="Business\BankingDetails.cs" />
     <Compile Include="Business\Booking.cs" />
@@ -82,7 +82,7 @@
     <Compile Include="Business\Person.cs" />
     <Compile Include="Business\Room.cs" />
     <Compile Include="Business\RoomController.cs" />
-    <Compile Include="Data\AccessDB.cs" />
+    <Compile Include="Data\EmployeeDB.cs" />
     <Compile Include="Data\AddressDB.cs" />
     <Compile Include="Data\BankingDetailsDB.cs" />
     <Compile Include="Data\BookingDB.cs" />

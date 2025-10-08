@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Phumla.Business
 {
-    public class Access
+    public class Employee
     {
         private long employeeid;
         private string password;
@@ -27,21 +27,21 @@ namespace Phumla.Business
         public AccessLevel Level
 
         {get { return level; } set { level = value; }}
-        public Access() { }
+        public Employee() { }
 
-        public Access(long eid, string pword)
+        public Employee(long eid, string pword)
         {
             employeeid = eid;
             password = pword;
             level = AccessLevel.Receptionist;
         }
-        public Access(long eid, string pword,  AccessLevel l)
+        public Employee(long eid, string pword,  AccessLevel l)
         {
             employeeid = eid;
             password = pword;
             level = l;
         }
-        public Access(Access a)
+        public Employee(Employee a)
         {
             employeeid=a.employeeid;
             password = a.password;

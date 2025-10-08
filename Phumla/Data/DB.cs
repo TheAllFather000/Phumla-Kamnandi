@@ -189,9 +189,9 @@ namespace Phumla.Data
 
                     return UpdateDataSource("SELECT * FROM Payment", table);
                 }
-                else if (g.GetType() == typeof(Access))
+                else if (g.GetType() == typeof(Employee))
                 {
-                    Access a = new Access((Access)g);
+                    Employee a = new Employee((Employee)g);
                     row["employeeid"] = a.EmployeeID;
                     row["password_"] = a.Password;
                     row["accesslevel"] = a.Level;
@@ -200,7 +200,7 @@ namespace Phumla.Data
 
                     
 
-                    return UpdateDataSource("SELECT * FROM Access", table);
+                    return UpdateDataSource("SELECT * FROM Employee", table);
                 }
                 else if (g.GetType() == typeof(Address))
                 {
