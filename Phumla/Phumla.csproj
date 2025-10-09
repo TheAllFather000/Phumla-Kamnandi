@@ -139,6 +139,18 @@
     <Compile Include="Presentation\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\BankDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\BankDetailsControl.Designer.cs">
+      <DependentUpon>BankDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AddGuestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\AddGuestControl.Designer.cs">
+      <DependentUpon>AddGuestControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\AddGuest.resx">
@@ -166,6 +178,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\BankDetailsControl.resx">
+      <DependentUpon>BankDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\AddGuestControl.resx">
+      <DependentUpon>AddGuestControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

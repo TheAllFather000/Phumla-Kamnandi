@@ -31,7 +31,7 @@ namespace Phumla.Data
             {
                 Address a = new Address();
 
-                a.ID = Convert.ToInt64(r["id"]);
+                a.ID = Convert.ToString(r["id"]);
                 a.HouseNumber = Convert.ToString(r["number"]);
                 a.Suburb = Convert.ToString(r["suburb"]);
                 a.City = Convert.ToString(r["city"]);
@@ -58,7 +58,7 @@ namespace Phumla.Data
             AllAddresses();
         }
 
-        public Address addNewAddress(long id, string n, string s, string su, string city, string postalcode)
+        public Address addNewAddress(string id, string n, string s, string su, string city, string postalcode)
         {
             Address a = new Address(id, n, s, su, city, postalcode);
             Addresses.Add(a);
@@ -69,7 +69,20 @@ namespace Phumla.Data
             AllAddresses();
             return a;
         }
-        public Address getAddress(long id)
+
+        public Address addNewAddress(Address address)
+        {
+            Addresses.Add(address);
+            DataRow r = ds.Tables[table].NewRow();
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            FillRow(r, address, table, DB.Operation.Add);
+            ds.Tables[table].Rows.Add(r);
+            AllAddresses();
+            return address;
+
+        }
+
+        public Address getAddress(string id)
         {
             foreach (Address add in addresses)
             {

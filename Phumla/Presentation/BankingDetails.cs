@@ -20,7 +20,6 @@ namespace Phumla.Presentation
 
         private void lblAddGuest_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblSurname_Click(object sender, EventArgs e)
@@ -52,6 +51,11 @@ namespace Phumla.Presentation
                 homePage.ShowDialog();
                 this.Hide();
             }
+        }
+
+        private void btnFinaliseGuestAccount_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

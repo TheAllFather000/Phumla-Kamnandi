@@ -8,7 +8,7 @@ namespace Phumla.Business
 {
     public class Address
     {
-        private long id;
+        private string id;
         private string number;
         private string street;
         private string suburb;
@@ -18,7 +18,7 @@ namespace Phumla.Business
         public string HouseNumber
         { get { return number; } set { number = value; } }
         
-        public long ID
+        public string ID
         { get { return id; } set { id = value; } }
         
         public string Street
@@ -43,7 +43,7 @@ namespace Phumla.Business
             number = street = suburb = city = postalcode = "NONE";
         }
 
-        public Address(long id, string num, string street, string suburb, string city, string pc)
+        public Address(string id, string num, string street, string suburb, string city, string pc)
         {
             this.id = id;
             number = num;

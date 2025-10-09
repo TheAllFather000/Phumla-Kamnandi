@@ -34,23 +34,19 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnRemoveGuest = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
-            this.lblHomePage = new System.Windows.Forms.Label();
-            this.tpnlHomePage = new System.Windows.Forms.TableLayoutPanel();
             this.poisonContextMenuStrip1 = new ReaLTaiizor.Controls.PoisonContextMenuStrip(this.components);
             this.gayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.parrotSlidingPanel1 = new ReaLTaiizor.Controls.ParrotSlidingPanel();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tpnlHomePage.SuspendLayout();
+            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.poisonContextMenuStrip1.SuspendLayout();
             this.parrotSlidingPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,7 +57,7 @@
             // btnAddBooking
             // 
             this.btnAddBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddBooking.Location = new System.Drawing.Point(373, 215);
+            this.btnAddBooking.Location = new System.Drawing.Point(51, 11);
             this.btnAddBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddBooking.Name = "btnAddBooking";
             this.btnAddBooking.Size = new System.Drawing.Size(171, 39);
@@ -73,7 +69,7 @@
             // btnCreateReport
             // 
             this.btnCreateReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateReport.Location = new System.Drawing.Point(373, 148);
+            this.btnCreateReport.Location = new System.Drawing.Point(51, 197);
             this.btnCreateReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(171, 39);
@@ -86,10 +82,10 @@
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogout.AutoSize = true;
-            this.btnLogout.Location = new System.Drawing.Point(105, 55);
+            this.btnLogout.Location = new System.Drawing.Point(105, 329);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(63, 39);
+            this.btnLogout.Size = new System.Drawing.Size(63, 26);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -98,7 +94,7 @@
             // btnRemoveGuest
             // 
             this.btnRemoveGuest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRemoveGuest.Location = new System.Drawing.Point(373, 81);
+            this.btnRemoveGuest.Location = new System.Drawing.Point(51, 135);
             this.btnRemoveGuest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveGuest.Name = "btnRemoveGuest";
             this.btnRemoveGuest.Size = new System.Drawing.Size(171, 39);
@@ -110,7 +106,7 @@
             // btnEditBooking
             // 
             this.btnEditBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditBooking.Location = new System.Drawing.Point(373, 282);
+            this.btnEditBooking.Location = new System.Drawing.Point(51, 73);
             this.btnEditBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(171, 39);
@@ -118,39 +114,6 @@
             this.btnEditBooking.Text = "Edit Booking";
             this.btnEditBooking.UseVisualStyleBackColor = true;
             this.btnEditBooking.Click += new System.EventHandler(this.btnEditBooking_Click);
-            // 
-            // lblHomePage
-            // 
-            this.lblHomePage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHomePage.AutoSize = true;
-            this.lblHomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHomePage.Location = new System.Drawing.Point(233, 6);
-            this.lblHomePage.Name = "lblHomePage";
-            this.lblHomePage.Size = new System.Drawing.Size(451, 55);
-            this.lblHomePage.TabIndex = 5;
-            this.lblHomePage.Text = "Welcome, [FILL IN]";
-            // 
-            // tpnlHomePage
-            // 
-            this.tpnlHomePage.ColumnCount = 1;
-            this.tpnlHomePage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlHomePage.Controls.Add(this.btnAddBooking, 0, 3);
-            this.tpnlHomePage.Controls.Add(this.btnRemoveGuest, 0, 1);
-            this.tpnlHomePage.Controls.Add(this.btnCreateReport, 0, 2);
-            this.tpnlHomePage.Controls.Add(this.btnEditBooking, 0, 4);
-            this.tpnlHomePage.Controls.Add(this.lblHomePage, 0, 0);
-            this.tpnlHomePage.Location = new System.Drawing.Point(280, 0);
-            this.tpnlHomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpnlHomePage.Name = "tpnlHomePage";
-            this.tpnlHomePage.RowCount = 6;
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tpnlHomePage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tpnlHomePage.Size = new System.Drawing.Size(918, 359);
-            this.tpnlHomePage.TabIndex = 6;
             // 
             // poisonContextMenuStrip1
             // 
@@ -174,13 +137,13 @@
             // slopToolStripMenuItem
             // 
             this.slopToolStripMenuItem.Name = "slopToolStripMenuItem";
-            this.slopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.slopToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.slopToolStripMenuItem.Text = "slop";
             // 
             // coreToolStripMenuItem
             // 
             this.coreToolStripMenuItem.Name = "coreToolStripMenuItem";
-            this.coreToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.coreToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.coreToolStripMenuItem.Text = "core";
             // 
             // coreToolStripMenuItem1
@@ -215,6 +178,88 @@
             this.parrotSlidingPanel1.TopLeft = System.Drawing.Color.Black;
             this.parrotSlidingPanel1.TopRight = System.Drawing.Color.Black;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnCreateReport, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnSettings, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddBooking, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRemoveGuest, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnEditBooking, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 172);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 374);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSettings.AutoSize = true;
+            this.btnSettings.Location = new System.Drawing.Point(104, 266);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(65, 26);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.parrotPictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.lblWelcome);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(274, 172);
+            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.WrapContents = false;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblWelcome.Location = new System.Drawing.Point(96, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(154, 72);
+            this.lblWelcome.TabIndex = 10;
+            this.lblWelcome.Text = "Welcome,\r\n[EMPID]";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tabControl1.Location = new System.Drawing.Point(280, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(918, 546);
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(910, 517);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // parrotPictureBox1
             // 
             this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
@@ -235,90 +280,6 @@
             this.parrotPictureBox1.Text = "parrotPictureBox1";
             this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnSettings, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 446);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSettings.AutoSize = true;
-            this.btnSettings.Location = new System.Drawing.Point(104, 5);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(65, 39);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.parrotPictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.lblWelcome);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(274, 446);
-            this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.WrapContents = false;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblWelcome.Location = new System.Drawing.Point(96, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(154, 72);
-            this.lblWelcome.TabIndex = 10;
-            this.lblWelcome.Text = "Welcome,\r\n[EMPID]";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(523, 390);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(200, 100);
-            this.tabControl1.TabIndex = 12;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(192, 71);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 71);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,13 +287,10 @@
             this.ClientSize = new System.Drawing.Size(1198, 546);
             this.Controls.Add(this.parrotSlidingPanel1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.tpnlHomePage);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomePage";
             this.Text = "Home Page: [HOTEL ID]";
             this.Load += new System.EventHandler(this.HomePage_Load);
-            this.tpnlHomePage.ResumeLayout(false);
-            this.tpnlHomePage.PerformLayout();
             this.poisonContextMenuStrip1.ResumeLayout(false);
             this.parrotSlidingPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -351,8 +309,6 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnRemoveGuest;
         private System.Windows.Forms.Button btnEditBooking;
-        private System.Windows.Forms.Label lblHomePage;
-        private System.Windows.Forms.TableLayoutPanel tpnlHomePage;
         private ReaLTaiizor.Controls.PoisonContextMenuStrip poisonContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem slopToolStripMenuItem;
@@ -365,7 +321,6 @@
         private System.Windows.Forms.Button btnSettings;
         private ReaLTaiizor.Controls.HeaderLabel lblWelcome;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
     }
 }

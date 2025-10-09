@@ -16,26 +16,43 @@ namespace Phumla.Presentation
 {
     public partial class AddGuest : Form
     {
-        private string firstName, surname, id, email, phoneNumber;
+        /*private string firstName, surname, id, email, phoneNumber;
+        private string streetName, suburb, city, country;
+        private int postalCode;*/
         private int Age {  get; set; }
+        private string PostalCode { get; set; }
 
         //private bool isNameValid, isSurnameValid, isIDValid, isEmailValid, isPhoneNumberValid;
         private DateTime dateOfBirth;
         private const int ID_AGE = 16;
         private const bool TESTING = true; // For Debugging
-        private bool validName, validSurname, validEmail, validDOB, validPhoneNumber, validID;
+        /*private bool validName, validSurname, validEmail, validDOB, validPhoneNumber, validID;
+        private bool validStreetName, validSuburb, validCity, validCountry, validPostalCode;*/
+        GuestDB guestDB = new GuestDB();
+        AddressDB addressDB = new AddressDB();
 
         public string FirstName { get; set; } 
         public string Surname { get; set; }
         public string ID { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public string StreetName { get; set; }
+        public string Suburb { get; set; }
+        public string  City { get; set; }
+        public string Country { get; set; }
+
         public bool ValidName { get; set; }
         public bool ValidSurname { get; set; }
         public bool ValidEmail { get; set; }
         public bool ValidDOB { get; set; }
         public bool ValidPhoneNumber { get; set; }
         public bool ValidID { get; set; }
+        bool ValidStreetName { get; set; }
+        bool ValidSuburb { get; set; }
+        bool ValidPostalCode { get; set; }
+        public bool ValidCity { get; set; }
+        public bool ValidCountry { get; set;  }
+        
         public AddGuest()
         {
             InitializeComponent();
@@ -129,6 +146,7 @@ namespace Phumla.Presentation
 
         private void btnAddBankingDetails_Click(object sender, EventArgs e)
         {
+
             BankingDetails bankingDetails = new BankingDetails();
             bankingDetails.Show();
             this.Hide();
@@ -144,7 +162,8 @@ namespace Phumla.Presentation
             return dateOfBirth.ToString("yy") == id.Substring(0, 2) &&
                 dateOfBirth.ToString("MM") == id.Substring(2, 2) &&
                 dateOfBirth.ToString("dd") == id.Substring(4, 2) &&
-                id.Length == 13;
+                id.Length == 13 &&
+                id.All(char.IsDigit);
         }
 
         private void btnFinaliseGuestAccount_Click(object sender, EventArgs e)
@@ -154,7 +173,6 @@ namespace Phumla.Presentation
             ID = txtID.Text;
             Email = txtEmail.Text;
             PhoneNumber = txtPhoneNumber.Text;
-            GuestDB guestDB = new GuestDB();
     
           
             ValidID = true; // True by default to evade the condition at the bottom
@@ -273,17 +291,93 @@ namespace Phumla.Presentation
                 ValidPhoneNumber = true;
             }
 
+            // Now the addresses
+            StreetName = txtStreetName.Text;
+            Suburb = txtSuburb.Text;
+            City = txtCity.Text;
+            PostalCode = txtPostalCode.Text;
+            Country = txtCountry.Text;
+
+            // Street Name
+            if (string.IsNullOrEmpty(StreetName))
+            {
+                lblStreetNameError.Text = "Please enter a street name.";
+                ValidStreetName = false;
+            } else
+            {
+                lblStreetNameError.Visible = false;
+                ValidStreetName = true;
+            }
+
+            // Suburb
+            if (string.IsNullOrEmpty(Suburb))
+            {
+                lblSuburbError.Text = "Please enter a suburb.";
+                ValidSuburb = false;
+            }
+            else
+            {
+                lblSuburbError.Visible = false;
+                ValidSuburb = true;
+            }
+
+            // City
+            if (string.IsNullOrEmpty(City))
+            {
+                lblCityError.Text = "Please enter a city.";
+                ValidCity = false;
+            }
+            else
+            {
+                lblCityError.Visible = false;
+                ValidCity = true;
+            }
+
+            // Postal Code
+            if (string.IsNullOrEmpty(PostalCode))
+            {
+                lblPostalCodeError.Text = "Please enter a postal number.";
+                ValidPostalCode = false;
+            }
+            else
+            {
+                if (!txtPostalCode.Text.All(char.IsDigit)) {
+                    lblPostalCodeError.Text = "Please enter a valid postal code.";
+                    ValidPostalCode = false;
+                } else
+                {
+                    lblPostalCodeError.Visible = false;
+                    ValidPostalCode = true;
+                }
+            }
+
+            // Country
+            if (string.IsNullOrEmpty(StreetName))
+            {
+                lblCountryError.Text = "Please enter a country.";
+                ValidCountry = false;
+            }
+
+            else
+            {
+                lblCountryError.Visible = false;
+                ValidCountry = true;
+
+            }
+
             //Console.WriteLine(ValidName + "\n" + ValidSurname + "\n" + ValidEmail + "\n" + ValidDOB + "\n" + ValidID + "\n" + ValidPhoneNumber);
 
-            if (ValidName = ValidSurname = ValidEmail = ValidDOB = ValidID = ValidPhoneNumber == true)
+            if (ValidName = ValidSurname = ValidEmail = ValidDOB = ValidID = ValidPhoneNumber
+                = ValidStreetName = ValidSuburb = ValidPostalCode = ValidCity = ValidCountry== true)
             {
                 Guest guest = new Guest(FirstName + " " + Surname, Age, ID, Email, PhoneNumber, 3.0);
                 guestDB.AddGuest(guest);
+                Address address = new Address(ID, "4", StreetName, Suburb, City, PostalCode); // I'll say 0 for now, but street nr is unnecessary
+                addressDB.addNewAddress(address);
+                MessageBox.Show("Guest successfully added to database.");
             }
-      
-
+     
         }
-
         
     }
 }

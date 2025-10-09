@@ -58,18 +58,31 @@ namespace Phumla.Presentation
 
         private void btnRemoveGuest_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-            reservation.Visible = true;
+            BankDetailsControl addGuest = new BankDetailsControl();
+            addGuest.Dock = DockStyle.Fill;
+
+            addGuest.GoBack += AddGuest_GoBack;
+
+            tabPage2.Controls.Clear();
+            tabPage2.Controls.Add(addGuest);
+
+        }
+
+        public void AddGuest_GoBack (object sender, EventArgs e) // JUST LIKE GDSCRIPT
+        {
+            tabPage2.Controls.Clear();
+            tabPage2.Controls.Add(new AddGuestControl());
         }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            //lblHomePage.Text = "Welcome, " + employee.EmployeeID; // CHANGE FOR LATER
+            //lblHomePage.Text = "Welcome, " + employee.EmployeeID; 
         }
 
         private void poisonDropDownButton1_Click(object sender, EventArgs e)
