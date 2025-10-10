@@ -97,6 +97,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AddBookingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\AddBookingControl.Designer.cs">
+      <DependentUpon>AddBookingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AddGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +121,11 @@
     <Compile Include="Presentation\CreateReport.Designer.cs">
       <DependentUpon>CreateReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\CreateReservation.cs">
+    <Compile Include="Presentation\AddBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\CreateReservation.Designer.cs">
-      <DependentUpon>CreateReservation.cs</DependentUpon>
+    <Compile Include="Presentation\AddBooking.Designer.cs">
+      <DependentUpon>AddBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FindGuest.cs">
       <SubType>Form</SubType>
@@ -153,6 +159,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\AddBookingControl.resx">
+      <DependentUpon>AddBookingControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\AddGuest.resx">
       <DependentUpon>AddGuest.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +173,8 @@
       <DependentUpon>CreateReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\CreateReservation.resx">
-      <DependentUpon>CreateReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\AddBooking.resx">
+      <DependentUpon>AddBooking.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FindGuest.resx">

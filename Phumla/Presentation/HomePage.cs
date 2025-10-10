@@ -14,11 +14,11 @@ namespace Phumla.Presentation
     public partial class HomePage : Form
     {
         private Employee employee;
-        private CreateReservation reservation;
+        private AddBooking reservation;
         public HomePage()
         {
             InitializeComponent();
-            reservation = new CreateReservation();
+            reservation = new AddBooking();
             reservation.Visible= false;
         }
 
@@ -29,7 +29,7 @@ namespace Phumla.Presentation
         { 
             InitializeComponent();
             this.employee = employee;
-            reservation = new CreateReservation();
+            reservation = new AddBooking();
             reservation.Visible = false;
         }
 
@@ -63,21 +63,24 @@ namespace Phumla.Presentation
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-            BankDetailsControl addGuest = new BankDetailsControl();
+            TabPage page = new TabPage();
+            page.Name = "tpgAddBooking";
+            page.Text = "Add Booking";
+
+            tbcHomePage.Controls.Add(page);
+
+            AddBookingControl addGuest = new AddBookingControl();
             addGuest.Dock = DockStyle.Fill;
-
-            addGuest.GoBack += AddGuest_GoBack;
-
-            tabPage2.Controls.Clear();
-            tabPage2.Controls.Add(addGuest);
+            page.Controls.Clear();
+            page.Controls.Add(addGuest);
 
         }
 
-        public void AddGuest_GoBack (object sender, EventArgs e) // JUST LIKE GDSCRIPT
+        /*public void AddGuest_GoBack (object sender, EventArgs e) // JUST LIKE GDSCRIPT
         {
-            tabPage2.Controls.Clear();
-            tabPage2.Controls.Add(new AddGuestControl());
-        }
+            tpg.Controls.Clear();
+            tpg.Controls.Add(new AddGuestControl());
+        }*/
 
         private void HomePage_Load(object sender, EventArgs e)
         {

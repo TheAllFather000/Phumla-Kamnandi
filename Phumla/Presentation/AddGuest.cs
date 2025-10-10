@@ -152,6 +152,8 @@ namespace Phumla.Presentation
             this.Hide();
         }
 
+
+
         public bool isEmailValid (string email)
         {
             return email.Contains("@");
@@ -378,6 +380,190 @@ namespace Phumla.Presentation
             }
      
         }
-        
+
+        private void lblAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlPersonalDetails_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblAddGuestAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPersonalDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpnlPersonalDetails_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSurname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDOB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNameError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSurnameError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDoBError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIDError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmailError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPhoneNumberError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpnlBillingAddress_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblCity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCountry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPostalCode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSuburb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStreetName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtCity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCityError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStreetNameError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPostalCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStreetName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSuburbError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPostalCodeError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCountry_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCountryError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSuburb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
