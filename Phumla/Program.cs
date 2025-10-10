@@ -32,7 +32,7 @@ namespace Phumla
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             */
             GuestDB guest = new GuestDB();
-            guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
+            //guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
             Application.Run(new Presentation.HomePage());
         }
     }
