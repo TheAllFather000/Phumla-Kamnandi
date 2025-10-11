@@ -32,13 +32,16 @@ namespace Phumla
             Employee.AccessLevel employee = employeeDB.checkLoginDetails(110113, "eishyahneh");
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             */
-            DB db = new DB();
-            string createcommand = @"CREATE TABLE GuestCreationLog
-                                     (employeeid bigint PRIMARY KEY,
-                                      guestid bigint NOT NULL,
-                                      date date NOT NULL     
+            /*DB db = new DB();
+            string createcommand = @"CREATE TABLE Hotel
+                                     (hotelId bigint PRIMARY KEY,
+                                      name varchar(13) NOT NULL,
+                                      numRooms bigint NOT NULL     
                                     );";
-            db.createTable(createcommand);
+            db.createTable(createcommand);*/
+
+            // Making a
+
             //guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
             Application.Run(new Presentation.HomePage());
         }

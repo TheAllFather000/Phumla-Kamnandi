@@ -15,13 +15,22 @@ namespace Phumla.Presentation
 {
     public partial class EditBookingControl : UserControl
     {
-        BookingDB bookingDB;
-        Collection<Booking> bookings;
+        private BookingDB bookingDB;
+        private Collection<Booking> bookings;
+        private string BookingID {  get; set; }
+        private string HotelID { get; set; }
+        private bool CheckedIn {  get; set; }
+        private string StartDate { get; set; }
+        private string EndDate { get; set; }
+        private string RoomNumber { get; set; }
+        private bool DepositStatus { get; set; }
+        private double Bill { get; set; }
         public EditBookingControl()
         {
             InitializeComponent();
             bookingDB = new BookingDB();
             bookings = bookingDB.Bookings;
+            loadListView();
 
         }
 
@@ -39,8 +48,9 @@ namespace Phumla.Presentation
 
         }
 
-        private void EditBookingControl_Load(object sender, EventArgs e)
+        private void loadListView()
         {
+            lsvBookings.Clear();
             // Populating the list view
             lsvBookings.View = View.Details;
             lsvBookings.Columns.Add("BookingID", 100, HorizontalAlignment.Left);
@@ -66,6 +76,10 @@ namespace Phumla.Presentation
                 lsvBookings.Items.Add(item);
             }
 
+        }
+
+        private void EditBookingControl_Load(object sender, EventArgs e)
+        {
             // Greying out the fields by default:
             changeEnabled(tlpBookingDetails, false);
             btnConfirmChanges.Enabled = false;
@@ -73,6 +87,24 @@ namespace Phumla.Presentation
 
         private void btnConfirmChanges_Click(object sender, EventArgs e)
         {
+            // We'll need to check if the modified data is valid in the first place
+            BookingID = txtBookingID.Text;
+            HotelID = txtHotelID.Text;
+            RoomNumber = txtRoomID.Text;
+            CheckedIn = cbxCheckedIn.Checked;
+            StartDate = dtpStartDate.Text;
+            EndDate = dtpEndDate.Text;
+            DepositStatus = cbxDepositStatus.Checked;
+            Bill = Convert.ToDouble(txtBill.Text);
+            // Optional: 
+            // Time = txtTime.Text;
+            Booking booking = new Booking(BookingID, HotelID, CheckedIn, StartDate, EndDate, "Blank", RoomNumber, DepositStatus, Bill);
+
+            bookingDB.editBooking(booking);
+            bookings = bookingDB.Bookings;
+            loadListView();
+
+            // bookingDB.editBooking(new Booking(false, ));
 
         }
 
@@ -97,7 +129,7 @@ namespace Phumla.Presentation
 
         private void btnCancelChanges_Click(object sender, EventArgs e)
         {
-
+            // I'll deal with you later, bum
         }
 
         private void txtBookingID_Click(object sender, EventArgs e)
