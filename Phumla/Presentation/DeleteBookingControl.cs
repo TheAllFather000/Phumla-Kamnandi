@@ -15,17 +15,25 @@ namespace Phumla.Presentation
 {
     public partial class DeleteBookingControl : UserControl
     {
-        BookingDB bookingDb;
-        Collection <Booking> bookings;
+        private BookingDB bookingDB;
+        private Collection <Booking> bookings;
         public DeleteBookingControl()
         {
             InitializeComponent();
-            bookingDb = new BookingDB();
-            bookings = bookingDb.Bookings;
+            bookingDB = new BookingDB();
+            bookings = bookingDB.Bookings;
         }
 
         private void DeleteBookingControl_Load(object sender, EventArgs e)
         {
+            // Populating the list view
+            loadListView();
+
+        }
+
+        private void loadListView()
+        {
+            lsvBookings.Clear();
             // Populating the list view
             lsvBookings.View = View.Details;
             lsvBookings.Columns.Add("BookingID", 100, HorizontalAlignment.Left);
@@ -68,7 +76,7 @@ namespace Phumla.Presentation
                 {
                     try
                     {
-                        bookingDb.cancelBooking(booking);
+                        bookingDB.cancelBooking(booking);
                         //Email email = new Email(booking.ID);
                         MessageBox.Show("Booking cancelled successfully. A notification has been sent to the guest.");
                     }

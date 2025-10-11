@@ -43,8 +43,8 @@
             this.dtpStartDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblStartDate = new System.Windows.Forms.Label();
-            this.dtpEndDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.lblEndDate = new System.Windows.Forms.Label();
+            this.dtpEndDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.txtSummary = new ReaLTaiizor.Controls.MetroRichTextBox();
             this.btnConfirmBooking = new ReaLTaiizor.Controls.AirButton();
             this.btnCancelBooking = new ReaLTaiizor.Controls.AirButton();
@@ -221,6 +221,17 @@
             this.skyComboBox1.FormattingEnabled = true;
             this.skyComboBox1.ItemHeight = 16;
             this.skyComboBox1.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+            this.skyComboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
             this.skyComboBox1.LineColorA = System.Drawing.Color.White;
             this.skyComboBox1.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.skyComboBox1.LineColorC = System.Drawing.Color.White;
@@ -271,15 +282,6 @@
             this.lblStartDate.TabIndex = 2;
             this.lblStartDate.Text = "Start Date:";
             // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpEndDate.Location = new System.Drawing.Point(78, 39);
-            this.dtpEndDate.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(263, 30);
-            this.dtpEndDate.TabIndex = 11;
-            // 
             // lblEndDate
             // 
             this.lblEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -289,6 +291,15 @@
             this.lblEndDate.Size = new System.Drawing.Size(69, 16);
             this.lblEndDate.TabIndex = 12;
             this.lblEndDate.Text = "End Date: ";
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.dtpEndDate.Location = new System.Drawing.Point(78, 39);
+            this.dtpEndDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(263, 30);
+            this.dtpEndDate.TabIndex = 11;
             // 
             // txtSummary
             // 
@@ -327,6 +338,7 @@
             this.btnConfirmBooking.TabIndex = 23;
             this.btnConfirmBooking.Text = "Confirm Booking";
             this.btnConfirmBooking.Transparent = false;
+            this.btnConfirmBooking.Click += new System.EventHandler(this.btnConfirmBooking_Click);
             // 
             // btnCancelBooking
             // 

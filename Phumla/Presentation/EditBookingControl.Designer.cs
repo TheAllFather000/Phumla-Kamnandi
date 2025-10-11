@@ -40,7 +40,6 @@
             this.lblBill = new System.Windows.Forms.Label();
             this.txtBookingID = new ReaLTaiizor.Controls.PoisonTextBox();
             this.txtHotelID = new ReaLTaiizor.Controls.PoisonTextBox();
-            this.txtDepositStatus = new ReaLTaiizor.Controls.PoisonTextBox();
             this.txtBill = new ReaLTaiizor.Controls.PoisonTextBox();
             this.txtRoomID = new ReaLTaiizor.Controls.PoisonTextBox();
             this.dtpEndDate = new ReaLTaiizor.Controls.PoisonDateTime();
@@ -51,6 +50,7 @@
             this.cbxCheckedIn = new ReaLTaiizor.Controls.PoisonCheckBox();
             this.btnConfirmChanges = new ReaLTaiizor.Controls.AirButton();
             this.btnCancelChanges = new ReaLTaiizor.Controls.AirButton();
+            this.cbxDepositStatus = new ReaLTaiizor.Controls.PoisonCheckBox();
             this.tlpBookingDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,38 +233,6 @@
             this.txtHotelID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtHotelID.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // txtDepositStatus
-            // 
-            this.txtDepositStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            // 
-            // 
-            // 
-            this.txtDepositStatus.CustomButton.Image = null;
-            this.txtDepositStatus.CustomButton.Location = new System.Drawing.Point(139, 1);
-            this.txtDepositStatus.CustomButton.Name = "";
-            this.txtDepositStatus.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDepositStatus.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            this.txtDepositStatus.CustomButton.TabIndex = 1;
-            this.txtDepositStatus.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            this.txtDepositStatus.CustomButton.UseSelectable = true;
-            this.txtDepositStatus.CustomButton.Visible = false;
-            this.txtDepositStatus.Lines = new string[0];
-            this.txtDepositStatus.Location = new System.Drawing.Point(171, 289);
-            this.txtDepositStatus.MaxLength = 32767;
-            this.txtDepositStatus.Name = "txtDepositStatus";
-            this.txtDepositStatus.PasswordChar = '\0';
-            this.txtDepositStatus.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDepositStatus.SelectedText = "";
-            this.txtDepositStatus.SelectionLength = 0;
-            this.txtDepositStatus.SelectionStart = 0;
-            this.txtDepositStatus.ShortcutsEnabled = true;
-            this.txtDepositStatus.Size = new System.Drawing.Size(161, 23);
-            this.txtDepositStatus.TabIndex = 9;
-            this.txtDepositStatus.UseSelectable = true;
-            this.txtDepositStatus.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDepositStatus.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDepositStatus.TextChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
             // txtBill
             // 
             this.txtBill.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -355,13 +323,13 @@
             this.tlpBookingDetails.ColumnCount = 2;
             this.tlpBookingDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.44068F));
             this.tlpBookingDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.55932F));
+            this.tlpBookingDetails.Controls.Add(this.cbxDepositStatus, 1, 6);
             this.tlpBookingDetails.Controls.Add(this.lblGuestList, 0, 8);
             this.tlpBookingDetails.Controls.Add(this.txtGuestList, 1, 8);
             this.tlpBookingDetails.Controls.Add(this.cbxCheckedIn, 1, 5);
             this.tlpBookingDetails.Controls.Add(this.lblBookingID, 0, 0);
             this.tlpBookingDetails.Controls.Add(this.txtBookingID, 1, 0);
             this.tlpBookingDetails.Controls.Add(this.lblBill, 0, 7);
-            this.tlpBookingDetails.Controls.Add(this.txtDepositStatus, 1, 6);
             this.tlpBookingDetails.Controls.Add(this.lblHotelID, 0, 1);
             this.tlpBookingDetails.Controls.Add(this.lblRoomNumber, 0, 2);
             this.tlpBookingDetails.Controls.Add(this.txtBill, 1, 7);
@@ -464,6 +432,17 @@
             this.btnCancelChanges.Transparent = false;
             this.btnCancelChanges.Click += new System.EventHandler(this.btnCancelChanges_Click);
             // 
+            // cbxDepositStatus
+            // 
+            this.cbxDepositStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbxDepositStatus.AutoSize = true;
+            this.cbxDepositStatus.Location = new System.Drawing.Point(171, 292);
+            this.cbxDepositStatus.Name = "cbxDepositStatus";
+            this.cbxDepositStatus.Size = new System.Drawing.Size(104, 17);
+            this.cbxDepositStatus.TabIndex = 16;
+            this.cbxDepositStatus.Text = "Deposit Paid?";
+            this.cbxDepositStatus.UseSelectable = true;
+            // 
             // EditBookingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -496,7 +475,6 @@
         private System.Windows.Forms.Label lblBill;
         private ReaLTaiizor.Controls.PoisonTextBox txtBookingID;
         private ReaLTaiizor.Controls.PoisonTextBox txtHotelID;
-        private ReaLTaiizor.Controls.PoisonTextBox txtDepositStatus;
         private ReaLTaiizor.Controls.PoisonTextBox txtBill;
         private ReaLTaiizor.Controls.PoisonTextBox txtRoomID;
         private ReaLTaiizor.Controls.PoisonDateTime dtpEndDate;
@@ -507,5 +485,6 @@
         private System.Windows.Forms.Label lblGuestList;
         private ReaLTaiizor.Controls.AirButton btnConfirmChanges;
         private ReaLTaiizor.Controls.AirButton btnCancelChanges;
+        private ReaLTaiizor.Controls.PoisonCheckBox cbxDepositStatus;
     }
 }
