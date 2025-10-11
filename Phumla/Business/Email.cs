@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Phumla.Business
 {
@@ -72,9 +74,27 @@ namespace Phumla.Business
     "Phumla Kamnandi Guest Services Team";
 
 
+        public const string changedBooking=
+        "Dear {0} {1},\n\n" +
+        "This email is to notify you about a change made to your booking for the date of {2}\n\n" +
+        "New Stay Details:\n" +
+        "----------------------------------\n" +
+        "Hotel: {3}\n" +
+        "Stay Period: {4} to {5}\n" +
+        "Check-In Time: {6}\n" +
+        "Room(s) Assigned: {7}\n\n" +
+        "----------------------------------\n" +
+        "Please feel free to contact us in the event that another change is needed.\n\n" +
+        "Warm regards,\n" +
+        "Phumla Kamnandi Guest Services Team";
 
+        public const string deleted =
+        "Dear {0} {1},\n\n" +
+        "This email is to notify you that your booking for the date of {2} has been deleted.\n\n" +
 
-
+        "Please feel free to contact us if this is believed to be an error.\n\n" +
+        "Warm regards,\n" +
+        "Phumla Kamnandi Guest Services Team";
 
         public Email()
         { }
@@ -100,8 +120,32 @@ namespace Phumla.Business
             smtp.Port = 587;
             smtp.Credentials = new System.Net.NetworkCredential(sender, password);
             smtp.EnableSsl = true;
-
+            
         }
+
+        public void Delete(Guest g, Booking b)
+        {
+            string message = string.Format(deleted, g.Name.Split()[0], g.Name.Split()[1], b.BookingDate);
+            mail = new MailMessage();
+            smtp = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress(email);
+            mail.To.Add(g.Email);
+            mail.Subject = "Deleted Booking: " + g.Name.Split()[0] + " " + g.Name.Split()[1];
+            mail.Body = message;
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential(email, password);
+            smtp.EnableSsl = true;
+
+            try
+            {
+                smtp.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+        
         public void addRecipient(string recipient)
         {
             mail.To.Add(recipient);
@@ -123,7 +167,28 @@ namespace Phumla.Business
             catch (Exception ex)
             { Console.WriteLine(ex.ToString()); }
         }
+        public void sendChangeEmail(Guest g, Booking b, string hotelname)
+        {
+            string message = string.Format(changedBooking, g.Name.Split()[0], g.Name.Split()[1], b.BookingDate, hotelname, b.BookingDate, b.BookingEnd, b.BookingTime, b.RoomNumber);
+            mail = new MailMessage();
+            smtp = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress(email);
+            mail.To.Add(g.Email);
+            mail.Subject = "Change in Booking: " + g.Name.Split()[0] + " " + g.Name.Split()[1];
+            mail.Body = message;
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential(email, password);
+            smtp.EnableSsl = true;
 
+            try
+            {
+                smtp.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
         public void sendCheckIn(Guest g, Booking b, string hotel, string startdate, string enddate, string checkintime, string checkouttime,
             string rooms)
         {
