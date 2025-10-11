@@ -232,6 +232,15 @@ namespace Phumla.Presentation
                 }
             }
         }
+
+        private void btnCancelBooking_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Details entered will be removed.", "Are you sure?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 } 
 

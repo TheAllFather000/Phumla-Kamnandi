@@ -40,12 +40,12 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAddBooking = new System.Windows.Forms.Button();
-            this.btnRemoveGuest = new System.Windows.Forms.Button();
+            this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
             this.tbcHomePage = new ReaLTaiizor.Controls.MetroTabControl();
+            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.poisonContextMenuStrip1.SuspendLayout();
             this.parrotGradientPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -119,7 +119,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSettings, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnAddBooking, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnRemoveGuest, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnDeleteBooking, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnEditBooking, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 220);
@@ -144,6 +144,7 @@
             this.btnCreateReport.TabIndex = 1;
             this.btnCreateReport.Text = "Create Report";
             this.btnCreateReport.UseVisualStyleBackColor = true;
+            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click_1);
             // 
             // btnSettings
             // 
@@ -181,16 +182,17 @@
             this.btnAddBooking.UseVisualStyleBackColor = true;
             this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
             // 
-            // btnRemoveGuest
+            // btnDeleteBooking
             // 
-            this.btnRemoveGuest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRemoveGuest.Location = new System.Drawing.Point(51, 135);
-            this.btnRemoveGuest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRemoveGuest.Name = "btnRemoveGuest";
-            this.btnRemoveGuest.Size = new System.Drawing.Size(171, 39);
-            this.btnRemoveGuest.TabIndex = 3;
-            this.btnRemoveGuest.Text = "Remove Booking";
-            this.btnRemoveGuest.UseVisualStyleBackColor = true;
+            this.btnDeleteBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteBooking.Location = new System.Drawing.Point(51, 135);
+            this.btnDeleteBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteBooking.Name = "btnDeleteBooking";
+            this.btnDeleteBooking.Size = new System.Drawing.Size(171, 39);
+            this.btnDeleteBooking.TabIndex = 3;
+            this.btnDeleteBooking.Text = "Delete Booking";
+            this.btnDeleteBooking.UseVisualStyleBackColor = true;
+            this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
             // 
             // btnEditBooking
             // 
@@ -202,6 +204,7 @@
             this.btnEditBooking.TabIndex = 4;
             this.btnEditBooking.Text = "Edit Booking";
             this.btnEditBooking.UseVisualStyleBackColor = true;
+            this.btnEditBooking.Click += new System.EventHandler(this.btnEditBooking_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -214,26 +217,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(274, 97);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // parrotPictureBox1
-            // 
-            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox1.FilterAlpha = 200;
-            this.parrotPictureBox1.FilterEnabled = true;
-            this.parrotPictureBox1.Image = global::Phumla.Properties.Resources.images1;
-            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox1.IsElipse = false;
-            this.parrotPictureBox1.IsParallax = false;
-            this.parrotPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.parrotPictureBox1.Name = "parrotPictureBox1";
-            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox1.Size = new System.Drawing.Size(87, 71);
-            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox1.TabIndex = 11;
-            this.parrotPictureBox1.Text = "parrotPictureBox1";
-            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // lblWelcome
             // 
@@ -269,6 +252,27 @@
             this.tbcHomePage.ThemeAuthor = "Taiizor";
             this.tbcHomePage.ThemeName = "MetroLight";
             this.tbcHomePage.UnselectedTextColor = System.Drawing.Color.Gray;
+            this.tbcHomePage.SelectedIndexChanged += new System.EventHandler(this.tbcHomePage_SelectedIndexChanged);
+            // 
+            // parrotPictureBox1
+            // 
+            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox1.FilterAlpha = 200;
+            this.parrotPictureBox1.FilterEnabled = true;
+            this.parrotPictureBox1.Image = global::Phumla.Properties.Resources.images1;
+            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox1.IsElipse = false;
+            this.parrotPictureBox1.IsParallax = false;
+            this.parrotPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.parrotPictureBox1.Name = "parrotPictureBox1";
+            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox1.Size = new System.Drawing.Size(87, 71);
+            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox1.TabIndex = 11;
+            this.parrotPictureBox1.Text = "parrotPictureBox1";
+            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // HomePage
             // 
@@ -303,7 +307,7 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnAddBooking;
-        private System.Windows.Forms.Button btnRemoveGuest;
+        private System.Windows.Forms.Button btnDeleteBooking;
         private System.Windows.Forms.Button btnEditBooking;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;

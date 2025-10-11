@@ -97,7 +97,23 @@ namespace Phumla.Data
             getAllBookings();
             return success;
         }
+        public bool cancelBooking(Booking booking)
+        {
+            bool success;
+            foreach (DataRow r in ds.Tables[table].Rows)
+            {
+                if (Convert.ToString(r["id"]) == booking.ID && Convert.ToString(r["bookingdate"]) == booking.BookingDate && Convert.ToString(r["roomid"]) == booking.RoomNumber)
+                {
+                    r.Delete();
+                    break;
+                }
 
+            }
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            success = UpdateDataSource("Select * From Booking", table);
+            getAllBookings();
+            return success;
+        }
 
     }
 }

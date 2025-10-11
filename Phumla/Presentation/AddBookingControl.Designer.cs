@@ -45,7 +45,9 @@
             this.lblStartDate = new System.Windows.Forms.Label();
             this.dtpEndDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.lblEndDate = new System.Windows.Forms.Label();
-            this.metroRichTextBox1 = new ReaLTaiizor.Controls.MetroRichTextBox();
+            this.txtSummary = new ReaLTaiizor.Controls.MetroRichTextBox();
+            this.btnConfirmBooking = new ReaLTaiizor.Controls.AirButton();
+            this.btnCancelBooking = new ReaLTaiizor.Controls.AirButton();
             this.flpGuest1.SuspendLayout();
             this.flpAddGuests.SuspendLayout();
             this.flpGuestButtons.SuspendLayout();
@@ -149,7 +151,7 @@
             this.flpGuestButtons.Controls.Add(this.btnRemoveGuest);
             this.flpGuestButtons.Location = new System.Drawing.Point(3, 49);
             this.flpGuestButtons.Name = "flpGuestButtons";
-            this.flpGuestButtons.Size = new System.Drawing.Size(529, 35);
+            this.flpGuestButtons.Size = new System.Drawing.Size(248, 35);
             this.flpGuestButtons.TabIndex = 2;
             // 
             // btnAddGuest
@@ -288,35 +290,66 @@
             this.lblEndDate.TabIndex = 12;
             this.lblEndDate.Text = "End Date: ";
             // 
-            // metroRichTextBox1
+            // txtSummary
             // 
-            this.metroRichTextBox1.AutoWordSelection = false;
-            this.metroRichTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroRichTextBox1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.metroRichTextBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroRichTextBox1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.metroRichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroRichTextBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.metroRichTextBox1.IsDerivedStyle = true;
-            this.metroRichTextBox1.Lines = null;
-            this.metroRichTextBox1.Location = new System.Drawing.Point(541, 252);
-            this.metroRichTextBox1.MaxLength = 32767;
-            this.metroRichTextBox1.Name = "metroRichTextBox1";
-            this.metroRichTextBox1.ReadOnly = false;
-            this.metroRichTextBox1.Size = new System.Drawing.Size(355, 183);
-            this.metroRichTextBox1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroRichTextBox1.StyleManager = null;
-            this.metroRichTextBox1.TabIndex = 22;
-            this.metroRichTextBox1.Text = "metroRichTextBox1";
-            this.metroRichTextBox1.ThemeAuthor = "Taiizor";
-            this.metroRichTextBox1.ThemeName = "MetroLight";
-            this.metroRichTextBox1.WordWrap = true;
+            this.txtSummary.AutoWordSelection = false;
+            this.txtSummary.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtSummary.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtSummary.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtSummary.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.txtSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSummary.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtSummary.IsDerivedStyle = true;
+            this.txtSummary.Lines = null;
+            this.txtSummary.Location = new System.Drawing.Point(541, 252);
+            this.txtSummary.MaxLength = 32767;
+            this.txtSummary.Name = "txtSummary";
+            this.txtSummary.ReadOnly = false;
+            this.txtSummary.Size = new System.Drawing.Size(355, 183);
+            this.txtSummary.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.txtSummary.StyleManager = null;
+            this.txtSummary.TabIndex = 22;
+            this.txtSummary.Text = "metroRichTextBox1";
+            this.txtSummary.ThemeAuthor = "Taiizor";
+            this.txtSummary.ThemeName = "MetroLight";
+            this.txtSummary.WordWrap = true;
+            // 
+            // btnConfirmBooking
+            // 
+            this.btnConfirmBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmBooking.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
+            this.btnConfirmBooking.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConfirmBooking.Image = null;
+            this.btnConfirmBooking.Location = new System.Drawing.Point(745, 441);
+            this.btnConfirmBooking.Name = "btnConfirmBooking";
+            this.btnConfirmBooking.NoRounding = false;
+            this.btnConfirmBooking.Size = new System.Drawing.Size(151, 45);
+            this.btnConfirmBooking.TabIndex = 23;
+            this.btnConfirmBooking.Text = "Confirm Booking";
+            this.btnConfirmBooking.Transparent = false;
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelBooking.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
+            this.btnCancelBooking.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancelBooking.Image = null;
+            this.btnCancelBooking.Location = new System.Drawing.Point(541, 441);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.NoRounding = false;
+            this.btnCancelBooking.Size = new System.Drawing.Size(151, 45);
+            this.btnCancelBooking.TabIndex = 24;
+            this.btnCancelBooking.Text = "Cancel Booking";
+            this.btnCancelBooking.Transparent = false;
+            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
             // 
             // AddBookingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroRichTextBox1);
+            this.Controls.Add(this.btnCancelBooking);
+            this.Controls.Add(this.btnConfirmBooking);
+            this.Controls.Add(this.txtSummary);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flpAddGuests);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -356,6 +389,8 @@
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
         private ReaLTaiizor.Controls.PoisonDateTime dtpEndDate;
-        private ReaLTaiizor.Controls.MetroRichTextBox metroRichTextBox1;
+        private ReaLTaiizor.Controls.MetroRichTextBox txtSummary;
+        private ReaLTaiizor.Controls.AirButton btnConfirmBooking;
+        private ReaLTaiizor.Controls.AirButton btnCancelBooking;
     }
 }
