@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 namespace Phumla.Data
 {
     //generic DB class
@@ -30,14 +31,14 @@ namespace Phumla.Data
         {
             try
             {
-                
+
                 connection = new SqlConnection(s);
                 ds = new DataSet();
 
             }
             catch (SystemException e)
             {
-                System.Windows.Forms.MessageBox.Show(e.Message + " Error", "Error");
+                MessageBox.Show("Connection Error", e.Message);
                 return;
             }
         }
@@ -56,7 +57,7 @@ namespace Phumla.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("ERROR "+ e.Message);
+                Console.WriteLine("ERROR " + e.Message);
             }
         }
         public void closeConnection()
@@ -68,10 +69,11 @@ namespace Phumla.Data
         }
         #endregion
         #region UpdateSource
-        protected bool UpdateDataSource(string query, string table)
+        public bool UpdateDataSource(string query, string table)
         {
             try
             {
+                adapter = new SqlDataAdapter(query, connection);
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
                 try
                 {
@@ -88,14 +90,14 @@ namespace Phumla.Data
             }
             catch (SystemException e)
             {
-                System.Windows.Forms.MessageBox.Show(e.Message + "Error", "Error");
+                MessageBox.Show("Connection Error", e.Message);
                 return false;
             }
         }
         #endregion
 
         #region CRUD
-        
+
         #endregion
 
 
@@ -139,12 +141,12 @@ namespace Phumla.Data
                     row["outstandingpayments"] = guest.Outstanding;
                     ds.Tables[table].Rows.Add(row);
 
-                    ;
+                    
                     return UpdateDataSource("SELECT * FROM Guest", table);
                 }
                 else if (g.GetType() == typeof(Booking))
                 {
-                    Booking b = new Booking( (Booking)g);
+                    Booking b = new Booking((Booking)g);
 
                     row["id"] = b.ID;
                     row["roomid"] = b.RoomNumber;
@@ -157,7 +159,7 @@ namespace Phumla.Data
                     ds.Tables[table].Rows.Add(row);
 
                     row["bill"] = b.Bill;
-                    
+
 
                     return UpdateDataSource("SELECT * FROM Booking", table);
                 }
@@ -170,13 +172,13 @@ namespace Phumla.Data
                     row["expiryDate"] = bd.ExpiryDate;
                     ds.Tables[table].Rows.Add(row);
 
-                     
+
 
                     return UpdateDataSource("SELECT * FROM BankingDetails", table);
                 }
                 else if (g.GetType() == typeof(Payment))
                 {
-                    Payment p = new Payment((Payment) g);
+                    Payment p = new Payment((Payment)g);
                     row["paymentid"] = p.PaymentID;
                     row["guestid"] = p.GuestID;
                     row["amount"] = p.Amount;
@@ -185,7 +187,7 @@ namespace Phumla.Data
                     row["time"] = p.Time;
                     ds.Tables[table].Rows.Add(row);
 
-                     ;
+                    ;
 
                     return UpdateDataSource("SELECT * FROM Payment", table);
                 }
@@ -198,13 +200,13 @@ namespace Phumla.Data
                     Console.WriteLine(row["employeeid"]);
                     ds.Tables[table].Rows.Add(row);
 
-                    
+
 
                     return UpdateDataSource("SELECT * FROM Employee", table);
                 }
                 else if (g.GetType() == typeof(Address))
                 {
-                    Address a = new Address((Address) g);
+                    Address a = new Address((Address)g);
                     row["id"] = a.ID;
                     row["number"] = a.HouseNumber;
                     row["street"] = a.Street;
@@ -213,13 +215,13 @@ namespace Phumla.Data
                     row["postalcode"] = a.Postalcode;
                     ds.Tables[table].Rows.Add(row);
 
-                     ;
+                    ;
 
                     return UpdateDataSource("SELECT * FROM Address", table);
                 }
                 else if (g.GetType() == typeof(Room))
                 {
-                    Room r = new Room((Room) g);
+                    Room r = new Room((Room)g);
                     row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
                     string d = Convert.ToString(row["date_under_use"]);
@@ -240,13 +242,28 @@ namespace Phumla.Data
                         hour, minute, second
                         );
                     ds.Tables[table].Rows.Add(row);
-                     ;
+                    ;
                     return UpdateDataSource("SELECT * FROM ROOM", table);
                 }
             }
             return false;
 
-            
+
+        }
+
+        public void createTable(string createcommand)
+        {
+            SqlCommand comm = new SqlCommand(createcommand, connection);
+            try
+            {
+                connection.Open();
+                comm.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: ", ex.Message); 
+            }
         }
     }
 }
