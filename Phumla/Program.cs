@@ -32,11 +32,19 @@ namespace Phumla
             Employee.AccessLevel employee = employeeDB.checkLoginDetails(110113, "eishyahneh");
             //new Email().sendCheckIn(g, b, "mewingbitch", "Booking Confirmation: " + g.Name, "PK HOTEL1", "GAAAAAA", "AAAAAAAAA" , "55A, 55B, 56C");
             */
-            /*DB db = new DB();
-            string createcommand = @"CREATE TABLE Hotel
-                                     (hotelId bigint PRIMARY KEY,
-                                      name varchar(13) NOT NULL,
-                                      numRooms bigint NOT NULL     
+            DB db = new DB();
+           /* string createcommand = @"CREATE TABLE Booking
+                                     (id bigint IDENTITY(1,1) not null,
+                                     guestid bigint not null,
+                                      hotelid bigint not null,
+                                      roomid  text,
+                                      bookingdate date not null,
+                                      bookingtime time not null,
+                                      bookingend DATE not null,
+                                      depositstatus int not null,
+                                      checkin int not null,
+                                      bill double precision,
+                                      CONSTRAINT Booking_Details PRIMARY KEY (id, guestid, hotelid)
                                     );";
             db.createTable(createcommand);*/
 

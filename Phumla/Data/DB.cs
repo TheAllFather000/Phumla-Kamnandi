@@ -57,7 +57,7 @@ namespace Phumla.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("ERROR " + e.Message);
+                MessageBox.Show(e.Message, e.StackTrace);
             }
         }
         public void closeConnection()
@@ -83,7 +83,7 @@ namespace Phumla.Data
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    MessageBox.Show(e.Message, e.StackTrace);
                 }
                 Fill(query, table);
                 return true;

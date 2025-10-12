@@ -35,7 +35,7 @@ namespace Phumla.Business
             {
                 foreach(Hotel hotel in hotels)
                 {
-                    Room room = new Room(false,);
+                    
                 }
             }
             catch (Exception ex) 
