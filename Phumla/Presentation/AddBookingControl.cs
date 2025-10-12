@@ -11,10 +11,12 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Xml.Serialization;
 
 namespace Phumla.Presentation
 {
@@ -23,8 +25,12 @@ namespace Phumla.Presentation
         private const int GUEST_MAX = 4;
         private int guestCount = 1;
         private GuestDB guestDB;
+        private HotelDB hotelDB;
         private Collection<Guest> guests;
+        private Collection<Hotel> hotels;
         private string connectionString = Settings.Default.PKDatabaseConnectionString;
+        private bool GuestsValid {  get; set; }
+        private bool DatesValid { get; set; }
         public AddBookingControl()
         {
             InitializeComponent();
@@ -59,7 +65,19 @@ namespace Phumla.Presentation
         private void AddBookingControl_Load(object sender, EventArgs e)
         {
             guestDB = new GuestDB();
+            hotelDB = new HotelDB();
             guests = guestDB.Guests; // Guests is now populated
+            hotels = hotelDB.Hotels; // Hotels too.
+
+            cbxHotels.Items.Clear();
+            foreach (Hotel hotel in hotels)
+            { 
+                cbxHotels.Items.Add(hotel.HotelID + " - " + hotel.HotelName);
+            }
+
+            dtpEndDate.MinDate = dtpStartDate.MinDate = DateTime.Today;
+
+
             lblGuest1Status.Text = "";
             /*lsvGuests.View = View.Details;
             lsvGuests.Columns.Add("d", 20, HorizontalAlignment.Left);
@@ -229,6 +247,7 @@ namespace Phumla.Presentation
                 else 
                 {
                     guestStatus.Text = "Guest not found. Create new guest?";
+                    // Make it Underlined
                 }
             }
         }
@@ -241,9 +260,47 @@ namespace Phumla.Presentation
                 
             }
         }
+        private void searchStatuses (Control ctrl) {
+            foreach (Control child in ctrl.Controls)
+            {
+                if (child.Name.EndsWith("Status")) 
+                {
+                    Label label = (Label) child; 
+                    if (label.Text.Contains("Guest not found. Create new guest?"))
+                    {
+                        GuestsValid = false;
+                        break;
+                    }
+                }
 
+                if (ctrl.HasChildren)
+                {
+                    searchStatuses(child);
+                }
+
+            }
+        }
+
+        private void isDatesValid()
+        {
+            if (dtpEndDate.Value < dtpStartDate.Value)
+            {
+                MessageBox.Show("End date value cannot be before Start date value.", "Date Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DatesValid = false;
+                return;
+            }
+            DatesValid = true;
+
+        }
         private void btnConfirmBooking_Click(object sender, EventArgs e)
         {
+            searchStatuses(flpAddGuests);
+            isDatesValid();
+            // First confirm all the information has been entered
+            if (GuestsValid  && DatesValid) 
+            {
+                
+            }
 
         }
     }

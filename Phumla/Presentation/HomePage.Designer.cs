@@ -43,9 +43,9 @@
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
             this.tbcHomePage = new ReaLTaiizor.Controls.MetroTabControl();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.poisonContextMenuStrip1.SuspendLayout();
             this.parrotGradientPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -91,8 +91,8 @@
             // 
             // parrotGradientPanel1
             // 
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Navy;
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Indigo;
             this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             this.parrotGradientPanel1.Controls.Add(this.tableLayoutPanel1);
             this.parrotGradientPanel1.Controls.Add(this.flowLayoutPanel1);
@@ -107,8 +107,8 @@
             this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             this.parrotGradientPanel1.TabIndex = 13;
             this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.DeepSkyBlue;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Fuchsia;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.DarkOrange;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Indigo;
             // 
             // tableLayoutPanel1
             // 
@@ -218,6 +218,26 @@
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
+            // parrotPictureBox1
+            // 
+            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox1.FilterAlpha = 200;
+            this.parrotPictureBox1.FilterEnabled = true;
+            this.parrotPictureBox1.Image = global::Phumla.Properties.Resources.images1;
+            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox1.IsElipse = false;
+            this.parrotPictureBox1.IsParallax = false;
+            this.parrotPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.parrotPictureBox1.Name = "parrotPictureBox1";
+            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox1.Size = new System.Drawing.Size(87, 71);
+            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox1.TabIndex = 11;
+            this.parrotPictureBox1.Text = "parrotPictureBox1";
+            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
@@ -253,26 +273,6 @@
             this.tbcHomePage.ThemeName = "MetroLight";
             this.tbcHomePage.UnselectedTextColor = System.Drawing.Color.Gray;
             this.tbcHomePage.SelectedIndexChanged += new System.EventHandler(this.tbcHomePage_SelectedIndexChanged);
-            // 
-            // parrotPictureBox1
-            // 
-            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox1.FilterAlpha = 200;
-            this.parrotPictureBox1.FilterEnabled = true;
-            this.parrotPictureBox1.Image = global::Phumla.Properties.Resources.images1;
-            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox1.IsElipse = false;
-            this.parrotPictureBox1.IsParallax = false;
-            this.parrotPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.parrotPictureBox1.Name = "parrotPictureBox1";
-            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox1.Size = new System.Drawing.Size(87, 71);
-            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox1.TabIndex = 11;
-            this.parrotPictureBox1.Text = "parrotPictureBox1";
-            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // HomePage
             // 
