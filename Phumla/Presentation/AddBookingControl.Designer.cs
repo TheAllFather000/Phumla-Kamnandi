@@ -39,7 +39,7 @@
             this.btnRemoveGuest = new ReaLTaiizor.Controls.AirButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHotelID = new System.Windows.Forms.Label();
-            this.skyComboBox1 = new ReaLTaiizor.Controls.SkyComboBox();
+            this.cbxHotels = new ReaLTaiizor.Controls.SkyComboBox();
             this.dtpStartDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblStartDate = new System.Windows.Forms.Label();
@@ -188,7 +188,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.lblHotelID);
-            this.flowLayoutPanel1.Controls.Add(this.skyComboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.cbxHotels);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 87);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(532, 35);
@@ -204,24 +204,24 @@
             this.lblHotelID.TabIndex = 2;
             this.lblHotelID.Text = "Hotel ID:  ";
             // 
-            // skyComboBox1
+            // cbxHotels
             // 
-            this.skyComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skyComboBox1.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.skyComboBox1.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.skyComboBox1.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.skyComboBox1.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.skyComboBox1.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.skyComboBox1.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
-            this.skyComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.skyComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skyComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.skyComboBox1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
-            this.skyComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyComboBox1.FormattingEnabled = true;
-            this.skyComboBox1.ItemHeight = 16;
-            this.skyComboBox1.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-            this.skyComboBox1.Items.AddRange(new object[] {
+            this.cbxHotels.BackColor = System.Drawing.Color.Transparent;
+            this.cbxHotels.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cbxHotels.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.cbxHotels.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.cbxHotels.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.cbxHotels.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.cbxHotels.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.cbxHotels.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxHotels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxHotels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxHotels.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+            this.cbxHotels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.cbxHotels.FormattingEnabled = true;
+            this.cbxHotels.ItemHeight = 16;
+            this.cbxHotels.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+            this.cbxHotels.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -232,24 +232,24 @@
             "8",
             "9",
             "10"});
-            this.skyComboBox1.LineColorA = System.Drawing.Color.White;
-            this.skyComboBox1.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.skyComboBox1.LineColorC = System.Drawing.Color.White;
-            this.skyComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.skyComboBox1.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.skyComboBox1.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.skyComboBox1.ListForeColor = System.Drawing.Color.Black;
-            this.skyComboBox1.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.skyComboBox1.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.skyComboBox1.Location = new System.Drawing.Point(73, 3);
-            this.skyComboBox1.Name = "skyComboBox1";
-            this.skyComboBox1.Size = new System.Drawing.Size(161, 22);
-            this.skyComboBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.skyComboBox1.StartIndex = 0;
-            this.skyComboBox1.TabIndex = 20;
-            this.skyComboBox1.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-            this.skyComboBox1.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyComboBox1.SelectedIndexChanged += new System.EventHandler(this.skyComboBox1_SelectedIndexChanged);
+            this.cbxHotels.LineColorA = System.Drawing.Color.White;
+            this.cbxHotels.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.cbxHotels.LineColorC = System.Drawing.Color.White;
+            this.cbxHotels.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxHotels.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxHotels.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.cbxHotels.ListForeColor = System.Drawing.Color.Black;
+            this.cbxHotels.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxHotels.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxHotels.Location = new System.Drawing.Point(73, 3);
+            this.cbxHotels.Name = "cbxHotels";
+            this.cbxHotels.Size = new System.Drawing.Size(161, 22);
+            this.cbxHotels.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cbxHotels.StartIndex = 0;
+            this.cbxHotels.TabIndex = 20;
+            this.cbxHotels.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+            this.cbxHotels.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.cbxHotels.SelectedIndexChanged += new System.EventHandler(this.skyComboBox1_SelectedIndexChanged);
             // 
             // dtpStartDate
             // 
@@ -320,7 +320,7 @@
             this.txtSummary.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.txtSummary.StyleManager = null;
             this.txtSummary.TabIndex = 22;
-            this.txtSummary.Text = "metroRichTextBox1";
+            this.txtSummary.Text = "Summary:";
             this.txtSummary.ThemeAuthor = "Taiizor";
             this.txtSummary.ThemeName = "MetroLight";
             this.txtSummary.WordWrap = true;
@@ -394,7 +394,7 @@
         private ReaLTaiizor.Controls.AirButton btnRemoveGuest;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lblHotelID;
-        private ReaLTaiizor.Controls.SkyComboBox skyComboBox1;
+        private ReaLTaiizor.Controls.SkyComboBox cbxHotels;
         private System.Windows.Forms.Label lblGuest1Status;
         private ReaLTaiizor.Controls.PoisonDateTime dtpStartDate;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

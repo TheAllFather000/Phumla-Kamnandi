@@ -49,8 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>PhumlaAppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -106,29 +105,11 @@
     <Compile Include="Presentation\AddBookingControl.Designer.cs">
       <DependentUpon>AddBookingControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AddGuest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\AddGuest.Designer.cs">
-      <DependentUpon>AddGuest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\BankingDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\BankingDetails.Designer.cs">
-      <DependentUpon>BankingDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\CreateReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\CreateReport.Designer.cs">
       <DependentUpon>CreateReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\AddBooking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\AddBooking.Designer.cs">
-      <DependentUpon>AddBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\DeleteBookingControl.cs">
       <SubType>UserControl</SubType>
@@ -141,12 +122,6 @@
     </Compile>
     <Compile Include="Presentation\EditBookingControl.Designer.cs">
       <DependentUpon>EditBookingControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\FindGuest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\FindGuest.Designer.cs">
-      <DependentUpon>FindGuest.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\HomePage.cs">
       <SubType>Form</SubType>
@@ -177,19 +152,8 @@
     <EmbeddedResource Include="Presentation\AddBookingControl.resx">
       <DependentUpon>AddBookingControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddGuest.resx">
-      <DependentUpon>AddGuest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\BankingDetails.resx">
-      <DependentUpon>BankingDetails.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CreateReport.resx">
       <DependentUpon>CreateReport.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddBooking.resx">
-      <DependentUpon>AddBooking.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\DeleteBookingControl.resx">
@@ -197,10 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\EditBookingControl.resx">
       <DependentUpon>EditBookingControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FindGuest.resx">
-      <DependentUpon>FindGuest.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -256,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PhumlaAppIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
