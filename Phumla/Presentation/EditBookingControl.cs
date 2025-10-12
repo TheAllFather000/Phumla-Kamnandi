@@ -98,9 +98,9 @@ namespace Phumla.Presentation
             Bill = Convert.ToDouble(txtBill.Text);
             // Optional: 
             // Time = txtTime.Text;
-            Booking booking = new Booking(BookingID, HotelID, CheckedIn, StartDate, EndDate, "Blank", RoomNumber, DepositStatus, Bill);
+            //Booking booking = new Booking(BookingID, HotelID, CheckedIn, StartDate, EndDate, "Blank", RoomNumber, DepositStatus, Bill);
 
-            bookingDB.editBooking(booking);
+            //bookingDB.editBooking(booking);
             bookings = bookingDB.Bookings;
             loadListView();
 

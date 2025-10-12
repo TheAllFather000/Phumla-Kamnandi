@@ -36,9 +36,9 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Hotel h = new Hotel();
-                h.HotelID = Convert.ToInt32(r["hotelId"]);
+                h.HotelID = Convert.ToInt32(r["id"]);
                 h.HotelName = Convert.ToString(r["name"]);
-                h.RoomNumber = Convert.ToInt32(r["numRooms"]);
+                h.RoomNumber = Convert.ToInt32(r["rooms"]);
                 hotels.Add(h);
             }
         }

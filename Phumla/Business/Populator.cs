@@ -15,28 +15,32 @@ namespace Phumla.Business
      */
     internal class Populator
     {
-        HotelDB hotelDB;
-        Collection<Hotel> hotels;
-        RoomDB roomDB;
-        Collection<Room> rooms;
+        private HotelDB hotelDB;
+        private  Collection<Hotel> hotels;
+        private  RoomDB roomDB;
 
         public Populator() 
         { 
             hotelDB = new HotelDB();
             hotels = hotelDB.Hotels;
             roomDB = new RoomDB();
-            rooms = roomDB.Rooms;
             populateHotels();
         }
 
-        public void populateHotels()
+        /*
+         * Populates the hotels with rooms.
+         */
+        public  void populateHotels()
         {
             try
             {
                 foreach(Hotel hotel in hotels)
                 {
-                    
-                    //Room room = new Room(false,);
+                    Console.WriteLine(hotel.HotelName);
+
+                    Room room = new Room(1.ToString(), hotel.HotelID, DateTime.Today, 0); // Open by default. Also Room is indexed.
+                    roomDB.AddRoom(room);
+                   
                 }
             }
             catch (Exception ex) 

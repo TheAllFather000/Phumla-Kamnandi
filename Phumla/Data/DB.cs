@@ -225,7 +225,7 @@ namespace Phumla.Data
                     Room r = new Room((Room)g);
                     row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
-                    string d = Convert.ToString(row["date_under_use"]);
+                    string d = Convert.ToString(row["date_available"]);
                     d.Replace("/", "-");
                     d.Replace("AM", "");
                     d.Replace("PM", "");

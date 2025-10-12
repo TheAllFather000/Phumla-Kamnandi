@@ -35,23 +35,13 @@ namespace Phumla.Data
                 Room room = new Room();
                 room.RoomID = Convert.ToString(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
-                string d = Convert.ToString(r["date_under_use"]);
+                string d = Convert.ToString(r["date_available"]);
                 d.Replace("/", "-");
                 d.Replace("AM", "");
                 d.Replace("PM", "");
                 d.Trim();
                 string[] datetime = d.Split(' ');
-                int year = Convert.ToInt32(d[0]);
-                int month = Convert.ToInt32(d[1]);
-                int day = Convert.ToInt32(d[2]);
-                int hour = Convert.ToInt32(d[3]);
-                int minute = Convert.ToInt32(d[4]);
-                int second = Convert.ToInt32(d[5]);
-                room.DateAvailable = new DateTime
-                    (
-                    year, month, day,
-                    hour, minute, second
-                    );
+                room.DateAvailable = Convert.ToDateTime(r["date_available"]);
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));
                 rooms.Add(room);
             }
@@ -73,16 +63,25 @@ namespace Phumla.Data
             getAllRooms();
 
         }
+
+        public void AddRoom(Room room)
+        {
+            DataRow r = ds.Tables[table].NewRow();
+            FillRow(r, room, table, Operation.Add);
+            getAllRooms();
+
+        }
+
         public Collection<Room> checkRoomAvailability(DateTime date)
         {
             Collection<Room> collection = new Collection<Room>();
-            Fill("SELECT * FROM Room where date_under_use <= '" + date.ToString("yyyy-MM-dd HH:mm:ss") + "'", table);
+            Fill("SELECT * FROM Room where date_available <= '" + date.ToString("yyyy-MM-dd HH:mm:ss") + "'", table);
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Room room = new Room();
                 room.RoomID = Convert.ToString(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
-                string d = Convert.ToString(r["date_under_use"]);
+                string d = Convert.ToString(r["date_available"]);
                 d.Replace("/", "-");
                 d.Replace("AM", "");
                 d.Replace("PM", "");
