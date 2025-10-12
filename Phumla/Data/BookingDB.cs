@@ -36,6 +36,7 @@ namespace Phumla.Data
                 b.ID = Convert.ToString(r["id"]);
                 b.Bill = Convert.ToDouble(r["bill"]);
                 b.RoomNumber = Convert.ToString(r["roomid"]);
+                b.BookingID = Convert.ToString(r["bookingid"]);
                 b.HotelID = Convert.ToString(r["hotelid"]);
                 b.CheckedIn = Convert.ToInt32(r["checkin"]) == 1 ? true : false;
                 b.BookingDate = Convert.ToString(r["bookingdate"]);

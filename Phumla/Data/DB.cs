@@ -150,6 +150,7 @@ namespace Phumla.Data
 
                     row["id"] = b.ID;
                     row["roomid"] = b.RoomNumber;
+                    row["bookingid"] = b.BookingID;
                     row["hotelid"] = b.HotelID;
                     b.CheckedIn = Convert.ToInt32(row["checkin"]) == 1 ? true : false;
                     row["bookingtime"] = b.BookingTime;
