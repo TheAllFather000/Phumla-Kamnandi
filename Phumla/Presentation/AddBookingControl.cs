@@ -3,6 +3,7 @@ using Phumla.Data;
 using Phumla.Properties;
 using ReaLTaiizor.Child.Metro;
 using ReaLTaiizor.Controls;
+using ReaLTaiizor.Enum.Crown;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,12 +26,15 @@ namespace Phumla.Presentation
         private const int GUEST_MAX = 4;
         private int guestCount = 1;
         private GuestDB guestDB;
+        private BookingDB bookingDB;
         private HotelDB hotelDB;
         private Collection<Guest> guests;
+        private Collection<Booking> bookings;
         private Collection<Hotel> hotels;
         private string connectionString = Settings.Default.PKDatabaseConnectionString;
         private bool GuestsValid {  get; set; }
         private bool DatesValid { get; set; }
+        private bool RoomAvailable {  get; set; }
         public AddBookingControl()
         {
             InitializeComponent();
@@ -299,7 +303,11 @@ namespace Phumla.Presentation
             // First confirm all the information has been entered
             if (GuestsValid  && DatesValid) 
             {
-                
+                DialogResult result = MessageBox.Show("Finished with the guest's details?", "Finalise Booking", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    booking
+                }
             }
 
         }

@@ -77,7 +77,8 @@ namespace Phumla.Presentation
                     try
                     {
                         bookingDB.cancelBooking(booking);
-                        //Email email = new Email(booking.ID);
+                        Email email = new Email();
+                        email.Delete(, booking); // Ask Ibrahim to update the booking class
                         MessageBox.Show("Booking cancelled successfully. A notification has been sent to the guest.");
                     }
                     catch { MessageBox.Show("An error occured while atttempting to delete the record. Try again.", "ERROR"); }
