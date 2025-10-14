@@ -240,18 +240,21 @@ namespace Phumla.Presentation
             foreach (Guest guest in guests)
             {
                 //MessageBox.Show(guest.ID);
-                if (ptb.Text == guest.ID && !string.IsNullOrEmpty(txtGuest1.Text))
-                {
-                    guestStatus.Text = "Guest found.";
-                    break;
-                }
-                else if (string.IsNullOrEmpty(txtGuest1.Text)) {
-                    guestStatus.Text = "";
+                if ((ptb.Text.Length >= 13)) {
+                    if ((ptb.Text == guest.ID) && (!string.IsNullOrEmpty(txtGuest1.Text))) 
+                    {
+                        guestStatus.Text = "Guest found.";
+                        break;
+                    }
+                    else
+                    {
+                        guestStatus.Text = "Guest not found. Create new guest?";
+                        // Make it Underlined
+                    }
                 }
                 else 
                 {
-                    guestStatus.Text = "Guest not found. Create new guest?";
-                    // Make it Underlined
+                    guestStatus.Text = "";
                 }
             }
         }
@@ -301,7 +304,7 @@ namespace Phumla.Presentation
             searchStatuses(flpAddGuests);
             isDatesValid();
             // First confirm all the information has been entered
-            if (GuestsValid  && DatesValid) 
+            if (GuestsValid  && DatesValid && string.IsNullOrEmpty(cbxHotels.Text)) 
             {
                 DialogResult result = MessageBox.Show("Finished with the guest's details?", "Finalise Booking", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)

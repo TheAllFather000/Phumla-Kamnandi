@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phumla.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,10 @@ namespace Phumla.Presentation
     public partial class BankDetailsControl : UserControl
     {
         public event EventHandler GoBack;
+        private Guest guest;
+        private string cardNumber;
+        private DateTime expiryDate;
+        private int cvv;
         public BankDetailsControl()
         {
             InitializeComponent();
@@ -25,8 +30,12 @@ namespace Phumla.Presentation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ShowTime");
             GoBack?.Invoke(this, EventArgs.Empty); // Fires the event to the parent
+        }
+
+        private void btnFinaliseGuestAccount_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

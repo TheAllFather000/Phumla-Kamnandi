@@ -8,19 +8,19 @@ namespace Phumla.Business
 {
     public class BankingDetails
     {
-        
+
         private string idNumber;
         private long cardNumber;
         private int cvv;
         private string expiryDate;
-        
+        private const int cardLength = 16; // The stanadard for Mastercard and the others.
 
         public string IDNumber
         { get { return idNumber; } set { idNumber = value; } }
         public long CardNumber
-            { get { return cardNumber; } set { cardNumber = value; } }
+        { get { return cardNumber; } set { cardNumber = value; } }
         public int CVV
-        {  get { return cvv; } set { cvv = value; } }
+        { get { return cvv; } set { cvv = value; } }
 
         public string ExpiryDate
         { get { return expiryDate; } set { expiryDate = value; } }
@@ -35,9 +35,9 @@ namespace Phumla.Business
         public BankingDetails(string id, long card, int cvv, string ex)
         {
             this.idNumber = id;
-            this.cardNumber=card;
+            this.cardNumber = card;
             this.cvv = cvv;
-            this.expiryDate=ex;
+            this.expiryDate = ex;
         }
         public BankingDetails(BankingDetails bd)
         {
@@ -48,6 +48,20 @@ namespace Phumla.Business
 
         }
 
+        public bool isCardNumberValid(long cardNumber)
+        {
+            return Convert.ToString(cardNumber).Length == cardLength;
+        }
+
+        public bool isCvvValid(int cvv)
+        {
+            return (Convert.ToString(cvv).Length == 3) || ( Convert.ToString(cvv).Length == 4)
+            ;
+        }
+        public bool isCardExpired(DateTime date)
+        {
+            return date > DateTime.Today;
+        } 
 
     }
 }

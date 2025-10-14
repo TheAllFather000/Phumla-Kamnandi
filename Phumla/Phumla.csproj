@@ -224,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PhumlaAppIcon.ico" />
+    <None Include="PhumlaAppIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

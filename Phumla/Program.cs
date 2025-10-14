@@ -50,7 +50,7 @@ namespace Phumla
            // populator.populateHotels();
             SummaryReport summaryReport = new SummaryReport();
             summaryReport.GenerateSummaryReport();
-            Application.Run();
+            Application.Run(new Presentation.HomePage());
         }
     }
 }

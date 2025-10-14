@@ -43,13 +43,14 @@
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
             this.tbcHomePage = new ReaLTaiizor.Controls.MetroTabControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.poisonContextMenuStrip1.SuspendLayout();
             this.parrotGradientPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // poisonContextMenuStrip1
@@ -169,6 +170,7 @@
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnAddBooking
             // 
@@ -209,7 +211,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.parrotPictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Controls.Add(this.lblWelcome);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -218,33 +220,13 @@
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
-            // parrotPictureBox1
-            // 
-            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox1.FilterAlpha = 200;
-            this.parrotPictureBox1.FilterEnabled = true;
-            this.parrotPictureBox1.Image = global::Phumla.Properties.Resources.images1;
-            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox1.IsElipse = false;
-            this.parrotPictureBox1.IsParallax = false;
-            this.parrotPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.parrotPictureBox1.Name = "parrotPictureBox1";
-            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox1.Size = new System.Drawing.Size(87, 71);
-            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox1.TabIndex = 11;
-            this.parrotPictureBox1.Text = "parrotPictureBox1";
-            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblWelcome.Location = new System.Drawing.Point(96, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(99, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(154, 72);
             this.lblWelcome.TabIndex = 10;
@@ -274,6 +256,17 @@
             this.tbcHomePage.UnselectedTextColor = System.Drawing.Color.Gray;
             this.tbcHomePage.SelectedIndexChanged += new System.EventHandler(this.tbcHomePage_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Phumla.Properties.Resources.PhumlaAppIcon;
+            this.pictureBox1.Image = global::Phumla.Properties.Resources.PhumlaAppIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,7 +276,7 @@
             this.Controls.Add(this.parrotGradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomePage";
-            this.Text = "Home Page: [HOTEL ID]";
+            this.Text = "Home Page";
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.poisonContextMenuStrip1.ResumeLayout(false);
             this.parrotGradientPanel1.ResumeLayout(false);
@@ -291,6 +284,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,8 +304,8 @@
         private System.Windows.Forms.Button btnDeleteBooking;
         private System.Windows.Forms.Button btnEditBooking;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;
         private ReaLTaiizor.Controls.HeaderLabel lblWelcome;
         private ReaLTaiizor.Controls.MetroTabControl tbcHomePage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

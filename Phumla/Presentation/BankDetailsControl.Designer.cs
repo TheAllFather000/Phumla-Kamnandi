@@ -270,6 +270,7 @@
             this.btnFinaliseGuestAccount.TabIndex = 37;
             this.btnFinaliseGuestAccount.Text = "Finalise Guest Account";
             this.btnFinaliseGuestAccount.UseVisualStyleBackColor = true;
+            this.btnFinaliseGuestAccount.Click += new System.EventHandler(this.btnFinaliseGuestAccount_Click);
             // 
             // lblAddGuest
             // 
