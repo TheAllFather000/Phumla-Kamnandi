@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using Microsoft.Office.Interop.Excel;
+using Microsoft.SqlServer.Server;
 using Phumla.Business;
 using System;
 using System.Collections.Generic;
@@ -35,12 +36,6 @@ namespace Phumla.Data
                 Room room = new Room();
                 room.RoomID = Convert.ToString(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
-                string d = Convert.ToString(r["date_available"]);
-                d.Replace("/", "-");
-                d.Replace("AM", "");
-                d.Replace("PM", "");
-                d.Trim();
-                string[] datetime = d.Split(' ');
                 room.DateAvailable = Convert.ToDateTime(r["date_available"]);
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));
                 rooms.Add(room);
@@ -72,6 +67,20 @@ namespace Phumla.Data
 
         }
 
+        public string generateRoomID()
+        {
+            int max = 0;
+            foreach (DataRow row in ds.Tables[table].Rows)
+            {
+                string roomID = Convert.ToString(row["roomid"]);
+                if (int.TryParse(roomID, out int currentID))
+                {
+                    max = Math.Max(max, currentID);
+                }
+            }
+            return (max + 1).ToString();
+        }
+
         public Collection<Room> checkRoomAvailability(DateTime date)
         {
             Collection<Room> collection = new Collection<Room>();
@@ -81,23 +90,7 @@ namespace Phumla.Data
                 Room room = new Room();
                 room.RoomID = Convert.ToString(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
-                string d = Convert.ToString(r["date_available"]);
-                d.Replace("/", "-");
-                d.Replace("AM", "");
-                d.Replace("PM", "");
-                d.Trim();
-                string[] datetime = d.Split(' ');
-                int year = Convert.ToInt32(d[0]);
-                int month = Convert.ToInt32(d[1]);
-                int day = Convert.ToInt32(d[2]);
-                int hour = Convert.ToInt32(d[3]);
-                int minute = Convert.ToInt32(d[4]);
-                int second = Convert.ToInt32(d[5]);
-                room.DateAvailable = new DateTime
-                    (
-                    year, month, day,
-                    hour, minute, second
-                    );
+                room.DateAvailable = Convert.ToDateTime(r["date_available"]);
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));
                 collection.Add(room);
             }

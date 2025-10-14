@@ -80,14 +80,11 @@
     <Compile Include="Business\Booking.cs" />
     <Compile Include="Business\Email.cs" />
     <Compile Include="Business\Guest.cs" />
-    <Compile Include="Business\GuestController.cs" />
     <Compile Include="Business\Hotel.cs" />
     <Compile Include="Business\Payment.cs" />
-    <Compile Include="Business\PaymentController.cs" />
     <Compile Include="Business\Person.cs" />
-    <Compile Include="Business\Populator.cs" />
+    <Compile Include="Business\HotelPopulator.cs" />
     <Compile Include="Business\Room.cs" />
-    <Compile Include="Business\RoomController.cs" />
     <Compile Include="Business\SummaryReport.cs" />
     <Compile Include="Data\EmployeeDB.cs" />
     <Compile Include="Data\AddressDB.cs" />

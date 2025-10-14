@@ -161,7 +161,6 @@ namespace Phumla.Data
 
                     row["bill"] = b.Bill;
 
-
                     return UpdateDataSource("SELECT * FROM Booking", table);
                 }
                 else if (g.GetType() == typeof(BankingDetails))
@@ -172,9 +171,6 @@ namespace Phumla.Data
                     row["cvv"] = bd.CVV;
                     row["expiryDate"] = bd.ExpiryDate;
                     ds.Tables[table].Rows.Add(row);
-
-
-
                     return UpdateDataSource("SELECT * FROM BankingDetails", table);
                 }
                 else if (g.GetType() == typeof(Payment))
@@ -187,9 +183,6 @@ namespace Phumla.Data
                     row["date"] = p.Date;
                     row["time"] = p.Time;
                     ds.Tables[table].Rows.Add(row);
-
-                    ;
-
                     return UpdateDataSource("SELECT * FROM Payment", table);
                 }
                 else if (g.GetType() == typeof(Employee))
@@ -200,9 +193,6 @@ namespace Phumla.Data
                     row["accesslevel"] = a.Level;
                     Console.WriteLine(row["employeeid"]);
                     ds.Tables[table].Rows.Add(row);
-
-
-
                     return UpdateDataSource("SELECT * FROM Employee", table);
                 }
                 else if (g.GetType() == typeof(Address))
@@ -215,36 +205,16 @@ namespace Phumla.Data
                     row["city"] = a.City;
                     row["postalcode"] = a.Postalcode;
                     ds.Tables[table].Rows.Add(row);
-
-                    ;
-
                     return UpdateDataSource("SELECT * FROM Address", table);
                 }
                 else if (g.GetType() == typeof(Room))
                 {
                     Room r = new Room((Room)g);
-                    row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
-                    string d = Convert.ToString(row["date_available"]);
-                    d.Replace("/", "-");
-                    d.Replace("AM", "");
-                    d.Replace("PM", "");
-                    d.Trim();
-                    string[] datetime = d.Split(' ');
-                    int year = Convert.ToInt32(d[0]);
-                    int month = Convert.ToInt32(d[1]);
-                    int day = Convert.ToInt32(d[2]);
-                    int hour = Convert.ToInt32(d[3]);
-                    int minute = Convert.ToInt32(d[4]);
-                    int second = Convert.ToInt32(d[5]);
-                    r.DateAvailable = new DateTime
-                        (
-                        year, month, day,
-                        hour, minute, second
-                        );
+                    row["date_available"] = r.DateAvailable;
+                    row["status"] = r.Status;
                     ds.Tables[table].Rows.Add(row);
-                    ;
-                    return UpdateDataSource("SELECT * FROM ROOM", table);
+                    return UpdateDataSource("SELECT * FROM Room", table);
                 }
             }
             return false;
