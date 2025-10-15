@@ -180,7 +180,7 @@ namespace Phumla.Data
                 else if (g.GetType() == typeof(Payment))
                 {
                     Payment p = new Payment((Payment)g);
-                    row["paymentid"] = p.PaymentID;
+                    row["hotelid"] = p.HotelID;
                     row["guestid"] = p.GuestID;
                     row["amount"] = p.Amount;
                     row["reason"] = p.Reason;
