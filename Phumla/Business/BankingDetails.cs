@@ -48,19 +48,20 @@ namespace Phumla.Business
 
         }
 
-        public bool isCardNumberValid(long cardNumber)
+        public bool isCardNumberValid(string cardNumber)
         {
-            return Convert.ToString(cardNumber).Length == cardLength;
+            return Convert.ToString(cardNumber).Length == cardLength && !string.IsNullOrEmpty(cardNumber) 
+                && cardNumber.All(char.IsDigit);
         }
 
-        public bool isCvvValid(int cvv)
+        public bool isCvvValid(string cvv)
         {
-            return (Convert.ToString(cvv).Length == 3) || ( Convert.ToString(cvv).Length == 4)
-            ;
+            return (Convert.ToString(cvv).Length == 3) || ( Convert.ToString(cvv).Length == 4) && !(string.IsNullOrEmpty(cvv))
+                && cvv.All(char.IsDigit);
         }
         public bool isCardExpired(DateTime date)
         {
-            return date > DateTime.Today;
+            return date < DateTime.Today;
         } 
 
     }

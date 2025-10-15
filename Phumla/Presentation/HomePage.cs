@@ -56,6 +56,25 @@ namespace Phumla.Presentation
            
         }
 
+        /*
+         * Clears all tabs that don't match the tab name.
+         */
+        public void clearTabs(string tabName)
+        {
+            if (tbcHomePage.TabPages.Count == 0)
+            {
+                return;
+            }
+
+            for (int i = tbcHomePage.TabPages.Count - 1; i >= 0; i--)
+            {
+                TabPage page = tbcHomePage.TabPages[i];
+                if (page.Name != tabName)
+                {
+                    tbcHomePage.TabPages.RemoveAt(i);
+                }
+            }
+        }
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
 
@@ -67,10 +86,28 @@ namespace Phumla.Presentation
                 tbcHomePage.TabPages.Add(page);
                 tbcHomePage.SelectedTab = page;
 
-                AddBookingControl addGuest = new AddBookingControl();
+                AddGuestControl addGuest = new AddGuestControl();
                 addGuest.Dock = DockStyle.Fill;
                 page.Controls.Clear();
                 page.Controls.Add(addGuest);
+                clearTabs(tpgAddBookingString);
+
+            }
+            else if (tbcHomePage.TabPages.ContainsKey(tpgAddBookingString))
+            {
+                clearTabs(tpgAddBookingString);
+                if (tbcHomePage.SelectedTab.Name == tpgAddBookingString) { 
+                DialogResult result = MessageBox.Show("The Add Booking tab will reload.", "Are you sure?", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    TabPage existingPage = tbcHomePage.TabPages[tpgAddBookingString];
+                    existingPage.Controls.Clear();
+                    AddGuestControl addGuest = new AddGuestControl();
+                    addGuest.Dock = DockStyle.Fill;
+                    existingPage.Controls.Add(addGuest);
+                    tbcHomePage.SelectedTab = existingPage;
+                }
+            }
             }
             
             
@@ -85,12 +122,30 @@ namespace Phumla.Presentation
                 page.Text = "Edit Booking";
                 page.AutoScroll = true;
                 tbcHomePage.Controls.Add(page);
-            
+
                 EditBookingControl editBooking = new EditBookingControl();
                 page.Controls.Clear();
                 page.Controls.Add(editBooking);
+                clearTabs(tpgEditBookingString);
             }
-        }
+            else if (tbcHomePage.TabPages.ContainsKey(tpgAddBookingString))
+            {
+                clearTabs(tpgAddBookingString);
+                if (tbcHomePage.SelectedTab.Name == tpgAddBookingString)
+                {
+                    DialogResult result = MessageBox.Show("The Edit Booking tab will reload.", "Are you sure?", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        TabPage existingPage = tbcHomePage.TabPages[tpgAddBookingString];
+                        existingPage.Controls.Clear();
+                        BankDetailsControl addGuest = new BankDetailsControl();
+                        addGuest.Dock = DockStyle.Fill;
+                        existingPage.Controls.Add(addGuest);
+                        tbcHomePage.SelectedTab = existingPage;
+                    }
+                }
+            }
+            }
         private void btnDeleteBooking_Click(object sender, EventArgs e)
         {
             if (!tbcHomePage.TabPages.ContainsKey(tpgDeleteBookingString))

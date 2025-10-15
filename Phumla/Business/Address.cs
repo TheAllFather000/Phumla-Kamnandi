@@ -64,6 +64,16 @@ namespace Phumla.Business
 
         }
 
+        public bool isPostalCodeValid (string postalCode)
+        {
+            return !string.IsNullOrEmpty(postalCode) && postalCode.All(char.IsDigit) && (postalcode.Length == 4); 
+        }
+
+        public bool isAddressValid (string address)
+        {
+            return !string.IsNullOrWhiteSpace(address)
+                && address.Any(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)) && address.Length > 5;
+        }
 
         public override string ToString()
         {

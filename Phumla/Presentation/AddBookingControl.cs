@@ -45,27 +45,6 @@ namespace Phumla.Presentation
 
         }
 
-        /*       private void cyberButton1_Click(object sender, EventArgs e)
-               {
-                   flowLayoutPanel1.Controls.Add(new Label());
-                   flowLayoutPanel1.Controls.Add(new TextBox());
-                   flowLayoutPanel1.Controls.Add(cyberButton1);
-               }*/
-
-        /*private void DisplayGuests()
-        {
-            lsvGuests.Items.Clear();
-
-            foreach (Guest guest in guests)
-            {
-                ListViewItem listViewItem = new ListViewItem(guest.ID);
-                listViewItem.SubItems.Add(guest.Name);
-                listViewItem.SubItems.Add(guest.Age.ToString());
-                listViewItem.SubItems.Add(guest.Outstanding.ToString());
-                lsvGuests.Items.Add(listViewItem);
-            }
-        }*/
-
         private void AddBookingControl_Load(object sender, EventArgs e)
         {
             guestDB = new GuestDB();
@@ -83,12 +62,7 @@ namespace Phumla.Presentation
 
 
             lblGuest1Status.Text = "";
-            /*lsvGuests.View = View.Details;
-            lsvGuests.Columns.Add("d", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("r", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("e", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("g", 20, HorizontalAlignment.Left);
-            DisplayGuests();*/
+
         }
 
         private void btnAddGuest_Click(object sender, EventArgs e)
