@@ -51,8 +51,8 @@ namespace Phumla.Presentation
         private void loadListView()
         {
             lsvBookings.Clear();
-            // Populating the list view
             lsvBookings.View = View.Details;
+            lsvBookings.Columns.Clear();
             lsvBookings.Columns.Add("BookingID", 100, HorizontalAlignment.Left);
             lsvBookings.Columns.Add("HotelID", 100, HorizontalAlignment.Left);
             lsvBookings.Columns.Add("RoomID", 100, HorizontalAlignment.Left);
@@ -67,15 +67,15 @@ namespace Phumla.Presentation
                 ListViewItem item = new ListViewItem(booking.ID);
                 item.SubItems.Add(booking.HotelID);
                 item.SubItems.Add(booking.RoomNumber);
-                item.SubItems.Add(booking.BookingDate);
-                item.SubItems.Add(booking.BookingEnd);
+                item.SubItems.Add(booking.BookingDate.ToString());
+                item.SubItems.Add(booking.BookingEnd.ToString());
                 item.SubItems.Add(booking.CheckedIn.ToString());
                 item.SubItems.Add(booking.DepositStatus.ToString());
-                item.SubItems.Add(booking.Bill.ToString("$"));
+                item.SubItems.Add(booking.Bill.ToString("C"));
+
                 item.Tag = booking;
                 lsvBookings.Items.Add(item);
             }
-
         }
 
         private void EditBookingControl_Load(object sender, EventArgs e)
@@ -122,8 +122,8 @@ namespace Phumla.Presentation
                 cbxCheckedIn.Checked = booking.CheckedIn;
                 dtpStartDate.Value =  Convert.ToDateTime(booking.BookingDate);
                 dtpEndDate.Value = Convert.ToDateTime(booking.BookingEnd);
-                //txtDepositStatus.Text = booking.DepositStatus;
-                txtBill.Text = booking.Bill.ToString("$");
+                // txtDepositStatus.Text = booking.DepositStatus;
+                txtBill.Text = booking.Bill.ToString("C");
             }
         }
 

@@ -86,10 +86,10 @@ namespace Phumla.Presentation
                 tbcHomePage.TabPages.Add(page);
                 tbcHomePage.SelectedTab = page;
 
-                AddGuestControl addGuest = new AddGuestControl();
-                addGuest.Dock = DockStyle.Fill;
+                AddBookingControl addBooking = new AddBookingControl();
+                addBooking.Dock = DockStyle.Fill;
                 page.Controls.Clear();
-                page.Controls.Add(addGuest);
+                page.Controls.Add(addBooking);
                 clearTabs(tpgAddBookingString);
 
             }
@@ -102,9 +102,9 @@ namespace Phumla.Presentation
                 {
                     TabPage existingPage = tbcHomePage.TabPages[tpgAddBookingString];
                     existingPage.Controls.Clear();
-                    AddGuestControl addGuest = new AddGuestControl();
-                    addGuest.Dock = DockStyle.Fill;
-                    existingPage.Controls.Add(addGuest);
+                    AddBookingControl addBooking = new AddBookingControl();
+                    addBooking.Dock = DockStyle.Fill;
+                    existingPage.Controls.Add(addBooking);
                     tbcHomePage.SelectedTab = existingPage;
                 }
             }

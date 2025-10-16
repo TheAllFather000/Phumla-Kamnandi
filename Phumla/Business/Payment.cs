@@ -38,6 +38,15 @@ namespace Phumla.Business
             date = d;
             time = t;
         }
+
+        public Payment(long gid, double amount, string reason, string date, string time)
+        {
+            guestid = gid;
+            this.amount = amount;
+            this.reason = reason;
+            this.date = date;
+            this.time = time;
+        }
         public Payment(Payment p)
         {
             paymentid = p.paymentid;

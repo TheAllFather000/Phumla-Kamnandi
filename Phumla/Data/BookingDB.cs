@@ -33,16 +33,17 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Booking b = new Booking();
-                b.ID = Convert.ToString(r["id"]);
+                b.ID = Convert.ToString(r["guestid"]);
                 b.Bill = Convert.ToDouble(r["bill"]);
                 b.RoomNumber = Convert.ToString(r["roomid"]);
-                b.BookingID = Convert.ToString(r["bookingid"]);
+                b.BookingID = Convert.ToString(r["id"]);
                 b.HotelID = Convert.ToString(r["hotelid"]);
                 b.CheckedIn = Convert.ToInt32(r["checkin"]) == 1 ? true : false;
                 b.BookingDate = Convert.ToString(r["bookingdate"]);
                 b.BookingTime = Convert.ToString(r["bookingtime"]);
                 b.BookingEnd = Convert.ToString(r["bookingend"]);
                 b.DepositStatus = Convert.ToInt32(r["depositstatus"]) == 1 ? true : false;
+                bookings.Add(b);
             }
 
         }
