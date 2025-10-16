@@ -8,15 +8,15 @@ namespace Phumla.Business
 {
     public class Payment
     {
-        private long paymentid;
-        private long guestid;
+        private int hotelid;
+        private string guestid;
         private double amount;
         private string reason;
         private string date;
         private string time;
 
-        public long PaymentID
-        {  get { return paymentid; } set { paymentid = value; } }
+        public int HotelID
+        {  get { return hotelid; } set { hotelid = value; } }
         public string Time
             { get { return time; } set { time = value; } }
         public string Reason
@@ -26,12 +26,12 @@ namespace Phumla.Business
         public double Amount
         { get { return amount; } set { amount = value; } }
 
-        public long GuestID
+        public string GuestID
             { get { return guestid; } set { guestid = value; } }
 
-        public Payment(long pid, long gid, double a, string r, string d, string t)
+        public Payment(int hid, string gid, double a, string r, string d, string t)
         {
-            paymentid = pid;
+            hotelid = hid;
             guestid = gid;
             amount = a;
             reason = r;
@@ -39,7 +39,7 @@ namespace Phumla.Business
             time = t;
         }
 
-        public Payment(long gid, double amount, string reason, string date, string time)
+        public Payment(string gid, double amount, string reason, string date, string time)
         {
             guestid = gid;
             this.amount = amount;
@@ -49,7 +49,7 @@ namespace Phumla.Business
         }
         public Payment(Payment p)
         {
-            paymentid = p.paymentid;
+            hotelid = p.hotelid;
             guestid = p.guestid;
             amount = p.amount;
             reason = p.reason;

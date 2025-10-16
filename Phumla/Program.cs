@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Phumla.Business;
 using Phumla.Data;
 using System.Data.Common;
+using System.Data;
 
 namespace Phumla
 {
@@ -47,13 +48,10 @@ namespace Phumla
              db.createTable(createcommand);*/
             //guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
             //Populator populator = new Populator();
-            // populator.populateHotels();
-            //SummaryReport summaryReport = new SummaryReport();
-            //summaryReport.GenerateSummaryReport();
-            //HotelPopulator pop = new HotelPopulator();
-            //pop.populateHotels();
-            // Don't run populate, hotels are already populated.
-            Application.Run(new Presentation.HomePage());
+           // populator.populateHotels();
+            SummaryReport summaryReport = new SummaryReport();
+            summaryReport.GenerateSummaryReport();
+            Application.Run();
         }
     }
 }

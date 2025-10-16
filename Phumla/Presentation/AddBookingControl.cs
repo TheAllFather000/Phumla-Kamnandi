@@ -314,9 +314,9 @@ namespace Phumla.Presentation
                         dtpStartDate.Value.TimeOfDay.ToString(), availableRoom.ToString(), true, Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value)) ;
                     bookingDB.createNewBooking(booking);
 
-                    Payment payment = new Payment((long) Convert.ToDouble(bookingGuests[0].ID), Price.calculateDeposit(dtpStartDate.Value, dtpEndDate.Value),
+                //    Payment payment = new Payment((long) Convert.ToDouble(bookingGuests[0].ID), Price.calculateDeposit(dtpStartDate.Value, dtpEndDate.Value),
                         "Deposit", DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString());
-                    paymentDB.addNewPayment(payment);
+                 //   paymentDB.addNewPayment(payment);
                     // The first parameter is a goddamn problem. Why the hell is it a long
 
                     new Email(bookingGuests[0], booking, 1, hotelID.ToString()).sendBookingMail();

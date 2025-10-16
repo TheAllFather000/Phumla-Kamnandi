@@ -77,5 +77,8 @@ namespace Phumla.Business
             return amount; // Assume a deposit is made every single time a booking is made.
 
         }
+
+    class Price
+    {
     }
 }

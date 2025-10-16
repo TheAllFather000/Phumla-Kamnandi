@@ -14,7 +14,10 @@ namespace Phumla.Data
     {
         private Collection<Booking> bookings;
         public static string table = "Booking";
-
+        public static string summaryfordate = "SELECT  \r\n\r\n    hotelid,\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 1 THEN guestid ELSE NULL END) AS Jan, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 2 THEN guestid ELSE NULL END) AS Feb, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 3 THEN guestid ELSE NULL END) AS Mar, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 4 THEN guestid ELSE NULL END) AS Apr, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 5 THEN guestid ELSE NULL END) AS May, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 6 THEN guestid ELSE NULL END) AS Jun, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 7 THEN guestid ELSE NULL END) AS Jul, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 8 THEN guestid ELSE NULL END) AS Aug, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 9 THEN guestid ELSE NULL END) AS Sep, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 10 THEN guestid ELSE NULL END) AS Oct, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 11 THEN guestid ELSE NULL END) AS Nov, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 12 THEN guestid ELSE NULL END) AS 'Dec', \r\n\r\n    COUNT(guestid) AS Total \r\n\r\nFROM Booking \r\n\r\nWHERE bookingdate <= '{0}'\r\nGROUP BY hotelid;";
+        public static string summarybetween = "SELECT  \r\n\r\n    hotelid,\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 1 THEN guestid ELSE NULL END) AS Jan, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 2 THEN guestid ELSE NULL END) AS Feb, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 3 THEN guestid ELSE NULL END) AS Mar, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 4 THEN guestid ELSE NULL END) AS Apr, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 5 THEN guestid ELSE NULL END) AS May, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 6 THEN guestid ELSE NULL END) AS Jun, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 7 THEN guestid ELSE NULL END) AS Jul, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 8 THEN guestid ELSE NULL END) AS Aug, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 9 THEN guestid ELSE NULL END) AS Sep, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 10 THEN guestid ELSE NULL END) AS Oct, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 11 THEN guestid ELSE NULL END) AS Nov, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 12 THEN guestid ELSE NULL END) AS 'Dec', \r\n\r\n    COUNT(guestid) AS Total \r\n\r\nFROM Booking \r\n\r\nWHERE bookingdate >= '{0}' AND bookingend <= '{1}'\r\nGROUP BY hotelid;";
+        public static string summarygreater = "SELECT  \r\n\r\n    hotelid,\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 1 THEN guestid ELSE NULL END) AS Jan, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 2 THEN guestid ELSE NULL END) AS Feb, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 3 THEN guestid ELSE NULL END) AS Mar, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 4 THEN guestid ELSE NULL END) AS Apr, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 5 THEN guestid ELSE NULL END) AS May, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 6 THEN guestid ELSE NULL END) AS Jun, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 7 THEN guestid ELSE NULL END) AS Jul, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 8 THEN guestid ELSE NULL END) AS Aug, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 9 THEN guestid ELSE NULL END) AS Sep, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 10 THEN guestid ELSE NULL END) AS Oct, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 11 THEN guestid ELSE NULL END) AS Nov, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 12 THEN guestid ELSE NULL END) AS 'Dec', \r\n\r\n    COUNT(guestid) AS Total \r\n\r\nFROM Booking \r\n\r\nWHERE bookingdate >= '{0}'\r\nGROUP BY hotelid;";
+        public static string summaryall = "SELECT  \r\n\r\n    hotelid,\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 1 THEN guestid ELSE NULL END) AS Jan, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 2 THEN guestid ELSE NULL END) AS Feb, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 3 THEN guestid ELSE NULL END) AS Mar, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 4 THEN guestid ELSE NULL END) AS Apr, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 5 THEN guestid ELSE NULL END) AS May, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 6 THEN guestid ELSE NULL END) AS Jun, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 7 THEN guestid ELSE NULL END) AS Jul, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 8 THEN guestid ELSE NULL END) AS Aug, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 9 THEN guestid ELSE NULL END) AS Sep, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 10 THEN guestid ELSE NULL END) AS Oct, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 11 THEN guestid ELSE NULL END) AS Nov, \r\n\r\n    COUNT(CASE WHEN MONTH(bookingdate) = 12 THEN guestid ELSE NULL END) AS 'Dec', \r\n\r\n    COUNT(guestid) AS Total \r\n\r\nFROM Booking \r\nGROUP BY hotelid;";
         public Collection<Booking> Bookings
         {
             get { return bookings; }
@@ -25,7 +28,6 @@ namespace Phumla.Data
         {
             bookings = new Collection<Booking>();
             Fill("Select * From Booking", table);
-            getAllBookings();
         }
         public void getAllBookings()
         {
@@ -116,6 +118,34 @@ namespace Phumla.Data
             getAllBookings();
             return success;
         }
+
+        public DataSet getDataSet()
+        {
+            return ds;
+        }
+
+        public void occupancyForAll()
+        {
+            Fill(summaryall, table);
+        }
+        
+        public void occupancyForLess(string date)
+        {
+            string select = string.Format(summaryfordate, date);
+            Fill(select, table);
+        }
+
+        public void occupancyBetween (string d1, string d2)
+        {
+            string select = string.Format(summarybetween, d1, d2);
+            Fill(select, table);
+        }
+        public void occupancyGreater (string d1)
+        {
+            string select = string.Format(summarygreater, d1);
+            Fill(select, table);
+        }
+        
 
     }
 }
