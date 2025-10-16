@@ -57,6 +57,22 @@ namespace Phumla.Data
             guests.Add(g);
             return success;
         }
+        /*
+         * Looks to see if it can find a particular guest by their ID.
+         */
+        public Guest guestFound (string ID)
+        {
+            Guest guest = null;
+            foreach (Guest g in guests)
+            {
+                if (g.ID ==  ID)
+                {
+                    guest = g; 
+                    break;
+                }
+            }
+            return guest;
+        }
 
         
 

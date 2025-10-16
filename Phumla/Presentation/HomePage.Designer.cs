@@ -37,15 +37,15 @@
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCreateReport = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnSearchBooking = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
             this.tbcHomePage = new ReaLTaiizor.Controls.MetroTabControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.poisonContextMenuStrip1.SuspendLayout();
             this.parrotGradientPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -116,12 +116,12 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnCreateReport, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnSettings, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnAddBooking, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteBooking, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnEditBooking, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnCreateReport, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearchBooking, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 220);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -138,7 +138,7 @@
             // btnCreateReport
             // 
             this.btnCreateReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateReport.Location = new System.Drawing.Point(51, 197);
+            this.btnCreateReport.Location = new System.Drawing.Point(51, 259);
             this.btnCreateReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(171, 39);
@@ -147,17 +147,17 @@
             this.btnCreateReport.UseVisualStyleBackColor = true;
             this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click_1);
             // 
-            // btnSettings
+            // btnSearchBooking
             // 
-            this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSettings.AutoSize = true;
-            this.btnSettings.Location = new System.Drawing.Point(104, 266);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(65, 26);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSearchBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchBooking.AutoSize = true;
+            this.btnSearchBooking.Location = new System.Drawing.Point(51, 197);
+            this.btnSearchBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchBooking.Name = "btnSearchBooking";
+            this.btnSearchBooking.Size = new System.Drawing.Size(171, 39);
+            this.btnSearchBooking.TabIndex = 3;
+            this.btnSearchBooking.Text = "Search Booking";
+            this.btnSearchBooking.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
@@ -220,6 +220,17 @@
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Phumla.Properties.Resources.PhumlaAppIcon;
+            this.pictureBox1.Image = global::Phumla.Properties.Resources.PhumlaAppIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
@@ -256,17 +267,6 @@
             this.tbcHomePage.UnselectedTextColor = System.Drawing.Color.Gray;
             this.tbcHomePage.SelectedIndexChanged += new System.EventHandler(this.tbcHomePage_SelectedIndexChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Phumla.Properties.Resources.PhumlaAppIcon;
-            this.pictureBox1.Image = global::Phumla.Properties.Resources.PhumlaAppIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,7 +298,7 @@
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnCreateReport;
-        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnSearchBooking;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnAddBooking;
         private System.Windows.Forms.Button btnDeleteBooking;

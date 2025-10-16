@@ -57,6 +57,20 @@ namespace Phumla.Business
             DepositStatus = depositStatus;
             bill = b;
         }
+
+        public Booking(string id, string hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
+        {
+            ID = id;
+            this.bookingid = bookingid;
+            HotelID = hotelID;
+            CheckedIn = checkin;
+            BookingDate = bookingDate;
+            BookingEnd = endDate;
+            BookingTime = bookingTime;
+            RoomNumber = roomNumber;
+            DepositStatus = depositStatus;
+            bill = b;
+        }
         public Booking(Booking booking)
         {
             ID = booking.ID;

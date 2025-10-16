@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,19 +18,13 @@ namespace Phumla.Presentation
 {
     public partial class AddGuestControl : UserControl
     {
-        /*  private string firstName, surname, id, email, phoneNumber;
-         *  private string streetName, suburb, city, country;
-         *  private int postalCode;
-        */
         private int Age { get; set; }
+        private Guest guest;
+        private Address address;
         private string PostalCode { get; set; }
-
-        //private bool isNameValid, isSurnameValid, isIDValid, isEmailValid, isPhoneNumberValid;
         private DateTime dateOfBirth;
         private const int ID_AGE = 16;
         private const bool TESTING = true; // For Debugging
-        /*private bool validName, validSurname, validEmail, validDOB, validPhoneNumber, validID;
-        private bool validStreetName, validSuburb, validCity, validCountry, validPostalCode;*/
         GuestDB guestDB = new GuestDB();
         AddressDB addressDB = new AddressDB();
 
@@ -41,7 +36,7 @@ namespace Phumla.Presentation
         public string StreetName { get; set; }
         public string Suburb { get; set; }
         public string City { get; set; }
-        public string Country { get; set; }
+        public string StreetNumber { get; set; }
 
         public bool ValidName { get; set; }
         public bool ValidSurname { get; set; }
@@ -53,7 +48,7 @@ namespace Phumla.Presentation
         bool ValidSuburb { get; set; }
         bool ValidPostalCode { get; set; }
         public bool ValidCity { get; set; }
-        public bool ValidCountry { get; set; }
+        public bool ValidStreetNumber { get; set; }
         public AddGuestControl()
         {
             InitializeComponent();
@@ -89,20 +84,16 @@ namespace Phumla.Presentation
 
         }
 
-
-        public bool isEmailValid(string email)
+        /*
+         * Determines if the adress fields are empty or not.
+         */
+        private bool addressFieldsEntered()
         {
-            return email.Contains("@");
+            return (string.IsNullOrEmpty(StreetName) && string.IsNullOrEmpty(Suburb) &&
+                    string.IsNullOrEmpty(City) && string.IsNullOrEmpty(PostalCode)
+                    && string.IsNullOrEmpty(StreetNumber));
         }
 
-        public bool isIDValid(string id)
-        {
-            return dateOfBirth.ToString("yy") == id.Substring(0, 2) &&
-                dateOfBirth.ToString("MM") == id.Substring(2, 2) &&
-                dateOfBirth.ToString("dd") == id.Substring(4, 2) &&
-                id.Length == 13 &&
-                id.All(char.IsDigit);
-        }
 
         private void btnFinaliseGuestAccount_Click(object sender, EventArgs e)
         {
@@ -111,37 +102,27 @@ namespace Phumla.Presentation
             ID = txtID.Text;
             Email = txtEmail.Text;
             PhoneNumber = txtPhoneNumber.Text;
+            guest = null;
 
 
             ValidID = true; // True by default to evade the condition at the bottom
             ValidName = ValidSurname = ValidEmail = ValidDOB = ValidPhoneNumber = false;
 
             // Name
-            if (string.IsNullOrEmpty(FirstName))
+            if (!guest.isNameValid(FirstName))
             {
-                lblNameError.Text = "Please enter a non-blank name.";
+                lblNameError.Text = "Enter a valid name.";
                 ValidName = false;
             }
-            else if (!FirstName.All(char.IsLetter))
-            {
-                lblNameError.Text = "Please enter a valid name.";
-                ValidName = false;
-            }
-            else
-            {
+            else { 
                 lblNameError.Visible = false;
                 ValidName = true;
             }
 
             // Surname
-            if (string.IsNullOrEmpty(Surname))
+            if (!guest.isSurnameValid(FirstName))
             {
-                lblSurnameError.Text = "Please enter a non-blank Surname.";
-                ValidSurname = false;
-            }
-            else if (!Surname.All(char.IsLetter))
-            {
-                lblSurnameError.Text = "Please enter a valid Surname.";
+                lblSurnameError.Text = "Enter a valid surname.";
                 ValidSurname = false;
             }
             else
@@ -151,10 +132,10 @@ namespace Phumla.Presentation
             }
 
             // DOB
-            if (dateOfBirth.Date >= DateTime.Today.Date)
+            if (!guest.isDoBValid(dateOfBirth))
             {
                 // lblDoBError.Text = "You missed everything bro";
-                lblDoBError.Text = "Please enter a valid date.";
+                lblDoBError.Text = "Enter a valid date.";
                 ValidDOB = false;
             }
             else
@@ -165,41 +146,25 @@ namespace Phumla.Presentation
             }
 
             // ID
-            if (txtID.Enabled == true)
-            {
-                if (string.IsNullOrEmpty(ID))
-                {
-                    lblIDError.Text = "Please enter an ID.";
-                    ValidID = false;
-                }
-                else if (!isIDValid(ID))
-                {
-                    lblIDError.Text = "ID is invalid (either mismatches birthday or wrong length).";
-                    ValidID = false;
-                } /*else if (!guestDB.checkIDExists(ID))
-                {
-                    lblIDError.Text = "ID already exists.";
-                    ValidID = false;
-                }*/
 
-                else
-                {
-                    lblIDError.Visible = false;
-                    ValidID = true;
-                }
+            if (guest.isIDValid(ID))
+            {
+                lblIDError.Text = "Enter a valid ID.";
+                ValidID = false;
             }
 
+            else
+            {
+                lblIDError.Visible = false;
+                ValidID = true;
+            }
+            
             // Email
-            if (string.IsNullOrEmpty(Email))
+            if (!guest.isEmailValid(Email))
             {
-                lblEmailError.Text = "Please enter an Email.";
+                lblEmailError.Text = "Enter a valid email.";
                 ValidEmail = false;
 
-            }
-            else if (!isEmailValid(Email))
-            {
-                lblEmailError.Text = "Please enter a valid Email.";
-                ValidEmail = false;
             }
             else
             {
@@ -208,25 +173,11 @@ namespace Phumla.Presentation
             }
 
             // Phone number
-            if (string.IsNullOrEmpty(PhoneNumber))
+            if (!guest.isPhoneValid(PhoneNumber))
             {
-                lblPhoneNumberError.Text = "Please enter a phone number.";
+                lblPhoneNumberError.Text = "Enter a valid phone number.";
                 ValidPhoneNumber = false;
             }
-            else if (!PhoneNumber.All(char.IsDigit))
-            {
-                lblPhoneNumberError.Text = "Invalid phone number, contains letters/special characters.";
-                ValidPhoneNumber = false;
-            }
-            else if (PhoneNumber[0] != '0' || PhoneNumber.Length != 10)
-            {
-                lblPhoneNumberError.Text = "Please enter a valid phone South African phone number.";
-                ValidPhoneNumber = false;
-            } /*else if (!guestDB.checkPhoneNumberExists(phoneNumber))
-            {
-                lblPhoneNumberError.Text = "Phone number already exists.";
-                ValidPhoneNumber = false;
-            }*/
             else
             {
                 lblPhoneNumberError.Visible = false;
@@ -238,90 +189,91 @@ namespace Phumla.Presentation
             Suburb = txtSuburb.Text;
             City = txtCity.Text;
             PostalCode = txtPostalCode.Text;
-            Country = txtCountry.Text;
+            StreetNumber = txtStreetNumber.Text;
+            address = null;
 
-            // Street Name
-            if (string.IsNullOrEmpty(StreetName))
+            if (!addressFieldsEntered())
             {
-                lblStreetNameError.Text = "Please enter a street name.";
-                ValidStreetName = false;
-            }
-            else
-            {
-                lblStreetNameError.Visible = false;
-                ValidStreetName = true;
-            }
-
-            // Suburb
-            if (string.IsNullOrEmpty(Suburb))
-            {
-                lblSuburbError.Text = "Please enter a suburb.";
-                ValidSuburb = false;
-            }
-            else
-            {
-                lblSuburbError.Visible = false;
-                ValidSuburb = true;
-            }
-
-            // City
-            if (string.IsNullOrEmpty(City))
-            {
-                lblCityError.Text = "Please enter a city.";
-                ValidCity = false;
-            }
-            else
-            {
-                lblCityError.Visible = false;
-                ValidCity = true;
-            }
-
-            // Postal Code
-            if (string.IsNullOrEmpty(PostalCode))
-            {
-                lblPostalCodeError.Text = "Please enter a postal number.";
-                ValidPostalCode = false;
-            }
-            else
-            {
-                if (!txtPostalCode.Text.All(char.IsDigit))
+                // Street Number
+                if (address.isAddressValid(StreetNumber))
                 {
-                    lblPostalCodeError.Text = "Please enter a valid postal code.";
+                    lblStreetNumberError.Text = "Enter a valid country.";
+                    ValidStreetNumber = false;
+                }
+
+                else
+                {
+                    lblStreetNumberError.Visible = false;
+                    ValidStreetNumber = true;
+
+                }
+                // Street Name
+                if (address.isAddressValid(StreetName))
+                {
+                    lblStreetNameError.Text = "Enter a valid street name.";
+                    ValidStreetName = false;
+                }
+                else
+                {
+                    lblStreetNameError.Visible = false;
+                    ValidStreetName = true;
+                }
+
+                // Suburb
+                if (address.isAddressValid(Suburb))
+                {
+                    lblSuburbError.Text = "Enter a valid suburb.";
+                    ValidSuburb = false;
+                }
+                else
+                {
+                    lblSuburbError.Visible = false;
+                    ValidSuburb = true;
+                }
+
+                // City
+                if (address.isAddressValid(City))
+                {
+                    lblCityError.Text = "Enter a valid city.";
+                    ValidCity = false;
+                }
+                else
+                {
+                    lblCityError.Visible = false;
+                    ValidCity = true;
+                }
+
+                // Postal Code
+                if (address.isAddressValid(PostalCode))
+                {
+                    lblPostalCodeError.Text = "Enter a valid postal number.";
                     ValidPostalCode = false;
                 }
                 else
                 {
+
                     lblPostalCodeError.Visible = false;
                     ValidPostalCode = true;
+
                 }
-            }
-
-            // Country
-            if (string.IsNullOrEmpty(StreetName))
-            {
-                lblCountryError.Text = "Please enter a country.";
-                ValidCountry = false;
-            }
-
-            else
-            {
-                lblCountryError.Visible = false;
-                ValidCountry = true;
-
             }
 
             //Console.WriteLine(ValidName + "\n" + ValidSurname + "\n" + ValidEmail + "\n" + ValidDOB + "\n" + ValidID + "\n" + ValidPhoneNumber);
 
-            if (ValidName = ValidSurname = ValidEmail = ValidDOB = ValidID = ValidPhoneNumber
-                = ValidStreetName = ValidSuburb = ValidPostalCode = ValidCity = ValidCountry == true)
+            if (ValidName = ValidSurname = ValidEmail = ValidDOB = ValidID = ValidPhoneNumber == true)
             {
-                Guest guest = new Guest(FirstName + " " + Surname, Age, ID, Email, PhoneNumber, 3.0);
-                guestDB.AddGuest(guest);
-                Address address = new Address(ID, "4", StreetName, Suburb, City, PostalCode); // I'll say 0 for now, but street nr is unnecessary
-                addressDB.addNewAddress(address);
+                Guest newGuest = new Guest(FirstName + " " + Surname, Age, ID, Email, PhoneNumber, 0); // 0 by default
+                guestDB.AddGuest(newGuest);
                 MessageBox.Show("Guest successfully added to database.");
+                
             }
+            if (ValidStreetName = ValidSuburb = ValidPostalCode = ValidCity = ValidStreetNumber == true)
+            {
+                Address newAddress = new Address(ID, StreetNumber, StreetName, Suburb, City, PostalCode);
+                addressDB.addNewAddress(newAddress);
+                MessageBox.Show("Address successfully added to database.");
 
+            }
         }
 
         /*
@@ -375,6 +327,11 @@ namespace Phumla.Presentation
             {
                 btnCancel.Enabled = true;
             }
+        }
+
+        private void btnAddBankingDetails_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

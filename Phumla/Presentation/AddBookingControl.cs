@@ -29,8 +29,10 @@ namespace Phumla.Presentation
         private BookingDB bookingDB;
         private HotelDB hotelDB;
         private Collection<Guest> guests;
+        private Collection<Guest> bookingGuests; // The guests in the booking itself.
         private Collection<Booking> bookings;
         private Collection<Hotel> hotels;
+        private PaymentDB paymentDB;
         private string connectionString = Settings.Default.PKDatabaseConnectionString;
         private bool GuestsValid {  get; set; }
         private bool DatesValid { get; set; }
@@ -44,34 +46,15 @@ namespace Phumla.Presentation
         {
 
         }
-
-        /*       private void cyberButton1_Click(object sender, EventArgs e)
-               {
-                   flowLayoutPanel1.Controls.Add(new Label());
-                   flowLayoutPanel1.Controls.Add(new TextBox());
-                   flowLayoutPanel1.Controls.Add(cyberButton1);
-               }*/
-
-        /*private void DisplayGuests()
-        {
-            lsvGuests.Items.Clear();
-
-            foreach (Guest guest in guests)
-            {
-                ListViewItem listViewItem = new ListViewItem(guest.ID);
-                listViewItem.SubItems.Add(guest.Name);
-                listViewItem.SubItems.Add(guest.Age.ToString());
-                listViewItem.SubItems.Add(guest.Outstanding.ToString());
-                lsvGuests.Items.Add(listViewItem);
-            }
-        }*/
-
         private void AddBookingControl_Load(object sender, EventArgs e)
         {
             guestDB = new GuestDB();
             hotelDB = new HotelDB();
+            bookingDB = new BookingDB();
+            paymentDB = new PaymentDB();
             guests = guestDB.Guests; // Guests is now populated
             hotels = hotelDB.Hotels; // Hotels too.
+            bookingGuests = new Collection<Guest>();
 
             cbxHotels.Items.Clear();
             foreach (Hotel hotel in hotels)
@@ -83,12 +66,7 @@ namespace Phumla.Presentation
 
 
             lblGuest1Status.Text = "";
-            /*lsvGuests.View = View.Details;
-            lsvGuests.Columns.Add("d", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("r", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("e", 20, HorizontalAlignment.Left);
-            lsvGuests.Columns.Add("g", 20, HorizontalAlignment.Left);
-            DisplayGuests();*/
+
         }
 
         private void btnAddGuest_Click(object sender, EventArgs e)
@@ -169,6 +147,7 @@ namespace Phumla.Presentation
                 Control flp = flpAddGuests.Controls["flpGuest" + (guestCount)];
                 flpAddGuests.Controls.Remove(flp);
                 guestCount--;
+                
                 //MessageBox.Show(guestCount.ToString());
 
             }
@@ -226,36 +205,59 @@ namespace Phumla.Presentation
         private void txtGuest_TextChanged(object sender, EventArgs e)
         {
             PoisonTextBox ptb = sender as PoisonTextBox;
-            Label guestStatus = null;
+            Control parentFlp = ptb.Parent;
             char index = ptb.Name.Last();
-            Control[] found = flpAddGuests.Controls.Find("lblGuest" + Convert.ToString(index) + "Status", true);
-
+            Control[] found = parentFlp.Controls.Find("lblGuest" + index + "Status", false);
+            Label guestStatus = null;
             if (found.Length > 0)
             {
                 guestStatus = found[0] as Label;
             }
 
-            if (guestStatus == null) return; // AAAHHHHHH
+            if (guestStatus == null) return;
 
-            foreach (Guest guest in guests)
+            guestStatus.ForeColor = SystemColors.ControlText;
+            guestStatus.Font = new System.Drawing.Font(guestStatus.Font, System.Drawing.FontStyle.Regular);
+
+            bool guestFound = false;
+
+            if (ptb.Text.Length >= 13)
             {
-                //MessageBox.Show(guest.ID);
-                if ((ptb.Text.Length >= 13)) {
-                    if ((ptb.Text == guest.ID) && (!string.IsNullOrEmpty(txtGuest1.Text))) 
+                foreach (Guest guest in guests)
+                {
+                    if (ptb.Text == guest.ID)
                     {
-                        guestStatus.Text = "Guest found.";
+                        guestStatus.Text = "Guest found: " + guest.Name;
+                        guestStatus.ForeColor = System.Drawing.Color.Green;
+
+                        if (!bookingGuests.Contains(guest))
+                        {
+                            bookingGuests.Add(guest);
+                        }
+                        guestFound = true;
                         break;
                     }
-                    else
-                    {
-                        guestStatus.Text = "Guest not found. Create new guest?";
-                        // Make it Underlined
-                    }
                 }
-                else 
+
+                if (!guestFound)
                 {
-                    guestStatus.Text = "";
+                    guestStatus.Text = "Guest not found. Create new guest?";
+                    guestStatus.ForeColor = System.Drawing.Color.Red;
+                    guestStatus.Font = new System.Drawing.Font(
+                        guestStatus.Font,
+                        guestStatus.Font.Style | System.Drawing.FontStyle.Underline);
                 }
+
+            }
+            else if (ptb.Text.Length > 0)
+            {
+                guestStatus.Text = "ID too short...";
+                guestStatus.ForeColor = System.Drawing.Color.Orange;
+                guestStatus.Font = new System.Drawing.Font(guestStatus.Font, System.Drawing.FontStyle.Regular);
+            }
+            else
+            {
+                guestStatus.Text = "";
             }
         }
 
@@ -288,30 +290,62 @@ namespace Phumla.Presentation
             }
         }
 
-        private void isDatesValid()
+        private int daysBetween ()
         {
-            if (dtpEndDate.Value < dtpStartDate.Value)
-            {
-                MessageBox.Show("End date value cannot be before Start date value.", "Date Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DatesValid = false;
-                return;
-            }
-            DatesValid = true;
-
+            double days = (dtpEndDate.Value - dtpStartDate.Value).TotalDays;
+            return (int)days;
         }
+
         private void btnConfirmBooking_Click(object sender, EventArgs e)
         {
+            GuestsValid = true; // Assume true by default
             searchStatuses(flpAddGuests);
-            isDatesValid();
             // First confirm all the information has been entered
-            if (GuestsValid  && DatesValid && string.IsNullOrEmpty(cbxHotels.Text)) 
+            if (GuestsValid && !string.IsNullOrEmpty(cbxHotels.Text)) 
             {
                 DialogResult result = MessageBox.Show("Finished with the guest's details?", "Finalise Booking", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     //booking
+                    int hotelID = Convert.ToInt32(cbxHotels.Text.Substring(0, cbxHotels.Text.IndexOf("-")));
+                    int availableRoom = Convert.ToInt32(hotelDB.roomsAvailable(hotelID, true)[0].RoomID);
+                    Booking booking = new Booking(bookingGuests[0].ID, hotelID.ToString(), 
+                        false, dtpStartDate.Value.ToString(), dtpEndDate.Value.ToString(), 
+                        dtpStartDate.Value.TimeOfDay.ToString(), availableRoom.ToString(), true, Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value)) ;
+                    bookingDB.createNewBooking(booking);
+
+                //    Payment payment = new Payment((long) Convert.ToDouble(bookingGuests[0].ID), Price.calculateDeposit(dtpStartDate.Value, dtpEndDate.Value),
+                        "Deposit", DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString());
+                 //   paymentDB.addNewPayment(payment);
+                    // The first parameter is a goddamn problem. Why the hell is it a long
+
+                    new Email(bookingGuests[0], booking, 1, hotelID.ToString()).sendBookingMail();
                 }
             }
+
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpEndDate.MinDate = dtpStartDate.Value;  // This prevent's me from having to have validation for the date
+            txtSummary.Text = ToString();
+        }
+
+        private string ToString ()
+        {
+            string temp = "Summary:\nHotel:\t" + cbxHotels.Text + "\nGuests:\t";
+            foreach (Guest guest in bookingGuests)
+            {
+                temp += "\t" + guest.ID + "\n";
+            }
+            temp += "Total days:\t" + daysBetween() + "\n";
+            temp += "Total cost (not incl. deposit):\t" + Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value);
+            return temp;
+        }
+
+        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            txtSummary.Text = ToString();
 
         }
     }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCountryError = new System.Windows.Forms.Label();
+            this.lblStreetNumberError = new System.Windows.Forms.Label();
             this.lblPhoneNumberError = new System.Windows.Forms.Label();
             this.lblEmailError = new System.Windows.Forms.Label();
             this.lblIDError = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@
             this.lblStreetName = new System.Windows.Forms.Label();
             this.lblSuburb = new System.Windows.Forms.Label();
             this.lblPostalCode = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblStreetNumber = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblSurnameError = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSuburb = new System.Windows.Forms.TextBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtStreetNumber = new System.Windows.Forms.TextBox();
             this.lblPostalCodeError = new System.Windows.Forms.Label();
             this.lblSuburbError = new System.Windows.Forms.Label();
             this.txtStreetName = new System.Windows.Forms.TextBox();
@@ -81,16 +81,16 @@
             this.tpnlPersonalDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCountryError
+            // lblStreetNumberError
             // 
-            this.lblCountryError.AutoSize = true;
-            this.lblCountryError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountryError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCountryError.Location = new System.Drawing.Point(3, 306);
-            this.lblCountryError.Name = "lblCountryError";
-            this.lblCountryError.Size = new System.Drawing.Size(85, 22);
-            this.lblCountryError.TabIndex = 23;
-            this.lblCountryError.Text = "Name(s)";
+            this.lblStreetNumberError.AutoSize = true;
+            this.lblStreetNumberError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetNumberError.ForeColor = System.Drawing.Color.Crimson;
+            this.lblStreetNumberError.Location = new System.Drawing.Point(3, 34);
+            this.lblStreetNumberError.Name = "lblStreetNumberError";
+            this.lblStreetNumberError.Size = new System.Drawing.Size(85, 22);
+            this.lblStreetNumberError.TabIndex = 23;
+            this.lblStreetNumberError.Text = "Name(s)";
             // 
             // lblPhoneNumberError
             // 
@@ -142,11 +142,11 @@
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.1531F));
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.84691F));
             this.tpnlBillingAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpnlBillingAddress.Controls.Add(this.lblStreetName, 0, 0);
-            this.tpnlBillingAddress.Controls.Add(this.lblSuburb, 0, 1);
-            this.tpnlBillingAddress.Controls.Add(this.lblPostalCode, 0, 3);
-            this.tpnlBillingAddress.Controls.Add(this.lblCountry, 0, 4);
-            this.tpnlBillingAddress.Controls.Add(this.lblCity, 0, 2);
+            this.tpnlBillingAddress.Controls.Add(this.lblStreetNumber, 0, 0);
+            this.tpnlBillingAddress.Controls.Add(this.lblStreetName, 0, 1);
+            this.tpnlBillingAddress.Controls.Add(this.lblSuburb, 0, 2);
+            this.tpnlBillingAddress.Controls.Add(this.lblCity, 0, 3);
+            this.tpnlBillingAddress.Controls.Add(this.lblPostalCode, 0, 4);
             this.tpnlBillingAddress.Location = new System.Drawing.Point(3, 12);
             this.tpnlBillingAddress.Name = "tpnlBillingAddress";
             this.tpnlBillingAddress.RowCount = 5;
@@ -162,7 +162,7 @@
             // 
             this.lblStreetName.AutoSize = true;
             this.lblStreetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreetName.Location = new System.Drawing.Point(3, 0);
+            this.lblStreetName.Location = new System.Drawing.Point(3, 68);
             this.lblStreetName.Name = "lblStreetName";
             this.lblStreetName.Size = new System.Drawing.Size(110, 22);
             this.lblStreetName.TabIndex = 5;
@@ -172,7 +172,7 @@
             // 
             this.lblSuburb.AutoSize = true;
             this.lblSuburb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuburb.Location = new System.Drawing.Point(3, 68);
+            this.lblSuburb.Location = new System.Drawing.Point(3, 136);
             this.lblSuburb.Name = "lblSuburb";
             this.lblSuburb.Size = new System.Drawing.Size(68, 22);
             this.lblSuburb.TabIndex = 17;
@@ -182,27 +182,27 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(3, 204);
+            this.lblPostalCode.Location = new System.Drawing.Point(3, 272);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(108, 22);
             this.lblPostalCode.TabIndex = 9;
             this.lblPostalCode.Text = "Postal Code";
             // 
-            // lblCountry
+            // lblStreetNumber
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(3, 272);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(73, 22);
-            this.lblCountry.TabIndex = 10;
-            this.lblCountry.Text = "Country";
+            this.lblStreetNumber.AutoSize = true;
+            this.lblStreetNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetNumber.Location = new System.Drawing.Point(3, 0);
+            this.lblStreetNumber.Name = "lblStreetNumber";
+            this.lblStreetNumber.Size = new System.Drawing.Size(126, 22);
+            this.lblStreetNumber.TabIndex = 10;
+            this.lblStreetNumber.Text = "Street Number";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(3, 136);
+            this.lblCity.Location = new System.Drawing.Point(3, 204);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(41, 22);
             this.lblCity.TabIndex = 6;
@@ -223,16 +223,16 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.txtSuburb, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblCountryError, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.txtCountry, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.lblPostalCodeError, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.lblSuburbError, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtStreetName, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtPostalCode, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.lblStreetNameError, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblCityError, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txtCity, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtStreetNumber, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtStreetName, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtPostalCode, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.lblStreetNumberError, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblStreetNameError, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtSuburb, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtCity, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lblCityError, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lblSuburbError, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lblPostalCodeError, 0, 9);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(204, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 10;
@@ -253,24 +253,24 @@
             // 
             // txtSuburb
             // 
-            this.txtSuburb.Location = new System.Drawing.Point(3, 71);
+            this.txtSuburb.Location = new System.Drawing.Point(3, 139);
             this.txtSuburb.Name = "txtSuburb";
             this.txtSuburb.Size = new System.Drawing.Size(409, 22);
             this.txtSuburb.TabIndex = 18;
             // 
-            // txtCountry
+            // txtStreetNumber
             // 
-            this.txtCountry.Location = new System.Drawing.Point(3, 275);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(409, 22);
-            this.txtCountry.TabIndex = 12;
+            this.txtStreetNumber.Location = new System.Drawing.Point(3, 3);
+            this.txtStreetNumber.Name = "txtStreetNumber";
+            this.txtStreetNumber.Size = new System.Drawing.Size(409, 22);
+            this.txtStreetNumber.TabIndex = 12;
             // 
             // lblPostalCodeError
             // 
             this.lblPostalCodeError.AutoSize = true;
             this.lblPostalCodeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPostalCodeError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblPostalCodeError.Location = new System.Drawing.Point(3, 238);
+            this.lblPostalCodeError.Location = new System.Drawing.Point(3, 306);
             this.lblPostalCodeError.Name = "lblPostalCodeError";
             this.lblPostalCodeError.Size = new System.Drawing.Size(85, 22);
             this.lblPostalCodeError.TabIndex = 22;
@@ -281,7 +281,7 @@
             this.lblSuburbError.AutoSize = true;
             this.lblSuburbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuburbError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblSuburbError.Location = new System.Drawing.Point(3, 102);
+            this.lblSuburbError.Location = new System.Drawing.Point(3, 170);
             this.lblSuburbError.Name = "lblSuburbError";
             this.lblSuburbError.Size = new System.Drawing.Size(85, 22);
             this.lblSuburbError.TabIndex = 21;
@@ -289,14 +289,14 @@
             // 
             // txtStreetName
             // 
-            this.txtStreetName.Location = new System.Drawing.Point(3, 3);
+            this.txtStreetName.Location = new System.Drawing.Point(3, 71);
             this.txtStreetName.Name = "txtStreetName";
             this.txtStreetName.Size = new System.Drawing.Size(409, 22);
             this.txtStreetName.TabIndex = 7;
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(3, 207);
+            this.txtPostalCode.Location = new System.Drawing.Point(3, 275);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(353, 22);
             this.txtPostalCode.TabIndex = 11;
@@ -306,7 +306,7 @@
             this.lblStreetNameError.AutoSize = true;
             this.lblStreetNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStreetNameError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblStreetNameError.Location = new System.Drawing.Point(3, 34);
+            this.lblStreetNameError.Location = new System.Drawing.Point(3, 102);
             this.lblStreetNameError.Name = "lblStreetNameError";
             this.lblStreetNameError.Size = new System.Drawing.Size(85, 22);
             this.lblStreetNameError.TabIndex = 19;
@@ -317,7 +317,7 @@
             this.lblCityError.AutoSize = true;
             this.lblCityError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCityError.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCityError.Location = new System.Drawing.Point(3, 170);
+            this.lblCityError.Location = new System.Drawing.Point(3, 238);
             this.lblCityError.Name = "lblCityError";
             this.lblCityError.Size = new System.Drawing.Size(85, 22);
             this.lblCityError.TabIndex = 20;
@@ -325,7 +325,7 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(3, 139);
+            this.txtCity.Location = new System.Drawing.Point(3, 207);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(409, 22);
             this.txtCity.TabIndex = 8;
@@ -566,6 +566,7 @@
             this.btnAddBankingDetails.TabIndex = 40;
             this.btnAddBankingDetails.Text = "Add Banking Details";
             this.btnAddBankingDetails.UseVisualStyleBackColor = true;
+            this.btnAddBankingDetails.Click += new System.EventHandler(this.btnAddBankingDetails_Click);
             // 
             // lblPersonalDetails
             // 
@@ -620,7 +621,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCountryError;
+        private System.Windows.Forms.Label lblStreetNumberError;
         private System.Windows.Forms.Label lblPhoneNumberError;
         private System.Windows.Forms.Label lblEmailError;
         private System.Windows.Forms.Label lblIDError;
@@ -629,12 +630,12 @@
         private System.Windows.Forms.Label lblStreetName;
         private System.Windows.Forms.Label lblSuburb;
         private System.Windows.Forms.Label lblPostalCode;
-        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblStreetNumber;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblSurnameError;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtSuburb;
-        private System.Windows.Forms.TextBox txtCountry;
+        private System.Windows.Forms.TextBox txtStreetNumber;
         private System.Windows.Forms.Label lblPostalCodeError;
         private System.Windows.Forms.Label lblSuburbError;
         private System.Windows.Forms.TextBox txtStreetName;

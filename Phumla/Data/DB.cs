@@ -148,12 +148,12 @@ namespace Phumla.Data
                 {
                     Booking b = new Booking((Booking)g);
 
-                    row["id"] = b.ID;
+                    row["guestid"] = b.ID;
                     row["roomid"] = b.RoomNumber;
-                    row["bookingid"] = b.BookingID;
                     row["hotelid"] = b.HotelID;
                     row["guestid"] = b.GuestID;
                     b.CheckedIn = Convert.ToInt32(row["checkin"]) == 1 ? true : false;
+                    row["checkin"] = b.CheckedIn ? 1 : 0;
                     row["bookingtime"] = b.BookingTime;
                     row["bookingdate"] = b.BookingDate;
                     row["depositstatus"] = b.DepositStatus;
