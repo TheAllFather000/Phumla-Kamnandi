@@ -8,10 +8,9 @@ namespace Phumla.Business
 {
     public class Booking
     {
-        private string id;
-        private string hotelID;
+        private int hotelID;
         private string guestid;
-        private string bookingid;
+        private int bookingid;
         private bool checkedin;
         private string bookingStartDate;
         private string bookingEndDate;
@@ -20,11 +19,9 @@ namespace Phumla.Business
         private bool depositStatus;
         private double bill;
 
-        public string ID
-        { get { return id; } set { id = value; } }
-        public string BookingID
+        public int BookingID
         { get { return bookingid; } set { bookingid = value; } }
-        public string HotelID
+        public int HotelID
         { get { return hotelID; } set { hotelID = value; } }
         public string BookingDate
         { get { return bookingStartDate; } set { bookingStartDate = value; } }
@@ -43,9 +40,8 @@ namespace Phumla.Business
 
         public double Bill
         { get { return bill; } set { bill = value; } }
-        public Booking(string bookingid, string id, string hotelID, string gid, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
+        public Booking(int bookingid, int hotelID, string gid, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
         {
-            ID = id;
             this.bookingid = bookingid;
             HotelID = hotelID;
             CheckedIn = checkin;
@@ -58,10 +54,12 @@ namespace Phumla.Business
             bill = b;
         }
 
-        public Booking(string id, string hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
+        /*
+         * The one used since the ID autoincrements in the DB
+         */
+        public Booking(string guestID, int hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
         {
-            ID = id;
-            this.bookingid = bookingid;
+            GuestID = guestid;
             HotelID = hotelID;
             CheckedIn = checkin;
             BookingDate = bookingDate;
@@ -73,8 +71,6 @@ namespace Phumla.Business
         }
         public Booking(Booking booking)
         {
-            ID = booking.ID;
-            RoomNumber = booking.RoomNumber;
             this.bookingid = booking.bookingid;
             HotelID = booking.HotelID;
             this.guestid = booking.guestid;

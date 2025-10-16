@@ -8,12 +8,12 @@ namespace Phumla.Business
 {
     public class Room
     {
-        private string roomid;
+        private int roomid;
         private int hotelid;
         private DateTime dateavailable;
         private int status; 
 
-        public string RoomID
+        public int RoomID
         { get {return roomid; } set { roomid = value;} }
 
         public int HotelID
@@ -22,7 +22,7 @@ namespace Phumla.Business
         { get { return dateavailable; } set { dateavailable = value; } }
         public int Status
         { get { return status; } set { status = value; } }
-        public Room(string rid, int hid, DateTime available, int status) 
+        public Room(int rid, int hid, DateTime available, int status) 
         { 
             roomid = rid;
             hotelid = hid;

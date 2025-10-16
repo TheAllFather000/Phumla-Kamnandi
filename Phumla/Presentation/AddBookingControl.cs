@@ -308,16 +308,15 @@ namespace Phumla.Presentation
                 {
                     //booking
                     int hotelID = Convert.ToInt32(cbxHotels.Text.Substring(0, cbxHotels.Text.IndexOf("-")));
-                    int availableRoom = Convert.ToInt32(hotelDB.roomsAvailable(hotelID, true)[0].RoomID);
+                    int availableRoomID = Convert.ToInt32(hotelDB.roomsAvailable(hotelID, true)[0].RoomID);
                     Booking booking = new Booking(bookingGuests[0].ID, hotelID.ToString(), 
                         false, dtpStartDate.Value.ToString(), dtpEndDate.Value.ToString(), 
-                        dtpStartDate.Value.TimeOfDay.ToString(), availableRoom.ToString(), true, Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value)) ;
+                        dtpStartDate.Value.TimeOfDay.ToString(), availableRoomID.ToString(), true, Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value)) ;
                     bookingDB.createNewBooking(booking);
 
-                //    Payment payment = new Payment((long) Convert.ToDouble(bookingGuests[0].ID), Price.calculateDeposit(dtpStartDate.Value, dtpEndDate.Value),
+                    Payment payment = new Payment(bookingGuests[0].ID, Price.calculateDeposit(dtpStartDate.Value, dtpEndDate.Value),
                         "Deposit", DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString());
-                 //   paymentDB.addNewPayment(payment);
-                    // The first parameter is a goddamn problem. Why the hell is it a long
+                    paymentDB.addNewPayment(payment);
 
                     new Email(bookingGuests[0], booking, 1, hotelID.ToString()).sendBookingMail();
                 }

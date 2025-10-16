@@ -109,9 +109,7 @@ namespace Phumla.Presentation
                 }
             }
             }
-            
-            
-
+           
         }
         private void btnEditBooking_Click(object sender, EventArgs e)
         {
@@ -161,13 +159,6 @@ namespace Phumla.Presentation
                 page.Controls.Add(deleteBooking);
             }
         }
-
-        /*public void AddGuest_GoBack (object sender, EventArgs e) // JUST LIKE GDSCRIPT
-        {
-            tpg.Controls.Clear();
-            tpg.Controls.Add(new AddGuestControl());
-        }*/
-
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();

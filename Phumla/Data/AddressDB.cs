@@ -40,12 +40,12 @@ namespace Phumla.Data
                 a = new Address();
             }
         }
-        public void DeleteAddress(long id)
+        public void DeleteAddress(string guestID)
         {
             int rowindex = 0;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["id"]) == id)
+                if ((string) r["id"] == guestID)
                 {
                     r.Delete();
                 }

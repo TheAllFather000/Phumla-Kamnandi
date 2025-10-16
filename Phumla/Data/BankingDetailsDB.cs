@@ -30,9 +30,9 @@ namespace Phumla.Data
             {
                 BankingDetails bd = new BankingDetails();
                 bd.IDNumber = Convert.ToString(r["id"]);
+                bd.CardNumber = (string)r["cardNumber"];
                 bd.CVV = Convert.ToInt32(r["cvv"]);
                 bd.ExpiryDate = Convert.ToString(r["expiryDate"]);
-                bd.CardNumber = Convert.ToInt64(r["cardNumber"]);
                 details.Add(bd);
             }
         }
@@ -45,11 +45,11 @@ namespace Phumla.Data
             }
             return null;
         }
-        public bool DeleteEntry(long id)
+        public bool DeleteEntry(string id)
         {
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["id"]) == (id))
+                if ((string)r["id"] == (id))
                 {
                     r.Delete();
                 }
