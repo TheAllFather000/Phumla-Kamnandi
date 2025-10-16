@@ -9,7 +9,7 @@ namespace Phumla.Business
     public class Payment
     {
         private int hotelid;
-        private long guestid;
+        private string guestid;
         private double amount;
         private string reason;
         private string date;
@@ -26,10 +26,10 @@ namespace Phumla.Business
         public double Amount
         { get { return amount; } set { amount = value; } }
 
-        public long GuestID
+        public string GuestID
             { get { return guestid; } set { guestid = value; } }
 
-        public Payment(int hid, long gid, double a, string r, string d, string t)
+        public Payment(int hid, string gid, double a, string r, string d, string t)
         {
             hotelid = hid;
             guestid = gid;

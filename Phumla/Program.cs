@@ -48,11 +48,9 @@ namespace Phumla
              db.createTable(createcommand);*/
             //guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
             //Populator populator = new Populator();
-            // populator.populateHotels();
-            SummaryReport summaryReport = new SummaryReport("2025", 1);
-            summaryReport.GenerateOccupancyReport();
-            //PaymentDB payment = new PaymentDB();
-            //payment.SummaryReport("'05/09/2025'");
+           // populator.populateHotels();
+            SummaryReport summaryReport = new SummaryReport();
+            summaryReport.GenerateSummaryReport();
             Application.Run();
         }
     }

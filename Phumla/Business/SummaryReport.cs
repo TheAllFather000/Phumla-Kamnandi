@@ -17,6 +17,7 @@ namespace Phumla.Business
     {
         private PaymentDB payments;
         private BookingDB bookings;
+        public Dictionary<string, int> piechartinfo;
         static string[] headers = { "Hotel Name","Jan", "Feb", "Mar", "Apr" , "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec", "TOTAL"};
         static string[] hotels = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD"};
         static string[] columns = {"B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N" };
@@ -273,6 +274,136 @@ namespace Phumla.Business
                 range.Formula = "=SUM(" + columns[z] + 5 + ":" + columns[z] + 34 + ")";
             }
             workbook.ReadOnlyRecommended = true;
+        }
+
+        public void ElectronicReport()
+        {
+            Excel.Application application = new Excel.Application();
+            application.Visible = true;
+
+            Excel.Workbook workbook = application.Workbooks.Add(); //creating excel file
+            Excel.Worksheet sheet = workbook.Worksheets.Add(); //creating sheet.
+            Excel.Range phumlakTitle = sheet.get_Range("A1", "H1"); //getting the top section for the header.
+            //making the headers and note
+            phumlakTitle.Merge();
+            if (period2 == null)
+            {
+                phumlakTitle.Value = "Phumla Kamnandi: Electronic Report For (" + period1 + ")";
+
+            }
+            else
+            {
+                phumlakTitle.Value = "Phumla Kamnandi: Electronic Report For (" + period1 + "- " + period2 + ")";
+            }
+            phumlakTitle.Font.Bold = true;
+            phumlakTitle.Font.Size = 14;
+            phumlakTitle.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+            phumlakTitle.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            phumlakTitle.Font.Color = System.Drawing.Color.Black;
+
+            application.ActiveWindow.DisplayGridlines = true;
+            //note cell
+            sheet.Cells[2, 1] = "NB: Any cash values displayed below are in millions of Rand ©";
+            Excel.Range noteRange = sheet.get_Range("A2", "F2");
+
+            noteRange.Merge();
+            noteRange.Font.Italic = true;
+            noteRange.Font.Size = 10;
+            noteRange.Font.Color = System.Drawing.Color.Black;
+
+            sheet.Cells[3, 1] = " Report is subject to change. All rights reserved.";
+            noteRange = sheet.get_Range("A3", "F3");
+
+            noteRange.Merge();
+            noteRange.Font.Italic = true;
+            noteRange.Font.Size = 10;
+            noteRange.Font.Color = System.Drawing.Color.Black;
+
+            sheet.Columns["A:D"].AutoFit();
+
+            //making a pie chart.
+            piechartinfo = new Dictionary<string, int>();
+            piechartinfo.Add("18-25 (Young Adults)", 0);
+            piechartinfo.Add("26–35 (Professionals)", 0);
+            piechartinfo.Add("36–45 (Mid-age Travelers)", 0);
+            piechartinfo.Add("46–60 (Older Adults)", 0);
+            piechartinfo.Add("61+ (Retirees)", 0);
+            string[] groups = { "18-25 (Young Adults)", "26–35 (Professionals)", "36–45 (Mid-age Travelers)", "46–60 (Older Adults)", "61+ (Retirees)" };
+
+
+            bookings.Fill("SELECT guestid FROM Booking", "Booking");
+            DataSet ds = bookings.getDataSet();
+            foreach (DataRow r in ds.Tables["Booking"].Rows)
+            {
+                string id = Convert.ToString(r["guestid"]);
+                string birthdate = id.Substring(0, 8);
+                int year = Convert.ToInt32(birthdate.Substring(4, 4));
+                int month = Convert.ToInt32(birthdate.Substring(2, 2));
+                int day = Convert.ToInt32(birthdate.Substring(0, 2));
+                if (Convert.ToString(year).Length == 3)
+                    year = Convert.ToInt32('1' + Convert.ToString(year));
+                Console.WriteLine(year);
+                Console.WriteLine(month);
+                if (day > 31)
+                {
+                    day %= 30;
+                    day++;
+                }
+                if (month == 2 && day >= 29)
+                {
+                    day = 28;
+                }
+                if (day <= 0)
+                    day++;
+                Console.WriteLine(day);
+
+                DateTime birthtime = new DateTime(year, month, day);
+                int age = DateTime.Now.Year - birthtime.Year;
+                if (age >= 18 && age <= 25)
+                {
+                    piechartinfo["18-25 (Young Adults)"] += 1;
+                }
+                else if (age >= 26 && age <= 35)
+                {
+                    piechartinfo["26–35 (Professionals)"] += 1;
+                }
+                else if (age >= 36 && age <= 45)
+                {
+                    piechartinfo["36–45 (Mid-age Travelers)"] += 1;
+                }
+                else if (age >= 46 && age <= 60)
+                {
+                    piechartinfo["46–60 (Older Adults)"] += 1;
+                }
+                else if (age >= 61)
+                {
+                    piechartinfo["61+ (Retirees)"] += 1;
+                }
+
+
+                
+            }
+            sheet.Cells[94, 1] = "Age Groups";
+            sheet.Cells[94, 2] = "Number of Guests";
+            for (int i = 0; i < groups.Length; i++)
+            {
+                sheet.Cells[95 + i, 1] = groups[i];
+                sheet.Cells[95 + i, 2] = piechartinfo[groups[i]];
+            }
+            range = sheet.Range["A94:B99"];
+            Range targetCell = sheet.Range["A8"];
+            ChartObjects objects = sheet.ChartObjects();
+            ChartObject chart = objects.Add(targetCell.Left, targetCell.Top, 300, 300);
+
+            Chart piechart = chart.Chart;
+
+            piechart.ChartType = XlChartType.xlPie;
+            piechart.SetSourceData(range);
+            piechart.HasTitle = true;
+            piechart.ChartTitle.Text = "Guest Age Group Distribution";
+
+            Series s = piechart.SeriesCollection(1);
+            s.ApplyDataLabels(XlDataLabelsType.xlDataLabelsShowPercent, false, false, false, false, false, true, true, true);
         }
     }
 }

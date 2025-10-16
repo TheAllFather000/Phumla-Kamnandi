@@ -15,9 +15,9 @@ namespace Phumla.Data
         private Collection<Payment> payments;
         public const string table = "Payment";
 
-        public const string summaryless= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date < '{0}'\r\nGROUP BY hotelid;";
-        public const string summarygreater= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date > '{0}'\r\nGROUP BY hotelid;";
-        public const string summarybetween= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date < '{0}' AND Payment.date > '{1}'\r\nGROUP BY hotelid;";
+        public const string summaryless= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date <= '{0}'\r\nGROUP BY hotelid;";
+        public const string summarygreater= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date >= '{0}'\r\nGROUP BY hotelid;";
+        public const string summarybetween= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE Payment.date >= '{0}' AND Payment.date <= '{1}'\r\nGROUP BY hotelid;";
         public const string summaryforyear= "SELECT  \r\n\r\n    hotelid,\r\n   \r\n    SUM(CASE WHEN MONTH(Payment.date) = 1 THEN amount ELSE 0 END) AS Jan, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 2 THEN amount ELSE 0 END) AS Feb, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 3 THEN amount ELSE 0 END) AS Mar, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 4 THEN amount ELSE 0 END) AS Apr, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 5 THEN amount ELSE 0 END) AS May, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 6 THEN amount ELSE 0 END) AS Jun, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 7 THEN amount ELSE 0 END) AS Jul, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 8 THEN amount ELSE 0 END) AS Aug, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 9 THEN amount ELSE 0 END) AS Sep, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 10 THEN amount ELSE 0 END) AS Oct, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 11 THEN amount ELSE 0 END) AS Nov, \r\n\r\n    SUM(CASE WHEN MONTH(Payment.date) = 12 THEN amount ELSE 0 END) AS 'Dec', \r\n\r\n    SUM(amount) AS Total \r\n\r\nFROM Payment \r\n\r\nWHERE YEAR(Payment.date) = {0}\r\nGROUP BY hotelid;";
         public Collection<Payment> Payments
         { get { return payments; } }
@@ -35,7 +35,7 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Payment p = new Payment();
-                p.GuestID = Convert.ToInt64(r["guestid"]);
+                p.GuestID = Convert.ToString(r["guestid"]);
                 p.HotelID = Convert.ToInt32(r["hotelid"]);
                 p.Amount = Convert.ToDouble(r["amount"]);
                 p.Reason = Convert.ToString(r["reason"]);
@@ -79,7 +79,7 @@ namespace Phumla.Data
                 {
                     Payment p = new Payment();
                     p.HotelID = Convert.ToInt32(r["hotelid"]);
-                    p.GuestID = Convert.ToInt64(r["guestid"]);
+                    p.GuestID = Convert.ToString(r["guestid"]);
                     p.Time = Convert.ToString(r["time"]);
                     p.Reason = Convert.ToString(r["reason"]);
                     p.Date = Convert.ToString(r["date"]);
@@ -138,7 +138,7 @@ namespace Phumla.Data
                 {
                     Payment p = new Payment();
                     p.HotelID = Convert.ToInt32(r["hotelid"]);
-                    p.GuestID = Convert.ToInt64(r["guestid"]);
+                    p.GuestID = Convert.ToString(r["guestid"]);
                     p.Time = Convert.ToString(r["time"]);
                     p.Reason = Convert.ToString(r["reason"]);
                     p.Date = Convert.ToString(r["date"]);
@@ -148,11 +148,11 @@ namespace Phumla.Data
             }
             return payment;
         }
-        public bool checkDepositPayed(long id)
+        public bool checkDepositPayed(string id)
         {
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToInt64(r["guestid"]) == id && Convert.ToString(r["reason"]) == "Deposit"
+                if (Convert.ToString(r["guestid"]) == id && Convert.ToString(r["reason"]) == "Deposit"
                     && Convert.ToDouble(r["amount"]) >=0)
                 {
                     return true;

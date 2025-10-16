@@ -29,6 +29,12 @@ namespace Phumla.Business
             dateavailable = available;
             this.status = status;
         }
+        public Room(int hid, DateTime available, int status)
+        {
+            hotelid = hid;
+            dateavailable = available;
+            this.status = status;
+        }
         public Room (Room r)
         {
         roomid =r.roomid;

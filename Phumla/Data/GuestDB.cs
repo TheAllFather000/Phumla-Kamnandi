@@ -39,11 +39,11 @@ namespace Phumla.Data
                 if (row.RowState != DataRowState.Deleted)
                 {
                     var guest = new Guest();
-                    guest.ID =  Convert.ToString(row["id"].ToString().TrimEnd());
-                    guest.Name = row["name"].ToString().TrimEnd();
-                    guest.Age = Convert.ToInt32(row["age"].ToString().TrimEnd());
-                    guest.Email = row["email"].ToString().TrimEnd();
-                    guest.Phone = row["phone"].ToString().TrimEnd();
+                    guest.ID =  Convert.ToString(row["id"]);
+                    guest.Name = Convert.ToString(row["name"]);
+                    guest.Age = Convert.ToInt32(row["age"]);
+                    guest.Email = Convert.ToString(row["email"]);
+                    guest.Phone = Convert.ToString(row["phone"]);
                     guest.Outstanding = Convert.ToDouble(row["outstandingpayments"]);
                     guests.Add(guest);
             }
@@ -120,7 +120,7 @@ namespace Phumla.Data
         {
             SqlParameter param = default(SqlParameter);
             param.SourceVersion = DataRowVersion.Current;
-            param = new SqlParameter("@id", SqlDbType.BigInt, 100, "ID");
+            param = new SqlParameter("@id", SqlDbType.VarChar, 13, "ID");
             adapter.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@name", SqlDbType.Text, 100, "Name");
@@ -143,7 +143,7 @@ namespace Phumla.Data
         {
             SqlParameter param = default(SqlParameter);
             param.SourceVersion = DataRowVersion.Current;
-            param = new SqlParameter("@id", SqlDbType.Text, 100, "ID");
+            param = new SqlParameter("@id", SqlDbType.VarChar, 13, "ID");
             adapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@name", SqlDbType.Text, 100, "Name");
@@ -183,6 +183,5 @@ namespace Phumla.Data
             return success;
         }
         #endregion
-        //to do , put the current methods into DB class, generalise for all classes.
     }
 }
