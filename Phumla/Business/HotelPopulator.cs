@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Phumla.Business
 {
@@ -37,7 +38,13 @@ namespace Phumla.Business
                 {
                     for (int i = 0; i < hotel.RoomNumber; i++)
                     {
-                        Room room = new Room(hotel.HotelID, DateTime.Today, 0); // This auto-increments.
+                        Room room = new Room
+                        {
+                            HotelID = hotel.HotelID,
+                            DateAvailable = DateTime.Today,
+                            Status = 0
+                        };
+
                         roomDB.AddRoom(room);
                     }
                 }

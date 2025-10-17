@@ -148,18 +148,29 @@ namespace Phumla.Data
                 {
                     Booking b = new Booking((Booking)g);
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     row["guestid"] = b.GuestID;
+=======
+                    row["id"] = b.BookingID;
+>>>>>>> Stashed changes
+=======
+                    row["id"] = b.BookingID;
+>>>>>>> Stashed changes
                     row["roomid"] = b.RoomNumber;
                     row["hotelid"] = b.HotelID;
                     row["guestid"] = b.GuestID;
-                    b.CheckedIn = Convert.ToInt32(row["checkin"]) == 1 ? true : false;
                     row["checkin"] = b.CheckedIn ? 1 : 0;
                     row["bookingtime"] = b.BookingTime;
                     row["bookingdate"] = b.BookingDate;
                     row["depositstatus"] = b.DepositStatus;
                     row["bookingend"] = b.BookingEnd;
-                    ds.Tables[table].Rows.Add(row);
                     row["bill"] = b.Bill;
+
+                    if (op == DB.Operation.Add)
+                    {
+                        ds.Tables[table].Rows.Add(row);
+                    }
 
                     return UpdateDataSource("SELECT * FROM Booking", table);
                 }
@@ -210,6 +221,7 @@ namespace Phumla.Data
                 else if (g.GetType() == typeof(Room))
                 {
                     Room r = new Room((Room)g);
+                    row["roomid"] = r.RoomID;
                     row["hotelid"] = r.HotelID;
                     row["date_available"] = r.DateAvailable;
                     row["status"] = r.Status;

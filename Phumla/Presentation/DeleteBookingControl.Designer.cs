@@ -31,8 +31,8 @@
             this.lblDeleteBooking = new ReaLTaiizor.Controls.BigLabel();
             this.lsvBookings = new ReaLTaiizor.Controls.MaterialListView();
             this.btnDeleteBooking = new ReaLTaiizor.Controls.AirButton();
-            this.poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.poisonDateTime2 = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.dtpStartDate = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.dtpEndDate = new ReaLTaiizor.Controls.PoisonDateTime();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
@@ -87,23 +87,24 @@
             this.btnDeleteBooking.Transparent = false;
             this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
             // 
-            // poisonDateTime1
+            // dtpStartDate
             // 
-            this.poisonDateTime1.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.poisonDateTime1.Location = new System.Drawing.Point(117, 6);
-            this.poisonDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.poisonDateTime1.Name = "poisonDateTime1";
-            this.poisonDateTime1.Size = new System.Drawing.Size(230, 30);
-            this.poisonDateTime1.TabIndex = 5;
+            this.dtpStartDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.dtpStartDate.Location = new System.Drawing.Point(117, 6);
+            this.dtpStartDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(230, 30);
+            this.dtpStartDate.TabIndex = 5;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.poisonDateTime1_ValueChanged);
             // 
-            // poisonDateTime2
+            // dtpEndDate
             // 
-            this.poisonDateTime2.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.poisonDateTime2.Location = new System.Drawing.Point(117, 153);
-            this.poisonDateTime2.MinimumSize = new System.Drawing.Size(0, 30);
-            this.poisonDateTime2.Name = "poisonDateTime2";
-            this.poisonDateTime2.Size = new System.Drawing.Size(230, 30);
-            this.poisonDateTime2.TabIndex = 6;
+            this.dtpEndDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.dtpEndDate.Location = new System.Drawing.Point(117, 153);
+            this.dtpEndDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(230, 30);
+            this.dtpEndDate.TabIndex = 6;
             // 
             // tableLayoutPanel1
             // 
@@ -111,8 +112,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.44476F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.55524F));
-            this.tableLayoutPanel1.Controls.Add(this.poisonDateTime1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.poisonDateTime2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtpStartDate, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtpEndDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblStartDate, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblEndDate, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 74);
@@ -163,8 +164,8 @@
         private ReaLTaiizor.Controls.BigLabel lblDeleteBooking;
         private ReaLTaiizor.Controls.MaterialListView lsvBookings;
         private ReaLTaiizor.Controls.AirButton btnDeleteBooking;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime2;
+        private ReaLTaiizor.Controls.PoisonDateTime dtpStartDate;
+        private ReaLTaiizor.Controls.PoisonDateTime dtpEndDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;

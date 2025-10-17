@@ -20,8 +20,8 @@ namespace Phumla.Presentation
         private string BookingID {  get; set; }
         private string HotelID { get; set; }
         private bool CheckedIn {  get; set; }
-        private string StartDate { get; set; }
-        private string EndDate { get; set; }
+        private DateTime StartDate { get; set; }
+        private DateTime EndDate { get; set; }
         private string RoomNumber { get; set; }
         private bool DepositStatus { get; set; }
         private double Bill { get; set; }
@@ -64,15 +64,27 @@ namespace Phumla.Presentation
 
             foreach (Booking booking in bookings)
             {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 ListViewItem item = new ListViewItem(Convert.ToString(booking.BookingID));
                 item.SubItems.Add(Convert.ToString(booking.GuestID));
                 item.SubItems.Add(Convert.ToString(booking.HotelID));
                 item.SubItems.Add(booking.RoomNumber);
+=======
+                ListViewItem item = new ListViewItem(booking.BookingID.ToString());
+                item.SubItems.Add(booking.HotelID.ToString());
+                item.SubItems.Add(booking.RoomNumber.ToString());
+>>>>>>> Stashed changes
+=======
+                ListViewItem item = new ListViewItem(booking.BookingID.ToString());
+                item.SubItems.Add(booking.HotelID.ToString());
+                item.SubItems.Add(booking.RoomNumber.ToString());
+>>>>>>> Stashed changes
                 item.SubItems.Add(booking.BookingDate.ToString());
                 item.SubItems.Add(booking.BookingEnd.ToString());
                 item.SubItems.Add(booking.CheckedIn.ToString());
                 item.SubItems.Add(booking.DepositStatus.ToString());
-                item.SubItems.Add(booking.Bill.ToString("C"));
+                item.SubItems.Add(booking.Bill.ToString());
 
                 item.Tag = booking;
                 lsvBookings.Items.Add(item);
@@ -88,43 +100,46 @@ namespace Phumla.Presentation
 
         private void btnConfirmChanges_Click(object sender, EventArgs e)
         {
-            // We'll need to check if the modified data is valid in the first place
-            BookingID = txtBookingID.Text;
-            HotelID = txtHotelID.Text;
-            RoomNumber = txtRoomID.Text;
-            CheckedIn = cbxCheckedIn.Checked;
-            StartDate = dtpStartDate.Text;
-            EndDate = dtpEndDate.Text;
-            DepositStatus = cbxDepositStatus.Checked;
-            Bill = Convert.ToDouble(txtBill.Text);
-            // Optional: 
-            // Time = txtTime.Text;
-            //Booking booking = new Booking(BookingID, HotelID, CheckedIn, StartDate, EndDate, "Blank", RoomNumber, DepositStatus, Bill);
+            if (lsvBookings.SelectedItems.Count == 0) return;
+            Booking originalBooking = lsvBookings.SelectedItems[0].Tag as Booking;
 
-            //bookingDB.editBooking(booking);
+            if (originalBooking == null) return;
+            originalBooking.HotelID = Convert.ToInt32(txtHotelID.Text);
+            originalBooking.RoomNumber = txtRoomID.Text;
+            originalBooking.CheckedIn = cbxCheckedIn.Checked;
+            originalBooking.BookingDate = dtpStartDate.Value.ToString();
+            originalBooking.BookingEnd = dtpEndDate.Value.ToString();
+            originalBooking.BookingTime = dtpStartDate.Value.TimeOfDay.ToString();
+            originalBooking.DepositStatus = cbxDepositStatus.Checked;
+            originalBooking.Bill = Convert.ToDouble(txtBill.Text.Replace('R', ' ').Replace('$', ' ')); // Clean up currency formatting if present
+            bookingDB.editBooking(originalBooking);
             bookings = bookingDB.Bookings;
             loadListView();
-
-            // bookingDB.editBooking(new Booking(false, ));
-
+            changeEnabled(tlpBookingDetails, false);
+            btnConfirmChanges.Enabled = false;
         }
 
         private void lsvBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsvBookings.SelectedItems.Count > 0)
             {
-                // Enables everything
                 changeEnabled(tlpBookingDetails, true);
-                // Add details to each component
                 Booking booking = lsvBookings.SelectedItems[0].Tag as Booking;
-                txtBookingID.Text = Convert.ToString(booking.BookingID);
-                txtHotelID.Text = Convert.ToString(booking.HotelID);
+                txtBookingID.Text = booking.BookingID.ToString();
+                txtHotelID.Text = booking.HotelID.ToString();
                 txtRoomID.Text = booking.RoomNumber;
                 cbxCheckedIn.Checked = booking.CheckedIn;
-                dtpStartDate.Value =  Convert.ToDateTime(booking.BookingDate);
-                dtpEndDate.Value = Convert.ToDateTime(booking.BookingEnd);
-                // txtDepositStatus.Text = booking.DepositStatus;
-                txtBill.Text = booking.Bill.ToString("C");
+
+                try
+                {
+                    dtpStartDate.Value = Convert.ToDateTime(booking.BookingDate);
+                    dtpEndDate.Value = Convert.ToDateTime(booking.BookingEnd);
+                }
+                catch (FormatException)
+                {
+
+                }
+                txtBill.Text = booking.Bill.ToString();
             }
         }
 

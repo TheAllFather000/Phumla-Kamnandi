@@ -28,6 +28,7 @@ namespace Phumla.Data
         {
             bookings = new Collection<Booking>();
             Fill("Select * From Booking", table);
+            getAllBookings();
         }
         public void getAllBookings()
         {
@@ -62,7 +63,15 @@ namespace Phumla.Data
             bool success = false;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 if (Convert.ToString(r["id"]) == b.GuestID && Convert.ToString(r["roomid"]) == b.RoomNumber)
+=======
+                if (Convert.ToInt32(r["id"]) == b.BookingID && Convert.ToString(r["roomid"]) == b.RoomNumber)
+>>>>>>> Stashed changes
+=======
+                if (Convert.ToInt32(r["id"]) == b.BookingID && Convert.ToString(r["roomid"]) == b.RoomNumber)
+>>>>>>> Stashed changes
                 {
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, b, table, Operation.Edit);
@@ -77,7 +86,7 @@ namespace Phumla.Data
             Collection<Booking> bookingsfor = new Collection<Booking>();
             foreach (Booking b in bookings)
             {
-                if (b.GuestID == id)
+                if (b.BookingID.ToString() == id)
                     bookingsfor.Add(b);
 
             }
@@ -106,7 +115,9 @@ namespace Phumla.Data
             bool success;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
+
                 if (Convert.ToString(r["id"]) == Convert.ToString(booking.BookingID) && Convert.ToString(r["bookingdate"]) == booking.BookingDate && Convert.ToString(r["roomid"]) == booking.RoomNumber)
+
                 {
                     r.Delete();
                     break;

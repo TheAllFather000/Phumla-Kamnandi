@@ -51,7 +51,6 @@ namespace Phumla.Data
             DataRow r = ds.Tables[table].NewRow();
             SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             bool success = FillRow(r, p, table, DB.Operation.Add);
-            ds.Tables[table].Rows.Add(r);
             getAllPayments();
             return success;
         }

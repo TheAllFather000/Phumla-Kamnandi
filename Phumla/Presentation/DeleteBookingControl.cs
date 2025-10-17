@@ -47,6 +47,7 @@ namespace Phumla.Presentation
 
             foreach (Booking booking in bookings)
             {
+
                 ListViewItem item = new ListViewItem(Convert.ToString(booking.BookingID));
                 item.SubItems.Add(Convert.ToString(booking.GuestID));
                 item.SubItems.Add(Convert.ToString(booking.HotelID));
@@ -55,7 +56,7 @@ namespace Phumla.Presentation
                 item.SubItems.Add(booking.BookingEnd);
                 item.SubItems.Add(booking.CheckedIn.ToString());
                 item.SubItems.Add(booking.DepositStatus.ToString());
-                item.SubItems.Add(booking.Bill.ToString("$"));
+                item.SubItems.Add(booking.Bill.ToString());
                 item.Tag = booking;
                 lsvBookings.Items.Add(item);
             }
@@ -78,13 +79,21 @@ namespace Phumla.Presentation
                     try
                     {
                         bookingDB.cancelBooking(booking);
+                        GuestDB guestDB = new GuestDB();
+                     
                         Email email = new Email();
-                        //email.Delete(, booking); // Ask Ibrahim to update the booking class
+                        email.Delete(guestDB.guestFound(booking.GuestID), booking);
                         MessageBox.Show("Booking cancelled successfully. A notification has been sent to the guest.");
+                        loadListView();
                     }
                     catch { MessageBox.Show("An error occured while atttempting to delete the record. Try again.", "ERROR"); }
                 }
             }
+        }
+
+        private void poisonDateTime1_ValueChanged(object sender, EventArgs e)
+        {
+            dtpEndDate.MinDate = dtpStartDate.MinDate;
         }
     }
 }

@@ -62,12 +62,13 @@ namespace Phumla.Data
         public void AddRoom(Room room)
         {
             DataRow r = ds.Tables[table].NewRow();
+            room.RoomID = generateRoomID();
             FillRow(r, room, table, Operation.Add);
             getAllRooms();
 
         }
 
-        public string generateRoomID()
+        public int generateRoomID()
         {
             int max = 0;
             foreach (DataRow row in ds.Tables[table].Rows)
@@ -78,7 +79,7 @@ namespace Phumla.Data
                     max = Math.Max(max, currentID);
                 }
             }
-            return (max + 1).ToString();
+            return max + 1;
         }
 
         public Collection<Room> checkRoomAvailability(DateTime date)

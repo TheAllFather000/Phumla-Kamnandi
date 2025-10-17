@@ -49,9 +49,9 @@ namespace Phumla
             //guest.AddGuest(new Guest("Testing", 12, "564561", "phumla@k.gmail.com", "+test", 100));
             //Populator populator = new Populator();
            // populator.populateHotels();
-            //SummaryReport summaryReport = new SummaryReport("2024-01-01", "2025-06-06");
-            //summaryReport.GenerateOccupancyReport();
-
+            //SummaryReport summaryReport = new SummaryReport();
+            //summaryReport.GenerateSummaryReport();
+]
             Application.Run(new HomePage());
         }
     }

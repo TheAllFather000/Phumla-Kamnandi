@@ -59,7 +59,7 @@ namespace Phumla.Business
          */
         public Booking(string guestID, int hotelID, bool checkin, string bookingDate, string endDate, string bookingTime, string roomNumber, bool depositStatus, double b)
         {
-            GuestID = guestid;
+            GuestID = guestID;
             HotelID = hotelID;
             CheckedIn = checkin;
             BookingDate = bookingDate;
