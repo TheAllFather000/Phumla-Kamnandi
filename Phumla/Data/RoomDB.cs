@@ -34,18 +34,18 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Room room = new Room();
-                room.RoomID = Convert.ToString(r["roomid"]);
+                room.RoomID = Convert.ToInt32(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
                 room.DateAvailable = Convert.ToDateTime(r["date_available"]);
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));
                 rooms.Add(room);
             }
         }
-        public void setToBooked(string rid)
+        public void setToBooked(int rid)
         {
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (rid == Convert.ToString(r["roomid"]))
+                if (rid == (int) r["roomid"])
                 {
                     r["roomstatus"] = 1;
                     break;
@@ -88,7 +88,7 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Room room = new Room();
-                room.RoomID = Convert.ToString(r["roomid"]);
+                room.RoomID = Convert.ToInt32(r["roomid"]);
                 room.HotelID = Convert.ToInt32(r["hotelid"]);
                 room.DateAvailable = Convert.ToDateTime(r["date_available"]);
                 Console.WriteLine(room.DateAvailable.ToString("yyyy-MM-dd HH:mm:ss"));

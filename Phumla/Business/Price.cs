@@ -10,7 +10,7 @@ namespace Phumla.Business
     {
         public enum Seasons
         {
-            LOW = 550, 
+            LOW = 550,
             MID = 750,
             HIGH = 995
         }
@@ -20,7 +20,7 @@ namespace Phumla.Business
         private static double amount;
         private static double deposit;
 
-        static Price() 
+        static Price()
         {
             amount = 0;
         }
@@ -28,34 +28,34 @@ namespace Phumla.Business
         /*
          * Returns the value of that particular day in terms of price.
          */
-        public static double dayValue(DateTime date) 
+        public static double dayValue(DateTime date)
         {
             int dayOfMonth = date.Day;
 
             if (dayOfMonth >= 1 && dayOfMonth <= 7)
             {
-                return (double) Seasons.LOW;
+                return (double)Seasons.LOW;
             }
-            else if (8 <= dayOfMonth  && dayOfMonth <= 16)
+            else if (8 <= dayOfMonth && dayOfMonth <= 16)
             {
-                return (double) Seasons.MID;
+                return (double)Seasons.MID;
             }
             else
             {
-                return (double) Seasons.HIGH;
-            } 
-                
+                return (double)Seasons.HIGH;
+            }
+
         }
 
         // Calculates the deposit needed to be paid.
-        public static double calculateDeposit(DateTime startDate, DateTime endDate) 
+        public static double calculateDeposit(DateTime startDate, DateTime endDate)
         {
             calculateDays(startDate, endDate);
             deposit = amount * 0.1;
             return deposit;
         }
 
-       
+
         public static double calculateActual(DateTime startDate, DateTime endDate)
         {
             calculateDeposit(startDate, endDate);
@@ -65,11 +65,11 @@ namespace Phumla.Business
         /*
          * Calculates the money required between 2 days.
          */
-        public static double calculateDays (DateTime startDate, DateTime endDate) 
+        public static double calculateDays(DateTime startDate, DateTime endDate)
         {
             double amount = 0;
             DateTime tempDate = startDate;
-            while (tempDate < endDate)  
+            while (tempDate < endDate)
             {
                 amount += dayValue(tempDate);
                 tempDate = tempDate.AddDays(1);
@@ -77,8 +77,5 @@ namespace Phumla.Business
             return amount; // Assume a deposit is made every single time a booking is made.
 
         }
-
-    class Price
-    {
     }
 }

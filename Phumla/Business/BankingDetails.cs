@@ -8,16 +8,15 @@ namespace Phumla.Business
 {
     public class BankingDetails
     {
-
         private string idNumber;
-        private long cardNumber;
+        private string cardNumber;
         private int cvv;
         private string expiryDate;
         private const int cardLength = 16; // The stanadard for Mastercard and the others.
 
         public string IDNumber
         { get { return idNumber; } set { idNumber = value; } }
-        public long CardNumber
+        public string CardNumber
         { get { return cardNumber; } set { cardNumber = value; } }
         public int CVV
         { get { return cvv; } set { cvv = value; } }
@@ -27,12 +26,12 @@ namespace Phumla.Business
 
         public BankingDetails()
         {
-            cardNumber = 0;
+            cardNumber = "";
             cvv = 0;
             expiryDate = "08/2028";
         }
 
-        public BankingDetails(string id, long card, int cvv, string ex)
+        public BankingDetails(string id, string card, int cvv, string ex)
         {
             this.idNumber = id;
             this.cardNumber = card;
