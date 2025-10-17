@@ -63,15 +63,8 @@ namespace Phumla.Data
             bool success = false;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
                 if (Convert.ToString(r["id"]) == b.GuestID && Convert.ToString(r["roomid"]) == b.RoomNumber)
-=======
-                if (Convert.ToInt32(r["id"]) == b.BookingID && Convert.ToString(r["roomid"]) == b.RoomNumber)
->>>>>>> Stashed changes
-=======
-                if (Convert.ToInt32(r["id"]) == b.BookingID && Convert.ToString(r["roomid"]) == b.RoomNumber)
->>>>>>> Stashed changes
                 {
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, b, table, Operation.Edit);

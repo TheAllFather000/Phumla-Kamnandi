@@ -148,15 +148,8 @@ namespace Phumla.Data
                 {
                     Booking b = new Booking((Booking)g);
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                     row["guestid"] = b.GuestID;
-=======
                     row["id"] = b.BookingID;
->>>>>>> Stashed changes
-=======
-                    row["id"] = b.BookingID;
->>>>>>> Stashed changes
                     row["roomid"] = b.RoomNumber;
                     row["hotelid"] = b.HotelID;
                     row["guestid"] = b.GuestID;

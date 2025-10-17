@@ -64,22 +64,10 @@ namespace Phumla.Presentation
 
             foreach (Booking booking in bookings)
             {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 ListViewItem item = new ListViewItem(Convert.ToString(booking.BookingID));
                 item.SubItems.Add(Convert.ToString(booking.GuestID));
                 item.SubItems.Add(Convert.ToString(booking.HotelID));
                 item.SubItems.Add(booking.RoomNumber);
-=======
-                ListViewItem item = new ListViewItem(booking.BookingID.ToString());
-                item.SubItems.Add(booking.HotelID.ToString());
-                item.SubItems.Add(booking.RoomNumber.ToString());
->>>>>>> Stashed changes
-=======
-                ListViewItem item = new ListViewItem(booking.BookingID.ToString());
-                item.SubItems.Add(booking.HotelID.ToString());
-                item.SubItems.Add(booking.RoomNumber.ToString());
->>>>>>> Stashed changes
                 item.SubItems.Add(booking.BookingDate.ToString());
                 item.SubItems.Add(booking.BookingEnd.ToString());
                 item.SubItems.Add(booking.CheckedIn.ToString());
