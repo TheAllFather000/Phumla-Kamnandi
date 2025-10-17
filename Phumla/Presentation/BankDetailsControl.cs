@@ -27,6 +27,11 @@ namespace Phumla.Presentation
         {
             InitializeComponent();
         }
+        public BankDetailsControl(Guest newGuest)
+        {
+            InitializeComponent();
+            guest = newGuest;
+        }
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
@@ -91,6 +96,7 @@ namespace Phumla.Presentation
                 bankingDetails = new BankingDetails(guest.ID, cardNumber, cvv, expiryDate.ToString());
                 BankingDetailsDB bankingDetailsDB = new BankingDetailsDB();
                 bankingDetailsDB.AddNewBankingDetails(bankingDetails);
+                MessageBox.Show("Banking details successfully added.");
             }
             
         }

@@ -150,6 +150,12 @@
     <Compile Include="Presentation\AddGuestControl.Designer.cs">
       <DependentUpon>AddGuestControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\SearchBookingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\SearchBookingControl.Designer.cs">
+      <DependentUpon>SearchBookingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\AddBookingControl.resx">
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\AddGuestControl.resx">
       <DependentUpon>AddGuestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\SearchBookingControl.resx">
+      <DependentUpon>SearchBookingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

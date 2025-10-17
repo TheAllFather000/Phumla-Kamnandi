@@ -15,9 +15,10 @@ namespace Phumla.Presentation
     public partial class HomePage : Form
     {
         private Employee employee;
-        private string tpgAddBookingString = "tpgAddBooking";
-        private string tpgEditBookingString = "tpgEditBooking";
-        private string tpgDeleteBookingString = "tpgDeleteBooking";
+        private const string tpgAddBookingString = "tpgAddBooking";
+        private const string tpgEditBookingString = "tpgEditBooking";
+        private const string tpgDeleteBookingString = "tpgDeleteBooking";
+        private const string tpgSearchBookingString = "tpgSearchBooking";
         public HomePage()
         {
             InitializeComponent();
@@ -126,24 +127,24 @@ namespace Phumla.Presentation
                 page.Controls.Add(editBooking);
                 clearTabs(tpgEditBookingString);
             }
-            else if (tbcHomePage.TabPages.ContainsKey(tpgAddBookingString))
+            else if (tbcHomePage.TabPages.ContainsKey(tpgEditBookingString))
             {
-                clearTabs(tpgAddBookingString);
-                if (tbcHomePage.SelectedTab.Name == tpgAddBookingString)
+                clearTabs(tpgEditBookingString);
+                if (tbcHomePage.SelectedTab.Name == tpgEditBookingString)
                 {
                     DialogResult result = MessageBox.Show("The Edit Booking tab will reload.", "Are you sure?", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
-                        TabPage existingPage = tbcHomePage.TabPages[tpgAddBookingString];
+                        TabPage existingPage = tbcHomePage.TabPages[tpgEditBookingString];
                         existingPage.Controls.Clear();
-                        BankDetailsControl addGuest = new BankDetailsControl();
-                        addGuest.Dock = DockStyle.Fill;
-                        existingPage.Controls.Add(addGuest);
+                        EditBookingControl editBooking = new EditBookingControl();
+                        editBooking.Dock = DockStyle.Fill;
+                        existingPage.Controls.Add(editBooking);
                         tbcHomePage.SelectedTab = existingPage;
                     }
                 }
             }
-            }
+        }
         private void btnDeleteBooking_Click(object sender, EventArgs e)
         {
             if (!tbcHomePage.TabPages.ContainsKey(tpgDeleteBookingString))
@@ -157,12 +158,30 @@ namespace Phumla.Presentation
                 DeleteBookingControl deleteBooking = new DeleteBookingControl();
                 page.Controls.Clear();
                 page.Controls.Add(deleteBooking);
+                clearTabs(tpgDeleteBookingString);
+            }
+            else if (tbcHomePage.TabPages.ContainsKey(tpgDeleteBookingString))
+            {
+                clearTabs(tpgDeleteBookingString);
+                if (tbcHomePage.SelectedTab.Name == tpgDeleteBookingString)
+                {
+                    DialogResult result = MessageBox.Show("The Delete Booking tab will reload.", "Are you sure?", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        TabPage existingPage = tbcHomePage.TabPages[tpgDeleteBookingString];
+                        existingPage.Controls.Clear();
+                        DeleteBookingControl deleteBooking = new DeleteBookingControl();
+                        deleteBooking.Dock = DockStyle.Fill;
+                        existingPage.Controls.Add(deleteBooking);
+                        tbcHomePage.SelectedTab = existingPage;
+                    }
+                }
             }
         }
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            //lblHomePage.Text = "Welcome, " + employee.EmployeeID; 
+            //lblWelcome.Text = "Welcome, " + employee.EmployeeID; 
         }
 
         private void poisonDropDownButton1_Click(object sender, EventArgs e)
@@ -194,6 +213,40 @@ namespace Phumla.Presentation
         private void tbcHomePage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearchBooking_Click(object sender, EventArgs e)
+        {
+            if (!tbcHomePage.TabPages.ContainsKey(tpgSearchBookingString))
+            {
+                TabPage page = new TabPage();
+                page.Name = tpgSearchBookingString;
+                page.Text = "Search Booking";
+                page.AutoScroll = true;
+                tbcHomePage.Controls.Add(page);
+
+                SearchBookingControl searchBooking = new SearchBookingControl();
+                page.Controls.Clear();
+                page.Controls.Add(searchBooking);
+                clearTabs(tpgSearchBookingString);
+            }
+            else if (tbcHomePage.TabPages.ContainsKey(tpgSearchBookingString))
+            {
+                clearTabs(tpgSearchBookingString);
+                if (tbcHomePage.SelectedTab.Name == tpgSearchBookingString)
+                {
+                    DialogResult result = MessageBox.Show("The Search Booking tab will reload.", "Are you sure?", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        TabPage existingPage = tbcHomePage.TabPages[tpgSearchBookingString];
+                        existingPage.Controls.Clear();
+                        SearchBookingControl searchBooking = new SearchBookingControl();
+                        searchBooking.Dock = DockStyle.Fill;
+                        existingPage.Controls.Add(searchBooking);
+                        tbcHomePage.SelectedTab = existingPage;
+                    }
+                }
+            }
         }
     }
 }

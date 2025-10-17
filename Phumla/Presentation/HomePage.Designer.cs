@@ -36,12 +36,12 @@
             this.coreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCreateReport = new System.Windows.Forms.Button();
-            this.btnSearchBooking = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnEditBooking = new System.Windows.Forms.Button();
+            this.btnCreateReport = new System.Windows.Forms.Button();
+            this.btnSearchBooking = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new ReaLTaiizor.Controls.HeaderLabel();
@@ -135,30 +135,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 374);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // btnCreateReport
-            // 
-            this.btnCreateReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateReport.Location = new System.Drawing.Point(51, 259);
-            this.btnCreateReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCreateReport.Name = "btnCreateReport";
-            this.btnCreateReport.Size = new System.Drawing.Size(171, 39);
-            this.btnCreateReport.TabIndex = 1;
-            this.btnCreateReport.Text = "Create Report";
-            this.btnCreateReport.UseVisualStyleBackColor = true;
-            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click_1);
-            // 
-            // btnSearchBooking
-            // 
-            this.btnSearchBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchBooking.AutoSize = true;
-            this.btnSearchBooking.Location = new System.Drawing.Point(51, 197);
-            this.btnSearchBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchBooking.Name = "btnSearchBooking";
-            this.btnSearchBooking.Size = new System.Drawing.Size(171, 39);
-            this.btnSearchBooking.TabIndex = 3;
-            this.btnSearchBooking.Text = "Search Booking";
-            this.btnSearchBooking.UseVisualStyleBackColor = true;
-            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,6 +183,31 @@
             this.btnEditBooking.Text = "Edit Booking";
             this.btnEditBooking.UseVisualStyleBackColor = true;
             this.btnEditBooking.Click += new System.EventHandler(this.btnEditBooking_Click);
+            // 
+            // btnCreateReport
+            // 
+            this.btnCreateReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreateReport.Location = new System.Drawing.Point(51, 259);
+            this.btnCreateReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateReport.Name = "btnCreateReport";
+            this.btnCreateReport.Size = new System.Drawing.Size(171, 39);
+            this.btnCreateReport.TabIndex = 1;
+            this.btnCreateReport.Text = "Create Report";
+            this.btnCreateReport.UseVisualStyleBackColor = true;
+            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click_1);
+            // 
+            // btnSearchBooking
+            // 
+            this.btnSearchBooking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchBooking.AutoSize = true;
+            this.btnSearchBooking.Location = new System.Drawing.Point(51, 197);
+            this.btnSearchBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchBooking.Name = "btnSearchBooking";
+            this.btnSearchBooking.Size = new System.Drawing.Size(171, 39);
+            this.btnSearchBooking.TabIndex = 3;
+            this.btnSearchBooking.Text = "Search Booking";
+            this.btnSearchBooking.UseVisualStyleBackColor = true;
+            this.btnSearchBooking.Click += new System.EventHandler(this.btnSearchBooking_Click);
             // 
             // flowLayoutPanel1
             // 

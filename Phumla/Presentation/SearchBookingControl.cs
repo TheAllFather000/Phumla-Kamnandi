@@ -13,22 +13,15 @@ using System.Windows.Forms;
 
 namespace Phumla.Presentation
 {
-    public partial class DeleteBookingControl : UserControl
+    public partial class SearchBookingControl : UserControl
     {
         private BookingDB bookingDB;
-        private Collection <Booking> bookings;
-        public DeleteBookingControl()
+        private Collection<Booking> bookings;
+        public SearchBookingControl()
         {
             InitializeComponent();
             bookingDB = new BookingDB();
             bookings = bookingDB.Bookings;
-        }
-
-        private void DeleteBookingControl_Load(object sender, EventArgs e)
-        {
-            // Populating the list view
-            loadListView();
-
         }
 
         private void loadListView()
@@ -63,43 +56,34 @@ namespace Phumla.Presentation
 
         }
 
-        private void lsvBookings_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void SearchBooking_Load(object sender, EventArgs e)
         {
+            loadListView();
 
         }
+        private int daysBetween(DateTime start, DateTime end)
+        {
+            double days = (end - start).TotalDays;
+            return (int)days;
+        }
+        private string ToString(Booking booking)
+        {
+            string temp = "Summary:\nHotel:\t" + booking.HotelID + "\nGuests:\t";
 
-        private void btnDeleteBooking_Click(object sender, EventArgs e)
+            temp += "\t" + booking.GuestID + "\n";
+            
+            temp += "Total days:\t" + daysBetween(Convert.ToDateTime(booking.BookingEnd), Convert.ToDateTime(booking.BookingDate)) + "\n";
+            temp += "Bill: " + booking.Bill;
+            return temp;
+        }
+
+        private void lsvBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsvBookings.SelectedItems.Count > 0)
             {
                 Booking booking = lsvBookings.SelectedItems[0].Tag as Booking;
-                DialogResult result = MessageBox.Show("Booking " + booking.BookingID + " will be permanently deleted.", "Proceed with cancellation?", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-                        bookingDB.cancelBooking(booking);
-                        GuestDB guestDB = new GuestDB();
-                     
-                        Email email = new Email();
-                        email.Delete(guestDB.guestFound(booking.GuestID), booking);
-                        MessageBox.Show("Booking cancelled successfully. A notification has been sent to the guest.");
-                        loadListView();
-                    }
-                    catch { MessageBox.Show("An error occured while atttempting to delete the record. Try again.", "ERROR"); }
-                }
-            }
-        }
-
-        private void poisonDateTime1_ValueChanged(object sender, EventArgs e)
-        {
-            dtpEndDate.MinDate = dtpStartDate.MinDate;
-            foreach (Booking booking in bookings)
-            {
-                if (Convert.ToDateTime(booking.BookingDate) >= dtpStartDate.Value)
-                {
-
-                }
+                txtSummary.Text = ToString(booking);
             }
         }
     }

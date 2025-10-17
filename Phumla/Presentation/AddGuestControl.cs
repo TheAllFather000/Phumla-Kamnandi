@@ -260,14 +260,14 @@ namespace Phumla.Presentation
 
             //Console.WriteLine(ValidName + "\n" + ValidSurname + "\n" + ValidEmail + "\n" + ValidDOB + "\n" + ValidID + "\n" + ValidPhoneNumber);
 
-            if (ValidName = ValidSurname = ValidEmail = ValidDOB = ValidID = ValidPhoneNumber == true)
+            if (ValidName && ValidSurname && ValidEmail && ValidDOB && ValidID && ValidPhoneNumber)
             {
                 Guest newGuest = new Guest(FirstName + " " + Surname, Age, ID, Email, PhoneNumber, 0); // 0 by default
                 guestDB.AddGuest(newGuest);
                 MessageBox.Show("Guest successfully added to database.");
                 
             }
-            if (ValidStreetName = ValidSuburb = ValidPostalCode = ValidCity = ValidStreetNumber == true)
+            if (ValidStreetName && ValidSuburb && ValidPostalCode && ValidCity && ValidStreetNumber)
             {
                 Address newAddress = new Address(ID, StreetNumber, StreetName, Suburb, City, PostalCode);
                 addressDB.addNewAddress(newAddress);
@@ -331,6 +331,192 @@ namespace Phumla.Presentation
 
         private void btnAddBankingDetails_Click(object sender, EventArgs e)
         {
+            FirstName = txtName.Text;
+            Surname = txtSurname.Text;
+            ID = txtID.Text;
+            Email = txtEmail.Text;
+            PhoneNumber = txtPhoneNumber.Text;
+            guest = null;
+
+
+            ValidID = true; // True by default to evade the condition at the bottom
+            ValidName = ValidSurname = ValidEmail = ValidDOB = ValidPhoneNumber = false;
+
+            // Name
+            if (!guest.isNameValid(FirstName))
+            {
+                lblNameError.Text = "Enter a valid name.";
+                ValidName = false;
+            }
+            else
+            {
+                lblNameError.Visible = false;
+                ValidName = true;
+            }
+
+            // Surname
+            if (!guest.isSurnameValid(FirstName))
+            {
+                lblSurnameError.Text = "Enter a valid surname.";
+                ValidSurname = false;
+            }
+            else
+            {
+                lblSurnameError.Visible = false;
+                ValidSurname = true;
+            }
+
+            // DOB
+            if (!guest.isDoBValid(dateOfBirth))
+            {
+                // lblDoBError.Text = "You missed everything bro";
+                lblDoBError.Text = "Enter a valid date.";
+                ValidDOB = false;
+            }
+            else
+            {
+                lblDoBError.Visible = false;
+                Age = DateTime.Today.Year - dateOfBirth.Year;
+                ValidDOB = true;
+            }
+
+            // ID
+
+            if (guest.isIDValid(ID))
+            {
+                lblIDError.Text = "Enter a valid ID.";
+                ValidID = false;
+            }
+
+            else
+            {
+                lblIDError.Visible = false;
+                ValidID = true;
+            }
+
+            // Email
+            if (!guest.isEmailValid(Email))
+            {
+                lblEmailError.Text = "Enter a valid email.";
+                ValidEmail = false;
+
+            }
+            else
+            {
+                lblEmailError.Visible = false;
+                ValidEmail = true;
+            }
+
+            // Phone number
+            if (!guest.isPhoneValid(PhoneNumber))
+            {
+                lblPhoneNumberError.Text = "Enter a valid phone number.";
+                ValidPhoneNumber = false;
+            }
+            else
+            {
+                lblPhoneNumberError.Visible = false;
+                ValidPhoneNumber = true;
+            }
+
+            // Now the addresses
+            StreetName = txtStreetName.Text;
+            Suburb = txtSuburb.Text;
+            City = txtCity.Text;
+            PostalCode = txtPostalCode.Text;
+            StreetNumber = txtStreetNumber.Text;
+            address = null;
+
+            if (!addressFieldsEntered())
+            {
+                // Street Number
+                if (address.isAddressValid(StreetNumber))
+                {
+                    lblStreetNumberError.Text = "Enter a valid country.";
+                    ValidStreetNumber = false;
+                }
+
+                else
+                {
+                    lblStreetNumberError.Visible = false;
+                    ValidStreetNumber = true;
+
+                }
+                // Street Name
+                if (address.isAddressValid(StreetName))
+                {
+                    lblStreetNameError.Text = "Enter a valid street name.";
+                    ValidStreetName = false;
+                }
+                else
+                {
+                    lblStreetNameError.Visible = false;
+                    ValidStreetName = true;
+                }
+
+                // Suburb
+                if (address.isAddressValid(Suburb))
+                {
+                    lblSuburbError.Text = "Enter a valid suburb.";
+                    ValidSuburb = false;
+                }
+                else
+                {
+                    lblSuburbError.Visible = false;
+                    ValidSuburb = true;
+                }
+
+                // City
+                if (address.isAddressValid(City))
+                {
+                    lblCityError.Text = "Enter a valid city.";
+                    ValidCity = false;
+                }
+                else
+                {
+                    lblCityError.Visible = false;
+                    ValidCity = true;
+                }
+
+                // Postal Code
+                if (address.isAddressValid(PostalCode))
+                {
+                    lblPostalCodeError.Text = "Enter a valid postal number.";
+                    ValidPostalCode = false;
+                }
+                else
+                {
+
+                    lblPostalCodeError.Visible = false;
+                    ValidPostalCode = true;
+
+                }
+            }
+
+            //Console.WriteLine(ValidName + "\n" + ValidSurname + "\n" + ValidEmail + "\n" + ValidDOB + "\n" + ValidID + "\n" + ValidPhoneNumber);
+
+            Guest newGuest = new Guest();
+            if (ValidName && ValidSurname && ValidEmail && ValidDOB && ValidID && ValidPhoneNumber)
+            {
+                newGuest = new Guest(FirstName + " " + Surname, Age, ID, Email, PhoneNumber, 0); // 0 by default
+                guestDB.AddGuest(newGuest);
+                MessageBox.Show("Guest successfully added to database.");
+
+            }
+            if (ValidStreetName && ValidSuburb && ValidPostalCode && ValidCity && ValidStreetNumber)
+            {
+                Address newAddress = new Address(ID, StreetNumber, StreetName, Suburb, City, PostalCode);
+                addressDB.addNewAddress(newAddress);
+                MessageBox.Show("Address successfully added to database.");
+            }
+            if (ValidName && ValidSurname && ValidEmail && ValidDOB && ValidID && ValidPhoneNumber && ValidStreetName && ValidSuburb && ValidPostalCode && ValidCity && ValidStreetNumber)
+            {
+                BankDetailsControl nextControl = new BankDetailsControl(newGuest);
+                nextControl.Dock = DockStyle.Fill;
+                Control parentContainer = this.Parent;
+                parentContainer.Controls.Remove(this);
+                parentContainer.Controls.Add(nextControl);
+            }
 
         }
     }
