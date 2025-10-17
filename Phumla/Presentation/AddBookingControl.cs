@@ -309,7 +309,7 @@ namespace Phumla.Presentation
                     //booking
                     int hotelID = Convert.ToInt32(cbxHotels.Text.Substring(0, cbxHotels.Text.IndexOf("-")));
                     int availableRoomID = Convert.ToInt32(hotelDB.roomsAvailable(hotelID, true)[0].RoomID);
-                    Booking booking = new Booking(bookingGuests[0].ID, hotelID.ToString(), 
+                    Booking booking = new Booking(bookingGuests[0].ID, hotelID, 
                         false, dtpStartDate.Value.ToString(), dtpEndDate.Value.ToString(), 
                         dtpStartDate.Value.TimeOfDay.ToString(), availableRoomID.ToString(), true, Price.calculateDays(dtpStartDate.Value, dtpEndDate.Value)) ;
                     bookingDB.createNewBooking(booking);

@@ -148,7 +148,7 @@ namespace Phumla.Data
                 {
                     Booking b = new Booking((Booking)g);
 
-                    row["guestid"] = b.ID;
+                    row["guestid"] = b.GuestID;
                     row["roomid"] = b.RoomNumber;
                     row["hotelid"] = b.HotelID;
                     row["guestid"] = b.GuestID;

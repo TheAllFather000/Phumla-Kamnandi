@@ -47,8 +47,9 @@ namespace Phumla.Presentation
 
             foreach (Booking booking in bookings)
             {
-                ListViewItem item = new ListViewItem(booking.ID);
-                item.SubItems.Add(booking.HotelID);
+                ListViewItem item = new ListViewItem(Convert.ToString(booking.BookingID));
+                item.SubItems.Add(Convert.ToString(booking.GuestID));
+                item.SubItems.Add(Convert.ToString(booking.HotelID));
                 item.SubItems.Add(booking.RoomNumber);
                 item.SubItems.Add(booking.BookingDate);
                 item.SubItems.Add(booking.BookingEnd);
@@ -71,7 +72,7 @@ namespace Phumla.Presentation
             if (lsvBookings.SelectedItems.Count > 0)
             {
                 Booking booking = lsvBookings.SelectedItems[0].Tag as Booking;
-                DialogResult result = MessageBox.Show("Booking " + booking.ID + " will be permanently deleted.", "Proceed with cancellation?", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Booking " + booking.BookingID + " will be permanently deleted.", "Proceed with cancellation?", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     try

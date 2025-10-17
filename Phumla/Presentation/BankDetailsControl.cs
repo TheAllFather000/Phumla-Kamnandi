@@ -88,7 +88,7 @@ namespace Phumla.Presentation
             // All details captured are valid.
             if (!ValidExpiryDate && ValidCvv && ValidCardNumber)
             {
-                bankingDetails = new BankingDetails(guest.ID, cardNumberLong, cvv, expiryDate.ToString());
+                bankingDetails = new BankingDetails(guest.ID, Convert.ToString(cardNumberLong), cvv, expiryDate.ToString());
                 BankingDetailsDB bankingDetailsDB = new BankingDetailsDB();
                 bankingDetailsDB.AddNewBankingDetails(bankingDetails);
             }

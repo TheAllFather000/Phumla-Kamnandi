@@ -187,7 +187,8 @@ namespace Phumla.Presentation
 
         private void btnCreateReport_Click_1(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            new CreateReport().Show();
         }
 
         private void tbcHomePage_SelectedIndexChanged(object sender, EventArgs e)

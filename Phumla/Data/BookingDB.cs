@@ -35,11 +35,11 @@ namespace Phumla.Data
             foreach (DataRow r in ds.Tables[table].Rows)
             {
                 Booking b = new Booking();
-                b.ID = Convert.ToString(r["guestid"]);
+                b.GuestID = Convert.ToString(r["guestid"]);
                 b.Bill = Convert.ToDouble(r["bill"]);
                 b.RoomNumber = Convert.ToString(r["roomid"]);
-                b.BookingID = Convert.ToString(r["id"]);
-                b.HotelID = Convert.ToString(r["hotelid"]);
+                b.BookingID = Convert.ToInt32(r["id"]);
+                b.HotelID = Convert.ToInt32(r["hotelid"]);
                 b.CheckedIn = Convert.ToInt32(r["checkin"]) == 1 ? true : false;
                 b.BookingDate = Convert.ToString(r["bookingdate"]);
                 b.BookingTime = Convert.ToString(r["bookingtime"]);
@@ -62,7 +62,7 @@ namespace Phumla.Data
             bool success = false;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToString(r["id"]) == b.ID && Convert.ToString(r["roomid"]) == b.RoomNumber)
+                if (Convert.ToString(r["id"]) == b.GuestID && Convert.ToString(r["roomid"]) == b.RoomNumber)
                 {
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     success = FillRow(r, b, table, Operation.Edit);
@@ -77,7 +77,7 @@ namespace Phumla.Data
             Collection<Booking> bookingsfor = new Collection<Booking>();
             foreach (Booking b in bookings)
             {
-                if (b.ID == id)
+                if (b.GuestID == id)
                     bookingsfor.Add(b);
 
             }
@@ -106,7 +106,7 @@ namespace Phumla.Data
             bool success;
             foreach (DataRow r in ds.Tables[table].Rows)
             {
-                if (Convert.ToString(r["id"]) == booking.ID && Convert.ToString(r["bookingdate"]) == booking.BookingDate && Convert.ToString(r["roomid"]) == booking.RoomNumber)
+                if (Convert.ToString(r["id"]) == Convert.ToString(booking.BookingID) && Convert.ToString(r["bookingdate"]) == booking.BookingDate && Convert.ToString(r["roomid"]) == booking.RoomNumber)
                 {
                     r.Delete();
                     break;

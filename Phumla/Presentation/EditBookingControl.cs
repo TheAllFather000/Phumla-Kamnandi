@@ -64,8 +64,9 @@ namespace Phumla.Presentation
 
             foreach (Booking booking in bookings)
             {
-                ListViewItem item = new ListViewItem(booking.ID);
-                item.SubItems.Add(booking.HotelID);
+                ListViewItem item = new ListViewItem(Convert.ToString(booking.BookingID));
+                item.SubItems.Add(Convert.ToString(booking.GuestID));
+                item.SubItems.Add(Convert.ToString(booking.HotelID));
                 item.SubItems.Add(booking.RoomNumber);
                 item.SubItems.Add(booking.BookingDate.ToString());
                 item.SubItems.Add(booking.BookingEnd.ToString());
@@ -116,8 +117,8 @@ namespace Phumla.Presentation
                 changeEnabled(tlpBookingDetails, true);
                 // Add details to each component
                 Booking booking = lsvBookings.SelectedItems[0].Tag as Booking;
-                txtBookingID.Text = booking.ID;
-                txtHotelID.Text = booking.HotelID;
+                txtBookingID.Text = Convert.ToString(booking.BookingID);
+                txtHotelID.Text = Convert.ToString(booking.HotelID);
                 txtRoomID.Text = booking.RoomNumber;
                 cbxCheckedIn.Checked = booking.CheckedIn;
                 dtpStartDate.Value =  Convert.ToDateTime(booking.BookingDate);
